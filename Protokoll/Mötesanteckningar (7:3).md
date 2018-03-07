@@ -8,12 +8,26 @@
 * Victor Dahl
 
 ## To Do
-* Deadlines på Slack
+* Milo Bengtsson:
+	* Stäng Meeting Notes Templates
+	* Deadlines på Slack
+	* Daily check-in på Slack
+	* Skriv över anteckningar kring ansvarsområden och bemanning till projektplan
+* Hanna Fellwing:
+	* Skriver på projektplan, baserat på våra anteckningar kring planering
+* Lisa Wasslöv:
+	* Fokuserar på konkurrentanalys
+	* Kravanalys, men denna är beroende av nästa veckomöte (sitemap, definition av funktioner, o.s.v.)
+* Victor Dahl:
+	* Gantt-schema
+	* Kravanalys och övrig ifyllnad av projektplan
+
 
 
 ## Efter lunch
 * Ansvarsområden
-* 
+* S1 Planering
+* Projektplan
 
   
 ## Anteckningar
@@ -25,6 +39,13 @@
 	* Applikationen (för användaren): svenska primärt, med en engelsk översättning i mån av tid
 * Skapade [wiki på GitHub](https://github.com/projectpaca/paca/wiki) där användbar information om projektet kommer stå. Än så länge finns förstasidan och en tom sida om applikationens visuella identitet. Vidare finns det en sidebar med länkar till alla docs.
 * Vi skjuter upp att bestämma om eventuella mötesroller (t.ex. hattar) tills dessa börjar, men vi tänker preliminärt att det åtminstone krävs en ledare (personen som kallat mötet eller behöver mötet mest) och en sekreterare. 
+* Vi har planerat sprint 1:
+	* #todo
+* Nedanstående anteckningar har bestämts
+* Vi har påbörjat de delar av projektplanen som går (utan dependencies)
+
+
+
 
 
 ### Ansvarsområden
