@@ -15,6 +15,7 @@
 * Ansvarsområden
 * 
 
+___
   
 ## Anteckningar
 * Vi implementerar dagliga Sprint check-ins på Slack (förutom på dagar som vi har möten)
@@ -26,6 +27,7 @@
 * Skapade [wiki på GitHub](https://github.com/projectpaca/paca/wiki) där användbar information om projektet kommer stå. Än så länge finns förstasidan och en tom sida om applikationens visuella identitet. Vidare finns det en sidebar med länkar till alla docs.
 * Vi skjuter upp att bestämma om eventuella mötesroller (t.ex. hattar) tills dessa börjar, men vi tänker preliminärt att det åtminstone krävs en ledare (personen som kallat mötet eller behöver mötet mest) och en sekreterare. 
 
+___
 
 ### Ansvarsområden
 
@@ -74,7 +76,11 @@ Vi bestämde oss för att granska det som vi *inte* har primärt hållit på med
 	* Hanna Fellwing
 
 **Fler?**
-  
+ 
+___
+
+## Sprintöversikt
+
 ### Sprint 1 (V10-12)
 
 ### Deadlines och viktiga datum
@@ -98,7 +104,6 @@ Retrospect-möte 27 mars
 * 12 april
 * Inlämning av materiel till RS-möte: torsdag 12 april 12.00
 * Retrospect-möte 17 april (i sprint 3)
-
   
 #### Mål
 
@@ -127,7 +132,6 @@ Retrospect-möte 8 maj
 * Regressionstester + ny implementation ska ha testats minst en gång
 * Minst en andra omgång av granskningar och tester som faller under individuell fördjupning. För analyser så ska en kompletterande rapport ha gjort som adresserar hur problem som pekats ut i den första analysen åtgärdats.
   
-
 #### Deadlines och viktiga datum
 *Utställningsdag 24 maj*
 Deadline 27 maj
