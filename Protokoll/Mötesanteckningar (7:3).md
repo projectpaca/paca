@@ -116,7 +116,7 @@ Retrospect-möte 27 mars
 #### Deadlines och viktiga datum
 
 * Handledning varje tisdag kl 10
-* 12 april
+* Deadline för nedanstående mål: 12 april
 * Inlämning av materiel till RS-möte: torsdag 12 april 12.00
 * Retrospect-möte 17 april (i sprint 3)
 
