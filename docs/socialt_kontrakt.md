@@ -1,5 +1,6 @@
 # Socialt kontrakt för projekt Paca
 DA336A VT18
+
 Grupp 5
 
 Detta dokument fastslår riktlinjer för projektgruppens förhållningssätt till projektet och varandra. 
@@ -10,7 +11,7 @@ Detta dokument fastslår riktlinjer för projektgruppens förhållningssätt til
 Inofficiell kommunikation sker i gruppchatt på Facebook, eftersom det är snabbt och tillgängligt för alla medlemmar. 
 
 #### Slack
-Vi avser använda Slack (https://projectpaca.slack.com/) för mer officiell och projektrelaterad kommunikation i vårt projekt. Vår workspace är dessutom tillgänglig för vår handledare, Dipak Surie. 
+Vi avser använda [Slack](https://projectpaca.slack.com/) för mer officiell och projektrelaterad kommunikation i vårt projekt. Vår workspace är dessutom tillgänglig för vår handledare, Dipak Surie. 
 
 Anledningen till att vi valt att inte ha *all* kommunikation i Slack är för att applikationen inte är optimerad för att ha en lika snabb och tillgänglig chattfunktion som Facebook. Aviseringar och åtkomst fungerar inte likadant i Slack, och vidare kan en användare inte vara inne på flera workspaces samtidigt. Detta i kontrast till Facebook, där varje användare kan kommunicera på flera håll samtidigt.
 
@@ -46,50 +47,50 @@ Nedan är en lista över projektets deltagare, och på vilka dagar som de är up
 	* XX
 	* XX
 	
-		## Möten
-		Nedan följer en lista över de mötestyper som projektet innefattar, ordnade efter deras frekvens:
-		* Planeringsmöte (Sprint Planning)
-		* Sprint Review
-		* Retrospect-möte
-		* Handledningsmöte
-		* Gruppmöte (officiella)
-		* Gruppmöte (inofficiella)
+## Möten
+Nedan följer en lista över de mötestyper som projektet innefattar, ordnade efter deras frekvens:
+* Planeringsmöte (Sprint Planning)
+* Sprint Review
+* Retrospect-möte
+* Handledningsmöte
+* Gruppmöte (officiella)
+* Gruppmöte (inofficiella)
 
-		Övriga grupptillfällen, utan inbördes ordning:
-		* Utbildning
-			* Laborationer
-			* Individuell insamling av kunskap
-			* Föreläsningar?
-		* Koddesign
-		* Kodning
-		* Omarbetning kod
-		* Dokumentation
-		* Omarbetning dokument
-		* Granskning
-		* Kravhantering
-		* Testning
-
-
-		### Föra protokoll
+Övriga grupptillfällen, utan inbördes ordning:
+* Utbildning
+	* Laborationer
+	* Individuell insamling av kunskap
+	* Föreläsningar?
+* Koddesign
+* Kodning
+* Omarbetning kod
+* Dokumentation
+* Omarbetning dokument
+* Granskning
+* Kravhantering
+* Testning
 
 
+### Föra protokoll
 
-		vilken typ av möten kommer man att hålla (utöver handledning och retrospekt), hur fastställs agenda och vem håller i mötena, ska de dokumenteras? Hur får någon som varit frånvarande information om arbete som utförts eller beslut som fattats?
 
-		Mall för alla typer av mötesanteckningar 
 
-		### Mötestyper
-		* Sprint-möte
-			* Planering av den kommande sprinten, inklusive inbokning av gruppmöten
-		*
+vilken typ av möten kommer man att hålla (utöver handledning och retrospekt), hur fastställs agenda och vem håller i mötena, ska de dokumenteras? Hur får någon som varit frånvarande information om arbete som utförts eller beslut som fattats?
 
-		Planering av möten sprint efter sprint (Boka möten en sprint i taget)
-		En punktlista över saker (t.ex. känslotillstånd, )
+Mall för alla typer av mötesanteckningar 
 
-		## Konflikter
-		Projektmedlemmarna har alla uttryckt en öppenhet för konstruktiv kritik – så tidigt och så ärligt som möjligt. Det finns emellertid en risk att klimatet enbart ger intryck av att *verka* öppet, vilket är varför gruppmedlemmarna kommer sträva efter att bjuda in till konstruktiv kritik. Detta kommer ske rutinmässigt på veckomöten.
+### Mötestyper
+* Sprint-möte
+	* Planering av den kommande sprinten, inklusive inbokning av gruppmöten
+*
 
-		Eftersom målet i planering av möten är god framförhållning, är förhoppningen att projektet inte drabbas av alltför många förhinder. Diskussioner projektmedlemmarna emellan, beträffande tidshållning och planering, har utmynnat i att det inte finns definierade konsekvenser för dröjsmål eller utebliven frånvaro. Den enda riktlinjen – som alla gruppmedlemmar ämnar att upprätthålla – är att kontakta övriga projektgruppen i Facebook-chatten så fort som förseningen eller frånvaron blir känd. 
+Planering av möten sprint efter sprint (Boka möten en sprint i taget)
+En punktlista över saker (t.ex. känslotillstånd, )
+
+## Konflikter
+Projektmedlemmarna har alla uttryckt en öppenhet för konstruktiv kritik – så tidigt och så ärligt som möjligt. Det finns emellertid en risk att klimatet enbart ger intryck av att *verka* öppet, vilket är varför gruppmedlemmarna kommer sträva efter att bjuda in till konstruktiv kritik. Detta kommer ske rutinmässigt på veckomöten.
+
+Eftersom målet i planering av möten är god framförhållning, är förhoppningen att projektet inte drabbas av alltför många förhinder. Diskussioner projektmedlemmarna emellan, beträffande tidshållning och planering, har utmynnat i att det inte finns definierade konsekvenser för dröjsmål eller utebliven frånvaro. Den enda riktlinjen – som alla gruppmedlemmar ämnar att upprätthålla – är att kontakta övriga projektgruppen i Facebook-chatten så fort som förseningen eller frånvaron blir känd. 
 
 ## Arbetsklimat
 En del uppgifter – kanske i synnerhet i början av processen – kan och bör av tidsskäl göras individuellt. Så småningom kommer större beslut att behövas ta kring kodning och design, och uppgifterna kommer att öka i svårighetsgrad. För att kontra ökningen i svårighet kommer parkodning och övrigt arbete i par att uppmuntras och främjas. 
