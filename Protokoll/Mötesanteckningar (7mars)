@@ -29,7 +29,6 @@
 * S1 Planering
 * Projektplan
 
-___
   
 ## Anteckningar
 * Vi implementerar dagliga Sprint check-ins på Slack (förutom på dagar som vi har möten)
@@ -43,12 +42,27 @@ ___
 * Vi har planerat sprint 1:
 	* #todo
 * Nedanstående anteckningar har bestämts
-* Vi har påbörjat de delar av projektplanen som går (utan dependencies)
-
-
-
-
-___
+* Vi har påbörjat de delar av projektplanen som går (utan dependencies). Målet är att fylla på följande delar allteftersom:
+	* Projektplan
+		2.1 Syfte
+		2.2 Ordlista
+		2.3 Referenser
+	* Översikt av projekt
+		3.1 Syfte
+		3.2 Omfattning
+		3.3 Mål
+	* Produkt
+		4.1 Produktbeskrivning
+		4.2 Målgrupp
+	* Process
+		5.1 Utvecklingsprocess
+		5.2 Bemanning och ansvarsområden
+	* Planering
+		6.1 Grovplan
+		6.2 Gantt-schema
+	* Riskanalys
+		7.1 Identifierade risker
+		7.2 Riskdiagram
 
 ### Ansvarsområden
 
@@ -89,7 +103,7 @@ Milo Bengtsson och Hanna Fellwing är ansvariga för detta område. Eftersom fro
 Vi bestämde oss för att granska det som vi *inte* har primärt hållit på med.
 
 * Dokumentgranskning
-	* Victor Dahl
+	* Viktor Dahl
 * Kodgranskning
 	* Milo Bengtsson
 * Användbarhetstestning och användbarhetsanalys
@@ -97,11 +111,7 @@ Vi bestämde oss för att granska det som vi *inte* har primärt hållit på med
 	* Hanna Fellwing
 
 **Fler?**
- 
-___
-
-## Sprintöversikt
-
+  
 ### Sprint 1 (V10-12)
 
 ### Deadlines och viktiga datum
@@ -125,6 +135,7 @@ Retrospect-möte 27 mars
 * Deadline för nedanstående mål: 12 april
 * Inlämning av materiel till RS-möte: torsdag 12 april 12.00
 * Retrospect-möte 17 april (i sprint 3)
+
   
 #### Product backlog 
 
@@ -152,7 +163,6 @@ Retrospect-möte 8 maj
   
 
 ### Sprint 4 (V19-22)
-<<<<<<< HEAD:Protokoll/Mötesanteckningar (7:3).md
 
 #### Product backlog
 
@@ -164,12 +174,3 @@ Deadline 27 maj
 * Problem som noterats tidigare ska ha åtgärdats och vissa av de krav som prioriterats som ”bör”/”should” ska ha implementerats.
 * Regressionstester + ny implementation ska ha testats minst en gång
 * Minst en andra omgång av granskningar och tester som faller under individuell fördjupning. För analyser så ska en kompletterande rapport ha gjort som adresserar hur problem som pekats ut i den första analysen åtgärdats.
-=======
-* Problem som noterats tidigare ska ha åtgärdats och vissa av de krav som prioriterats som ”bör”/”should” ska ha implementerats.
-* Regressionstester + ny implementation ska ha testats minst en gång
-* Minst en andra omgång av granskningar och tester som faller under individuell fördjupning. För analyser så ska en kompletterande rapport ha gjort som adresserar hur problem som pekats ut i den första analysen åtgärdats.
-  
-#### Deadlines och viktiga datum
-*Utställningsdag 24 maj*
-Deadline 27 maj
->>>>>>> a5d12bbaf9a3b06f043ab6e89d6bc9ee6fdd14c8:Protokoll/Mötesanteckningar (7mars)
