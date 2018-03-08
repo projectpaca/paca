@@ -1,16 +1,35 @@
 # Socialt kontrakt för projekt Paca
-DA336A VT18
-
-Grupp 5
+DA336A VT18 | Grupp 5
 
 Detta dokument fastslår riktlinjer för projektgruppens förhållningssätt till projektet och varandra. 
 
+## Innehållsförteckning
+
+1. Kommunikationskanaler
+	1.1 Facebook
+	1.2 Slack
+2. Arbetstider
+	2.1 Gruppmedlemmars arbeten utöver studier och projekt
+3. Möten
+	3.1 Föra protokoll
+	3.2 Mötestyper
+4. Arbetsklimat
+	4.1 Parkodning
+	4.2 Kodning med bollplank
+	4.3 Nedbrytning för att främja arbetsklimatet
+5. Resurser
+	5.1 GitHub
+	5.2 YouTrack
+	5.3 Övrigt
+6. Godkännande
+	
+
 ## Kommunikationskanaler
 
-#### Facebook
+### Facebook
 Inofficiell kommunikation sker i gruppchatt på Facebook, eftersom det är snabbt och tillgängligt för alla medlemmar. 
 
-#### Slack
+### Slack
 Vi avser använda [Slack](https://projectpaca.slack.com/) för mer officiell och projektrelaterad kommunikation i vårt projekt. Vår workspace är dessutom tillgänglig för vår handledare, Dipak Surie. 
 
 Anledningen till att vi valt att inte ha *all* kommunikation i Slack är för att applikationen inte är optimerad för att ha en lika snabb och tillgänglig chattfunktion som Facebook. Aviseringar och åtkomst fungerar inte likadant i Slack, och vidare kan en användare inte vara inne på flera workspaces samtidigt. Detta i kontrast till Facebook, där varje användare kan kommunicera på flera håll samtidigt.
@@ -87,10 +106,14 @@ Mall för alla typer av mötesanteckningar
 Planering av möten sprint efter sprint (Boka möten en sprint i taget)
 En punktlista över saker (t.ex. känslotillstånd, )
 
+___
+
 ## Konflikter
 Projektmedlemmarna har alla uttryckt en öppenhet för konstruktiv kritik – så tidigt och så ärligt som möjligt. Det finns emellertid en risk att klimatet enbart ger intryck av att *verka* öppet, vilket är varför gruppmedlemmarna kommer sträva efter att bjuda in till konstruktiv kritik. Detta kommer ske rutinmässigt på veckomöten.
 
 Eftersom målet i planering av möten är god framförhållning, är förhoppningen att projektet inte drabbas av alltför många förhinder. Diskussioner projektmedlemmarna emellan, beträffande tidshållning och planering, har utmynnat i att det inte finns definierade konsekvenser för dröjsmål eller utebliven frånvaro. Den enda riktlinjen – som alla gruppmedlemmar ämnar att upprätthålla – är att kontakta övriga projektgruppen i Facebook-chatten så fort som förseningen eller frånvaron blir känd. 
+
+Om gruppmedlemmar är oense får personen ansvarig för delen det sista ordet. Detta för att de har störst insikt och erfarenhet i området. 
 
 ## Arbetsklimat
 En del uppgifter – kanske i synnerhet i början av processen – kan och bör av tidsskäl göras individuellt. Så småningom kommer större beslut att behövas ta kring kodning och design, och uppgifterna kommer att öka i svårighetsgrad. För att kontra ökningen i svårighet kommer parkodning och övrigt arbete i par att uppmuntras och främjas. 
@@ -120,8 +143,6 @@ Genom att börja definiera hela det önskade innehållet på applikationen, för
 
 
 
-
-
 ## Resurser
 
 ### Github
@@ -133,7 +154,10 @@ Genom att börja definiera hela det önskade innehållet på applikationen, för
 ## Övrigt
 
 ## Godkännande
+Dokumentet är skrivet av Milo Bengtsson, i samverkan med resterande gruppmedlemmar.
+
 Följande gruppmedlemmar har <datum> tagit del av och godkänt det sociala kontraktet:
+
 *
 *
 *

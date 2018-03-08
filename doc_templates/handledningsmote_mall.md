@@ -51,4 +51,20 @@ Kommentar om hur man ligger till med arbetet i förhållande till planeringen. T
 ## Övriga punkter
 
 
+Vilka som är närvarande
+• Tidrapport (information om arbetad tid tas ut via projekthanteringsverktyg)
+o Summering av tidrapport för  Varje person
+ Gruppen som helhet
+o Summeringen av tidrapporten ska antal timmar och procentsats av total
+timbudget för personer och gruppen som helhet. 4
+DA336A VT18 Projektguide
+o Kommentar om man ligger i fas med planerat arbetad tid eller om man ligger före/efter denna.
+• Planering
+o För varje person i gruppen ska det finnas en kort beskrivning av:
+ Vad personen jobbat med sedan senaste mötet.
+ Vad personen är planerad att jobba med den kommande veckan.
+o Kommentar om man ligger i fas med den gjorda planeringen eller om man
+behövt göra några förändringar.
+
+
 

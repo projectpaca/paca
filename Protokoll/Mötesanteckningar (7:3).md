@@ -104,12 +104,12 @@ Projektplan + kravdokument i första färdiga version: 23 mars kl 12:00
 Inlämning av materiel till RS-möte: fredag 23 mars 12.00
 Retrospect-möte 27 mars
 
-### Mål
+#### Product backlog
 
 * Projektplan ska finnas i en första färdig version.
 * Kravdokument ska finnas i en första färdig version. Alla krav är dock kanske inte definierade i detalj ännu. Kravdokumentet kommer sannolikt att förändras men en första uppsättning funktionella och icke-funktionella krav ska finnas.
 * Det ska kunna genomföras en demo av produkten med fungerande kod. Inga krav behöver vara färdigimplementerade och testade formellt men det ska finnas exekverbar kod eller en statisk webbsida som minst.
-  
+
 
 ### Sprint 2 (V13-15)
 
@@ -121,7 +121,7 @@ Retrospect-möte 27 mars
 * Retrospect-möte 17 april (i sprint 3)
 
   
-#### Mål
+#### Product backlog 
 
 * En första version av verifiering- och validerings-dokumentet. 
 * Ett designdokument i en första version.
@@ -131,24 +131,30 @@ Retrospect-möte 27 mars
 
 ### Sprint 3 (V16-18)
 
-* Det finns en första version av produkten som är en helhet.
-* Alla krav prioriterade som ”ska”/”must” (Eklund 2010 kap. 10) är implementerade och testade enligt verifiering- och validerings-dokument.
-* En annan grupp ska ha testat projektet och överlämnat en rapport
-* Användbarhetsanalyser, användbarhetstester och white-box-testning (delar av individuell fördjupning) ska ha genomförts minst en gång om någon gör dessa.
-
 #### Deadlines och viktiga datum
 Deadline 3 maj 12:00
 Affischer 6 maj 23:55
 Inlämning av materiel inför RS-möte: torsdag 3 maj 12.00
 Retrospect-möte 8 maj 
+
+#### Product backlog
+* Det finns en första version av produkten som är en helhet.
+* Alla krav prioriterade som ”ska”/”must” (Eklund 2010 kap. 10) är implementerade och testade enligt verifiering- och validerings-dokument.
+* En annan grupp ska ha testat projektet och överlämnat en rapport
+* Användbarhetsanalyser, användbarhetstester och white-box-testning (delar av individuell fördjupning) ska ha genomförts minst en gång om någon gör dessa.
+
+
   
 
 ### Sprint 4 (V19-22)
-* Problem som noterats tidigare ska ha åtgärdats och vissa av de krav som prioriterats som ”bör”/”should” ska ha implementerats.
-* Regressionstester + ny implementation ska ha testats minst en gång
-* Minst en andra omgång av granskningar och tester som faller under individuell fördjupning. För analyser så ska en kompletterande rapport ha gjort som adresserar hur problem som pekats ut i den första analysen åtgärdats.
-  
+
+#### Product backlog
 
 #### Deadlines och viktiga datum
 *Utställningsdag 24 maj*
 Deadline 27 maj
+
+#### Product backlog
+* Problem som noterats tidigare ska ha åtgärdats och vissa av de krav som prioriterats som ”bör”/”should” ska ha implementerats.
+* Regressionstester + ny implementation ska ha testats minst en gång
+* Minst en andra omgång av granskningar och tester som faller under individuell fördjupning. För analyser så ska en kompletterande rapport ha gjort som adresserar hur problem som pekats ut i den första analysen åtgärdats.
