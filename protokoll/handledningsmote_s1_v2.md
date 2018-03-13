@@ -4,7 +4,7 @@ Grupp 5
 # Handledningsmöte 2 (13/3 -18)
 
 ## Närvarande
-* Milo Bengtsson
+* Milo Bengtsson (protocol)
 * Hanna Fellwing
 * Lisa Wasslöv
 * Victor Dahl
@@ -22,8 +22,8 @@ Gruppens timmar sammanlagt: 61 h (6,9 % av 880 h)
 Eventuell kommentar om huruvida rapporteringen är ”up-to-date” eller inte eller andra oklarheter som kan finnas. Kommentar om hur man ligger till tidsmässigt i förhållande till planeringen.
 
 ### Milo Bengtsson
-Har spenderat mest tid till att förbereda projektarbetet genom att skapa diverse workspaces och mallar för gruppen, och optimera dessa för arbetet. 
-* Arbete med att konvertera dokumentmallar till Markdown, för mer konsekvent formattering och enklare bearbetning i Git 
+Har spenderat mest tid till att förbereda projektarbetet genom att skapa diverse workspaces och mallar för gruppen, och optimera dessa för arbetet. Milo arbetade fler timmar eftersom hen ordnade med programvaror innan sprint 1, vilka loggades till sprint 1. 
+* Arbete med att konvertera dokumentmallar till Markdown, för mer konsekvent formattering och enklare bearbetning i Git
 * Föreläsningar
 * Handledningsmöte
 * Planering av sprint 1 (S1)
@@ -33,7 +33,6 @@ Har spenderat mest tid till att förbereda projektarbetet genom att skapa divers
 
 ### Hanna Fellwing
 Vid planeringsmötet av sprint 1 arbetade Hanna i synnerhet med skrivande av projektplanen.
-
 * Föreläsningar
 * Handledningsmöte
 * Planering av sprint 1 (S1)
@@ -93,6 +92,14 @@ Gruppens Slack har fått två nya integrationer: **Standuply** och **todobot**. 
 
 Målet med denna dagliga check-in är att dels ge gruppmedlemmarna ett tillfälle att reflektera kring gårdagens och det kommande egna arbete, samt att erbjuda möjligheten att få insikt i vad de andra projektdeltagarna har åstadkommit och planerar att syssla med. Chansen finns även att en annan student vet en bra lösning för eventuella hinder en upplever.
 
+### Arbete med demo
+Front-end är med för proof of concept, så det bör fungera att skapa wireframes. Vad gäller back-end så handlar det mer om att bevisa att vi *har* någon kod, så förbered dokumentation kring databasen (vilka tabeller vi har osv.)
 
+### Individuella fördjupningar och arbetsfördelning
+Dipak ser positivt på att våra individuella fördjupningar är "motsatsen" till vad våra huvudområden är. 
 
+### Vår gissning av hur långt vi har kommit i procent (Gantt)
+Product backlog bör delas upp i ännu mindre delar för att på så sätt underlätta vår gissning av hur långt vi har kommit.
 
+### Data gathering
+Lisa ska ta kontakt med sin arbetsgivare för att få hans input kring deras nuvarande schemaläggningsprogram. Hanna ska försöka fråga sin arbetsgivare om dennes input eftersom de inte har något sådant program.  Dessa konversation får vara tämligen ostrukturerad. 
