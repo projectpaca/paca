@@ -9,7 +9,6 @@ Grupp 5
 * Lisa Wasslöv
 * Victor Dahl
 
-___
 
 ## Tidrapport
 Antal rapporterade timmar i sprinten (totalt avklarad tid i procent)
@@ -34,13 +33,15 @@ Antal rapporterade timmar i sprinten (totalt avklarad tid i procent)
 *Gruppens timmar sammanlagt:* 19 h (9,1 % av 880h)
 Detta skiljer sig markant från förgående vecka, då det gick upp i 61h.
 
-### Varför har vi rapporterat så mycket färre timmar?
+### Varför har vi rapporterat så många färre timmar?
 ...
 
 ### Hur kan vi förbättra oss nästa vecka för att åtgärda detta, och hur kan vi arbeta för att förhindra det i framtiden?
 ...
 
+
 ___
+
 
 ## Arbete sedan senaste handledningsmöte
 Generellt sett har arbetet påverkats av tentamen i databasteknik på torsdagen, och vi kom alla överens (muntligt) om att vi kunde tillåta oss att spendera mindre tid till projektet denna vecka i förmån för tentan. Tiden som vi spenderade mindre denna vecka ska vi försöka ta igen i nästa vecka, då det trots allt är sista delen av sprinten och således innefattar en rad inlämningar. 
@@ -57,7 +58,9 @@ Fokus på att skriva konkurrentanalys, samt aspirationer om att hålla i ostrukt
 ### Victor Dahl
 Victor tog en ledande roll vid veckomötet i tisdags, och gick tillsammans med gruppmedlemmarna igenom funktioner som delades in i kategorierna "måste", "bör" och "vill" beroende på deras prioriteringar. Efter diskussioner kring webbapplikationens utseende ritade Victor snabbt upp våra första wireframes på en whiteboard-tavla, vilka vi under sprintens sista vecka ska digitalisera och utveckla. Eget arbete med Python.
 
+
 ___
+
 
 ## Planerat arbete kommande vecka
 Sista veckan kommer troligtvis att bli stressig eftersom vi, utöver sprintens flera resterande uppgifter, måste arbeta med samt redovisa vår sista uppgift i databasteknik. 
@@ -72,7 +75,9 @@ Sista veckan kommer troligtvis att bli stressig eftersom vi, utöver sprintens f
 * **Bör:**
 	* Kodgranskningsdokument (Milo)
 
+
 ___
+
 
 ## Övriga punkter
 
