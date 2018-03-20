@@ -25,6 +25,14 @@
 	1. Vad har varit bra med hur vi arbetat i grupp?
 	2. Vad har varit mindre bra? 
 	3. Vad kan vi göra bättre i nästa sprint?
-4. Övrigt
+4. RS-möte
+	1. Vem ska ansvara för vilken del i 
 
 ## Anteckningar
+
+1. Timelog
+	1. 
+	2. 
+	3. 
+	4. Vad kan vi förbättra till nästa sprint?
+		* Inte skapa issues såsom "Veckomöte" där vi inte har ett möte, utan mest sitter och aktivt jobbar med dokumentation eller kod. Skapa 

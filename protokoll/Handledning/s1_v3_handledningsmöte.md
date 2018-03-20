@@ -67,8 +67,8 @@ Sista veckan kommer troligtvis att bli stressig eftersom vi, utöver sprintens f
 
 ### Issues
 * **Måste:**
-	* Projektplan (Lisa skriver klart och avslutar| 4h )
-	* Kravdokument (?
+	* Projektplan (Lisa skriver klart och avslutar | 4h )
+	* Kravdokument (Hanna & Milo | 2h per person )
 	* Första demo 
 		* Front-end: wireframes (Hanna & Milo)
 		* Back-end: kod som går att interagera med (Lisa & Victor)
