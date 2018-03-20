@@ -34,7 +34,7 @@ Antal rapporterade timmar i sprinten (totalt avklarad tid i procent)
 Detta skiljer sig markant från förgående vecka, då det gick upp i 61h.
 
 ### Varför har vi rapporterat så många färre timmar?
-...
+Tentan i torsdags + uppgift i databasteknik denna veckan.
 
 ### Hur kan vi förbättra oss nästa vecka för att åtgärda detta, och hur kan vi arbeta för att förhindra det i framtiden?
 ...
@@ -81,4 +81,12 @@ ___
 
 ## Övriga punkter
 
+* Genomsnittlig tid som vi bör spendera per vecka är 18h
+* Dagens gruppmöte, efterhandledningsmötet, kommer handla om att 
+* Kravdokumentet har vi inte börjat med, så det måste vi fokusera på
+* Lisa har gjort en kort (splittrad) intervju med sin chef om deras schemaläggningsapplikation, och de kommer prata mer framöver 
+	* Googla fram studier kring det (inte bara work schedule apps, utan även vanliga schedule apps om det förstnämnda inte finns=
+* Planera issues lite tydligare, och uppdatera detta dokument (i "Issues")
+* Måste-Bör-Vill – fortsätta? Lägga till på YouTrack?
+* Diskutera gruppdynamik innan RS-mötet (men inte på) för att summera grupparbetet för den föregående sprinten
 
