@@ -4,7 +4,7 @@ Grupp 5
 # Handledningsmöte (20/3 -18)
 
 ## Närvarande
-* Milo Bengtsson 
+* Milo Bengtsson (protokoll)
 * Hanna Fellwing
 * Lisa Wasslöv
 * Victor Dahl
@@ -67,8 +67,8 @@ Sista veckan kommer troligtvis att bli stressig eftersom vi, utöver sprintens f
 
 ### Issues
 * **Måste:**
-	* Projektplan (Alla)
-	* Kravdokument (?)
+	* Projektplan (Lisa skriver klart och avslutar| 4h )
+	* Kravdokument (?
 	* Första demo 
 		* Front-end: wireframes (Hanna & Milo)
 		* Back-end: kod som går att interagera med (Lisa & Victor)
