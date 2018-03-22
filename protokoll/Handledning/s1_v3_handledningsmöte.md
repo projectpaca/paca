@@ -18,9 +18,10 @@ Antal rapporterade timmar i sprinten (totalt avklarad tid i procent)
 	* PACA-9	| Drop in-hjälp Dokumentation	(2h)
 	* PACA-22	| Kodgranskningsdokument (1 av 3h)
 	* PACA-14	| Veckomöte (2,5h)
-* Hanna Fellwing: 3 h (7.7 % av 220h)
+* Hanna Fellwing: 5 h (8.6 % av 220h)
 	* PACA-10	| Handledningsmöte 2 (30m)
 	* PACA-14	| Veckomöte	(2,5h)
+	* PACA-24	| DOC – Gruppmöte (2h)
 * Lisa Wasslöv: 5 h (8,6 % av 220h)
 	* PACA-10	| Handledningsmöte 2 (30m)
 	* PACA-18	| Konkurrentanalys (2h)
@@ -30,8 +31,10 @@ Antal rapporterade timmar i sprinten (totalt avklarad tid i procent)
 	* PACA-14	| Veckomöte	(2,5h)
 
 
-*Gruppens timmar sammanlagt:* 19 h (9,1 % av 880h)
+*Gruppens timmar sammanlagt:* 21 h 
 Detta skiljer sig markant från förgående vecka, då det gick upp i 61h.
+
+*Progress so far:* 9,3 % av 880h
 
 ### Varför har vi rapporterat så många färre timmar?
 Tentan i torsdags + uppgift i databasteknik denna veckan.
