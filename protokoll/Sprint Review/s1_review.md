@@ -26,7 +26,8 @@
 	2. Vad har varit mindre bra? 
 	3. Vad kan vi göra bättre i nästa sprint?
 4. RS-möte
-	1. Vem ska ansvara för vilken del i 
+	1. Vem ska ansvara för vilken del i granskningen?
+	2. PowerPoint
 
 ## Anteckningar
 
