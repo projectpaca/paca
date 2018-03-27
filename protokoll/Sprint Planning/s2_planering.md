@@ -35,8 +35,8 @@ v 13-15 | 26 mars - 13 april
 #### V1
 Mån: S2 Planering 4h x 4
 Tis: RS-möte 4h x 4 + S2 Planering forts 2h x 4
-Ons: KANSKE 28/3 (drop in doc och webb)
-Tor: Hanna & Milo designdoc
+Ons: Drop in-hjälp Dokumentation 2h x 1 (Victor) + Drop in-hjälp Webb 2h x 1 (Hanna)
+Tor: 
 Fre:
 
 **Preliminärt antal timmar:** 10h x 4 (exkl ons)
