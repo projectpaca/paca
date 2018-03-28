@@ -32,7 +32,7 @@ v 13-15 | 26 mars - 13 april
 	* Minst en dokumentgranskning + dokumentgranskningsdokument
 * 13 april | Självgranskning Testdokument
 
-#### V1
+### V1
 * Mån: S2 Planering 4h x 4
 * Tis: Planering forts 2h x 4
 * Ons: Drop in-hjälp Dokumentation 2h x 1 (Victor) + Drop in-hjälp Webb 2h x 1 (Hanna)
@@ -41,7 +41,7 @@ v 13-15 | 26 mars - 13 april
 
 **Preliminärt antal timmar:** 6h x 4 (exkl ons) + 2h x 2 (Victor & Hanna)
 
-#### V2
+### V2
 * Mån:
 * Tis:
 * Ons: Handledning 30 min x 4 + Veckomöte 2,5h x 4 (ev längre, då 13.15-17 är drop in webb och doc)
