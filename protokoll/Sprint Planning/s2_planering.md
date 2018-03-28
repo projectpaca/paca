@@ -110,42 +110,78 @@ En lista över uppgifter som är nödvändiga för att leverera ovannämnda *pro
 I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela upp sprint backloggen till mindre och fler issues. Detta för att underlätta översikt och uppskattning av tidsåtgång. 
 
 1. Demo
-	1.1 Back-end (d: 2.1) (totalt: ) (Lisa & Victor) 
+	1.1 Back-end (d: 2.1) (totalt: ) (Lisa & Victor)
+	
 		1.1.1 Python (subtotal: 32h)
+		
 			1.1.1.1 Kravidentifikation (d: /protokoll/veckomöten/s1_v2_veckomöte.md) 4h x 2
+			
 			1.1.1.2 CRUD på användare 8h x 2
+			
 			1.1.1.3 CRUD på pass 4h x 2 
+			
 		1.1.2 Databas (subtotal: 8h)
+		
 			1.1.2.1 Vidareutveckling av databas 2h x 4 (Lisa & Victor x 2)
+			
 	1.2 Front-end (d: 2.2)  (total: 41 h)
+	
 		1.2.1 Skapa statisk HTML-struktur (inkl placeholders för Python-kod) (Hanna & Milo) 4h x 2
+		
 		1.2.2 Kravidentifikation CSS (d: kravdokument) (Hanna & Milo) 2h x 2
+		
 		1.2.3 Kravidentifikation JavaScript (d: kravdokument) (Hanna & Milo) 2h x 2
+		
 		1.2.4 CSS research (Milo) 5h x 1
+		
 		1.2.5 JavaScript research (Hanna) 10h x 1
+		
 		1.2.6 CSS-kodning (Milo) 4h x 1 
+		
 		1.2.7 JavaScript-kodning (Hanna) 6h x 1 
+		
 2. Dokument
+
 	2.1 Kodgranskningsdokument (totalt: 10h)
+	
 		2.1.1 Inledning 1h x 1 (Milo)
+		
 		2.1.2 Kodgranskning 1h x 1 (Milo)
+		
 		2.1.3 Riktlinjer för kod 3h x 1 (Milo)
+		
 			2.1.3.1 Brainstorming inför Python 2h x 2 (Victor & Milo) 
+			
 		2.1.4 Checklista för granskningsmöte 1h x 1 (Milo)
+		
 	2.2 Designdokument (totalt: 17h)
+	
 		2.2.1 Inledning (Syfte, Ordlista, Referenser) 1h x 1 (Milo)
+		
 		2.2.2 Systemdiagram 
+		
 			2.2.1.1 Grovjobb (handritade diagram och innehåll) 4h x 1 (Hanna)
+			
 			2.2.1.2 Digitalisering av diagram 1h x 1 (Milo)
+			
 		2.2.3 Användningsfallsdiagram 3h x 2 (Hanna & Milo)
+		
 		2.2.4 Användargränssnitt (d: wireframes) 2h x 2 (Hanna & Milo)
+		
 		2.2.5 ER-diagram/skiss 2h x 2 (Victor/Lisa)
+		
 	2.3 VoV-dokument (totalt: 11h)
+	
 		2.3.1 Inledning 1h x 1 (Hanna)
+		
 		2.3.2 Testprocess (d: projektplan, kravdokument, individuella fördjupningar) 2h x 2 (Victor & Lisa)
+		
 		2.3.3 Testning 2h x 2 (Victor & Lisa)
+		
 		2.3.4 Testfall 2h x 2 (Victor & Lisa)
+		
 			2.4.1 Spårningsmatris 
+			
 	2.5 Dokumentgranskningsdokument (totalt: 5h)
 		2.5.1 Inledning 1h x 1 (Victor)
 		2.5.2 Process 2h x 1 (Victor)
