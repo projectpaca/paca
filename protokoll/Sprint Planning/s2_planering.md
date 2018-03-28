@@ -110,6 +110,7 @@ En lista över uppgifter som är nödvändiga för att leverera ovannämnda *pro
 I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela upp sprint backloggen till mindre och fler issues. Detta för att underlätta översikt och uppskattning av tidsåtgång. 
 
 1. Demo
+
 	1.1 Back-end (d: 2.1) (totalt: ) (Lisa & Victor)
 	
 		1.1.1 Python (subtotal: 32h)
