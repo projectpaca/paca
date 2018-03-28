@@ -184,13 +184,24 @@ I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela
 			2.4.1 Spårningsmatris 
 			
 	2.5 Dokumentgranskningsdokument (totalt: 5h)
+		
 		2.5.1 Inledning 1h x 1 (Victor)
+		
 		2.5.2 Process 2h x 1 (Victor)
+		
 		2.5.3 Riktlinjer för dokument 1h x 1 (Milo)
+		
 		2.5.4 Checklista för granskningsmöte 1h x 1 (Victor)
+		
 3. Dokumentgranskning (totalt: 16h)
+
 	3.1 Minst en kodgranskning (d: 2,5 1, 2.1) 2h x 4 
+	
 	3.2 Minst en dokumentgranskning (d: 2.5) 2h x 4 
+	
 4. Tester
+
 	4.1 Flera kravbaserade tester enligt VoV-dokument (d: 3.1) 
+	
 	4.1 Testrapport (d: 4.1) 
+	
