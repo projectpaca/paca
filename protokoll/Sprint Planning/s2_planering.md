@@ -126,7 +126,7 @@ I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela
 		1.2.6 CSS-kodning (Milo) 4h x 1 
 		1.2.7 JavaScript-kodning (Hanna) 6h x 1 
 2. Dokument
-	2.1 Kodgranskningsdokument (totalt: 10h)
+	2.1 Kodgranskningsdokument (totalt: 12h)
 		2.1.1 Inledning 1h x 1 (Milo)
 		2.1.2 Kodgranskning 1h x 1 (Milo)
 		2.1.3 Riktlinjer för kod 3h x 1 (Milo)
@@ -136,10 +136,10 @@ I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela
 		2.2.1 Inledning (Syfte, Ordlista, Referenser) 1h x 1 (Milo)
 		2.2.2 Systemdiagram 
 			2.2.1.1 Grovjobb (handritade diagram och innehåll) 4h x 1 (Hanna)
-			2.2.1.2 Digitalisering av diagram 1h x 1 (Milo)
 		2.2.3 Användningsfallsdiagram 3h x 2 (Hanna & Milo)
 		2.2.4 Användargränssnitt (d: wireframes) 2h x 2 (Hanna & Milo)
 		2.2.5 ER-diagram/skiss 2h x 2 (Victor/Lisa)
+		2.2.6 Digitalisering av diagram 3h x 1 (Milo)
 	2.3 VoV-dokument (totalt: 11h)
 		2.3.1 Inledning 1h x 1 (Hanna)
 		2.3.2 Testprocess (d: projektplan, kravdokument, individuella fördjupningar) 2h x 2 (Victor & Lisa)
