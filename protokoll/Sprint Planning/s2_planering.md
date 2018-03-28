@@ -147,7 +147,7 @@ I följande sektion applicerar vi *work breakdown structure* (WBS) för att dela
 	
 		2.1.1 Inledning 1h x 1 (Milo)
 		
-		2.1.2 Kodgranskning 1h x 1 (Milo)
+		2.1.2 Process 1h x 1 (Milo)
 		
 		2.1.3 Riktlinjer för kod 3h x 1 (Milo)
 		
