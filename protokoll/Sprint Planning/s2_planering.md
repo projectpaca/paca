@@ -4,7 +4,7 @@ v 13-15 | 26 mars - 13 april
 **RS-möte:** 17 april 
 
 ## Närvarande
-* Milo Bengtsson
+* Milo Bengtsson (protokoll)
 * Hanna Fellwing
 * Lisa Wasslöv
 * Victor Dahl

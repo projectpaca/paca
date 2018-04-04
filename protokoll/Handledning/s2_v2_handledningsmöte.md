@@ -65,21 +65,24 @@ PACA-32	S2 Planering
 Kommentar om hur man ligger till med arbetet i förhållande till planeringen. Texten kan också beskriva aktuella utmaningar och vilka strategier man har för att hantera dessa.
 
 ### Milo Bengtsson
-* Förhoppningsvis att färdigställa designdokumentet
-* Skriva klart kodgranskningsdokumentet
-* Vid tid över, möts Milo och Hanna för brainstorming och fastställning av HTML-struktur och CSS-styling.
+* Designdokumentet
+* Kodgranskningsdokumentet
+* En enklare web interface för CRUD-funktioner
 
 ### Hanna Fellwing
-* Förhoppningsvis att färdigställa designdokumentet
-* Vid tid över, möts Milo och Hanna för brainstorming och fastställning av HTML-struktur och CSS-styling.
+* Designdokumentet
+* En enklare web interface för CRUD-funktioner
 
 ### Lisa Wasslöv
 * Färdigställ kravdokument med nya och utvecklade krav
-* Vidareutveckling av databas
+* Skriva databas + ER-diagram
+* VoV-dokumentet (med Victor)
 
 ### Victor Dahl
 * Färdigställ kravdokument med nya och utvecklade krav
-* Vidareutveckling av databas
+* Dokumentgranskningsdokumentet
+* VoV-dokumentet (med Lisa)
+
 
 ## Övriga punkter
 * VoV-dokument och dokumentgranskningsdokument får vi inte glömma!
