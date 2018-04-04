@@ -5,75 +5,119 @@ drop database if exists paca_database;
 create database paca_database;
 \c paca_database;
 
-
-CREATE TABLE person(
-	-- Anställda
-	anstid			INT UNIQUE primary key
-	,name			VARCHAR(30) NOT NULL
-	,email			text
-	,supervisor		BOOLEAN
+CREATE TABLE person (
+     	-- Information om en anställd
+     empid					INT PRIMARY KEY
+     ,pnr						INT UNIQUE NOT NULL
+	,name						VARCHAR(30) NOT NULL
+     ,email						TEXT
+     ,employ_date		DATE
+     ,emp_type			TEXT NOT NULL
+     --,def_img
 );
-
+ 
+CREATE TABLE adress (
+	-- Adressinfo för anställda
+	empid_f					INT PRIMARY KEY
+     ,street					VARCHAR
+     ,postcode				INT
+     ,city						TEXT
+	 
+	 ,foreign key (empid_f) references person(empid)
+	);
+ 
+CREATE TABLE admin_permission (
+	-- Register över användare med förhöjda rättigheter. Booleskt värde (chef) för fulla rättigheter. 
+	empid_f					INT PRIMARY KEY
+	,chef						BOOLEAN
+ 
+	,foreign key (empid_f) references person(empid)
+);
+ 
 CREATE TABLE phone (
-	--Telefonnummer till anställd
-	anstid_f		INT PRIMARY KEY	--FRÄMMANDE
-	,phone_nr	INT NOT NULL
-
-	,foreign key (anstid_f) references person(anstid)
+     	--Telefonnummer till anställd
+     	empid_f				INT PRIMARY KEY  	
+     	,phone				INT NOT NULL
+     	,type					CHAR(10)
+ 
+     	,foreign key (empid_f) references person(empid)
 );
-
-CREATE TABLE pass(
-	-- Info om ett pass
-	pass_id		SERIAL UNIQUE PRIMARY KEY
-	,name		VARCHAR(30) NOT NULL
-	,behov		INT --Antal anställda som behövs på passet
-	,date		DATE
-	,time		TIME
-	,break		TIME
+ 
+ 
+CREATE TABLE next_of_kin (
+	--En persons närmsta anhöriga
+	empid_f				INT PRIMARY KEY
+	,name					VARCHAR(30) NOT NULL
+	,phone				INT NOT NULL
+	,relationship		CHAR(10)
+	,prio					INT                  	
+ 
+	,foreign key (empid_f) references person(empid)
 );
-
-CREATE TABLE shift_demand(
-	pass_id_f		INT
-	,pid_f		INT
-	
-	,foreign key (pass_id_f) references pass(pass_id)
-	,foreign key (pid_f) references person(anstid)
+ 
+CREATE TABLE shift (
+     	-- Info om ett pass
+     	shift_id             	     	SERIAL UNIQUE PRIMARY KEY
+     	,depid_f            	     	INT NOT NULL
+     	,staffing						INT NOT NULL
+     	,date       	     			DATE NOT NULL
+     	,start_time       	     	TIME NOT NULL
+     	,duration          	     	 TIME NOT NULL
+     	,rest              	     		TIME
+     	,available         	     	BOOLEAN
+     	,description               TEXT
+     	,comment        	     	TEXT
 );
-	
+ 
+CREATE TABLE shift_staffing (
+     	-- Bokade personer på ett pass
+     	empid_f           	     	INT PRIMARY KEY
+     	,shiftid_f						INT
+     	,trainee            	     	BOOLEAN
+     	
+     	,foreign key (empid_f) references person(empid)
+     	,foreign key (shiftid_f) references shift(shift_id)
+);
+     	
 CREATE TABLE availability(
-	-- Anställdas tillgänglighet
-	anstid_f		INT  PRIMARY KEY
-	,date		DATE
-	,time		TIME
-	,comment	CHAR(144)
-	
-	,foreign key (anstid_f) references person(anstid)
+     	-- Anställdas tillgänglighet
+     	empid_f           	    	INT PRIMARY KEY
+     	,available         	    	BOOLEAN
+     	,date       	     		DATE
+     	,start_time       	    TIME
+     	,duration				TIME
+     	,comment				CHAR(144)
+     	
+     	,foreign key (empid_f) references person(empid)
 );
-
+ 
 CREATE TABLE department(
-	-- Förteckning av befintliga avdelningar
-	depid		SERIAL UNIQUE PRIMARY KEY
-	,name		CHAR(144)
-	,boss		int
-	
-	,foreign key (boss) references person(anstid)
+     	-- Förteckning över avdelningar
+     	depid      	     		SERIAL UNIQUE PRIMARY KEY
+     	,name						CHAR(144)
+     	,description			CHAR(144)
+     	,supervisor				INT
+ 
+,foreign key (supervisor) references person(empid)
 );
-
-CREATE TABLE avd_anstid(
-	-- Vilken anställd som jobbar i vilken avdelning
-	anstid_f 		INT PRIMARY KEY
-	,depid_f	INT
-
-	,foreign key (anstid_f) references person(anstid)
-	,foreign key (depid_f) references department(depid)
+ 
+CREATE TABLE dep_empid(
+     	-- Vilken anställd som jobbar i vilken avdelning (kan vara flera)
+     	empid_f           	     	INT PRIMARY KEY
+     	,depid_f  	               	INT
+ 
+     	,foreign key (empid_f) references person(empid)
+     	,foreign key (depid_f) references department(depid)
 );
+ 
+/* CREATE TABLE images(
+     	-- Tabell för samtliga sparade profilbilder för en kund
+     	empid_f                     	INT PRIMARY KEY
+     	,imgname        	     	CHAR(30)
+     	,img                 	bytes
+ 
+     	,foreign key (empid_f) references person(empid)*/
 
-/*CREATE TABLE images(
-	anstid_f			int
-	,imgname		CHAR(30)
-	,img 			bytes
-	,foreign key (anstid_f) references person(anstid)
-);*/
 	
 /* REVOKE ALL PRIVILEGES ON DATABASE paca_database FROM public;
 CREATE ROLE paca_admin LOGIN; 

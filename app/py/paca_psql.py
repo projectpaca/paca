@@ -436,10 +436,13 @@ def delete_from(table):
             print("\nTO DELETE: \n"+where_statement)
             records = cursor_execute(where_statement)
             print(*col_head)
+
             for record in records:
                 for item in record:
                     column_spacer(item)
                 row_spacer()
+
+                            
             available_statement = ("SELECT {0} FROM {1} WHERE {0} = {2}".format(col_head[0], table, where))
             cursor.execute(available_statement)
             available = cursor.fetchone()
@@ -481,7 +484,21 @@ def print_all(table):
     ''' Prints entire content of table '''
     exekvera = ("Select * FROM " + table)
     cursor.execute(exekvera)
-    printer_zeug(table, cursor.fetchall())
+    data = cursor.fetchall()
+
+    #data = [['a', 'b', 'c'], ['aaaaaaaaaa', 'b', 'c'], ['a', 'bbbbbbbbbb', 'c']]
+
+    col_width = max(len(str(item)) for row in data for item in row) + 2  # padding
+    for row in data:
+        print ("".join(item.ljust(col_width) for item in row))
+
+
+    """
+    col_width = max(len(word) for row in data for word in row) + 2  # padding
+    for row in data:
+        print "".join(word.ljust(col_width) for word in row)
+    """
+    
 
 def printer_zeug(table, record):
     ''' Printar nästlade listor! '''
@@ -507,6 +524,12 @@ def column_header_printer(col_head):
 def column_spacer(obj):
     ''' Gör så att vi kan ändra spacing på alla prints från samma ställe '''
     print("%11s" % (obj), end="")
+
+    """data = [['a', 'b', 'c'], ['aaaaaaaaaa', 'b', 'c'], ['a', 'bbbbbbbbbb', 'c']]
+
+    col_width = max(len(word) for row in data for word in row) + 2  # padding
+    for row in data:
+        print "".join(word.ljust(col_width) for word in row)"""
 
 def inv_inp():
     print("\n_Invalid input!_\n")
