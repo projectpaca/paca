@@ -83,4 +83,6 @@ Kommentar om hur man ligger till med arbetet i förhållande till planeringen. T
 
 ## Övriga punkter
 * VoV-dokument och dokumentgranskningsdokument får vi inte glömma!
+* Alla grupper inte har lämnat in skriftlig respons (RS-mötet förra veckan) på it’s learning
+
 
