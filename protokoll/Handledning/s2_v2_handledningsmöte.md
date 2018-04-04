@@ -84,5 +84,6 @@ Kommentar om hur man ligger till med arbetet i förhållande till planeringen. T
 ## Övriga punkter
 * VoV-dokument och dokumentgranskningsdokument får vi inte glömma!
 * Alla grupper inte har lämnat in skriftlig respons (RS-mötet förra veckan) på it’s learning
+* Dipak tog upp att det kan vara bra att granska varandras grejer lite då och då, för att säkerställa att vi alla är på samma sida.
 
 
