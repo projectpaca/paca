@@ -2,6 +2,7 @@
 # PROJECT: "PACA"
 # author = "VICTOR"
 # coding = utf-8
+
 ######################################
 #####  IMPORTS & SERVER CONNECT  #####
 ######################################
@@ -33,10 +34,13 @@ while connect != "OK":
 ######################################
 #####  MAIN  #########################
 ######################################
+
+
 def main():
     while True:
         main_menu()
         active_table()
+
 
 def active_table():
     ''' Basic menu choice handler '''
@@ -53,6 +57,7 @@ def active_table():
                                       " jag menar eh, ERROR! juste! ERROR.")
         else:                   inv_inp()
 
+
 def main_menu():
     ''' Basic menu printer '''
     print("\n_____PACA PSQL INTERFACE_____\n")
@@ -66,6 +71,7 @@ def main_menu():
     print("  0) END PROGRAM")
     print("-- Utkast 1 --")
 
+
 def table_options(table):
     ''' Basic manu printer '''
     print ("1) Register"    , table)
@@ -76,6 +82,7 @@ def table_options(table):
     if table == "person":
         print ("6) Statistics")
     print ("0) EXIT")
+
 
 def table_option_handler(table):
     ''' Handles all shared options '''
@@ -93,6 +100,8 @@ def table_option_handler(table):
 ######################################
 #####  CRUD  ######################### # Create, Read, Update, Delete
 ######################################
+
+
 def insert_vars(table):
     ''' Första funktionen i INSERT, bygger INSERT-statement '''
     tidy_col_list = non_serial_cols(table)
@@ -119,6 +128,7 @@ def insert_vars(table):
         print("Value error", ValueError)
         blank_exit()
 
+
 def non_serial_cols(table):
     ''' Andra funktionen i INSERT: Returnerar NON-SERIAL kolumner
         Används av INSERT, returnerar lista på kolumner i table'''
@@ -137,6 +147,7 @@ def non_serial_cols(table):
         print (col+ ", ", end="")
     row_spacer()
     return tidy_col_list
+
 
 def insert_statement(table, query_input, tidy_col_list):
     ''' Tredje funktionen i INSERT:
@@ -201,6 +212,7 @@ def insert_statement(table, query_input, tidy_col_list):
 
     else:
         execute_insert(table, col_names, new_values)
+
 
 def ins_x_weeks(table, col_names, new_values, weeks, query_input):
     ''' Används för att skapa flera inserts över flera veckor'''
@@ -293,7 +305,7 @@ def seats_available(table, query_input):
             return True
     except psycopg2.ProgrammingError as detail:
         print("psycopg2.ProgrammingError:", detail)
-    
+
 
 def execute_insert(table, col_names, new_values):
     ''' Confirmation and execution of insert '''
@@ -320,6 +332,7 @@ def execute_insert(table, col_names, new_values):
     column_header_printer(col_head)
     for item in new_row:
         column_spacer(item)    """
+
 
 ### SEARCH ####
 def search_in(table):
@@ -362,6 +375,7 @@ def where_criteria(table, col, where):
     else:
         blank_exit()
 
+
 def order_by(table, where_statement):
     ''' Bygger och exekverar ORDER BY statement '''
     order_input = input("Order by: ")
@@ -373,6 +387,7 @@ def order_by(table, where_statement):
         return order_by_statement
     else:
         blank_exit()
+
 
 def statistics(table):
     print("Hr kommer statistik! Wiiee")
@@ -416,6 +431,7 @@ def edit_statement(table, change_criteria, col_head, where):
         else:
             blank_exit()
 
+
 #### DELETE ####
 def delete_from(table):
     ''' Bygger DELETE-statement '''
@@ -441,8 +457,7 @@ def delete_from(table):
                 for item in record:
                     column_spacer(item)
                 row_spacer()
-
-                            
+                   
             available_statement = ("SELECT {0} FROM {1} WHERE {0} = {2}".format(col_head[0], table, where))
             cursor.execute(available_statement)
             available = cursor.fetchone()
@@ -455,6 +470,7 @@ def delete_from(table):
                 print("Tokigt")
         else:
             blank_exit()
+
 
 ######################################
 #####  ASSISTIVE  ####################
@@ -479,6 +495,7 @@ def confirm_commit(action, statement):
     else:
         blank_exit()
         return False
+
 
 def print_all(table):
     ''' Prints entire content of table '''
@@ -508,11 +525,13 @@ def printer_zeug(table, record):
             column_spacer(item)
         row_spacer()
 
+
 def column_headers(table):
     ''' Returns ALL colnames from current table '''
     cursor_execute("Select * FROM " + table)
     colname_list = [desc[0] for desc in cursor.description]
     return colname_list
+
 
 def column_header_printer(col_head):
     ''' Ökar antalet serveranrop (genom anrop:column_headers)
@@ -520,6 +539,7 @@ def column_header_printer(col_head):
     for name in col_head:
         column_spacer(name)
     row_spacer()
+
 
 def column_spacer(obj):
     ''' Gör så att vi kan ändra spacing på alla prints från samma ställe '''
@@ -531,8 +551,10 @@ def column_spacer(obj):
     for row in data:
         print "".join(word.ljust(col_width) for word in row)"""
 
+
 def inv_inp():
     print("\n_Invalid input!_\n")
+
 
 def cursor_execute(psql_string):
     ''' Short-hand code for PSQL-communication
@@ -540,11 +562,14 @@ def cursor_execute(psql_string):
     cursor.execute(psql_string)
     return cursor.fetchall()
 
+
 def blank_exit():
     print("-- Blank = Exit --")
 
+
 def row_spacer():
     print("")
+
 
 ######################################
 #####  RUN  ##########################
