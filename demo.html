@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<title>Paca</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="demo.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+	</head>
+	<body>
+		<div id="app">
+
+			<header id="top-bar">
+
+				
+			</header>
+
+	  		<aside>
+	  			
+	  			<div class="logo">
+					<img src="" alt="">	
+	  			</div> <!-- /.logo -->
+				
+				<nav>
+	  				<ul id="main-nav">
+	  					<li>
+	  						<a href="">
+								<i class="fas fa-tachometer-alt"></i>
+								<span class="nav-item">
+									Dashboard
+								</span> <!-- /.nav-item -->
+	  						</a>
+	  					</li>
+	  					<li>
+	  						<a href="">
+								<i class="fas fa-calendar-alt"></i>
+								<span class="nav-item">
+									Kalender
+								</span> <!-- /.nav-item -->
+	  						</a>
+	  					</li>
+	  					<li>
+	  						<a href="">
+								<i class="fas fa-info-circle"></i>
+								<span class="nav-item">
+									Resurser
+								</span> <!-- /.nav-item -->
+	  						</a>
+	  					</li>
+	  					<li>
+	  						<a href="">
+								<i class="fas fa-bullhorn"></i>
+								<span class="nav-item">
+									Nyheter
+								</span> <!-- /.nav-item -->
+	  						</a>
+	  					</li>
+	  					<li>
+	  						<a href="">
+								<i class="fas fa-cog"></i>
+								<span class="nav-item">
+									Inställningar
+								</span> <!-- /.nav-item -->
+	  						</a>
+	  					</li>
+
+
+	  		</aside>
+
+	  		<main>
+	  			
+	  			<section id="profile-container">
+
+	  				<header class="profile-header">
+
+	  					<h2>{{ name }}}</h2>
+
+	  					<div class="employment-type"> 
+	  						<i class="fas fa-user"></i>
+	  						<p>{{ emp_type }}</p>
+	  					</div> <!-- /.employment-type -->
+
+	  				</header> <!-- /.profile-header -->
+
+					<!-- Profile overview -->
+	  				<section class="profile-section">
+
+	  					<ul>
+	  						<li>Telefonnummer</li>
+	  						<li>{{ phone }}</li>
+	  						<li>E-postadress</li>
+	  						<li>{{ email }}</li>
+	  						<li>Anställnings-ID</li>
+	  						<li>{{ empid }}</li>
+	  						<li>Behörighet</li>
+	  						<li></li>
+	  						<li>Anställningsform</li>
+	  						<li>{{ emp_type}}</li>
+	  						<li>Kompetenser</li>
+	  						<li>{{ dep_empid }}</li>
+						
+	  				</section> <!-- /Profile overview -->
+
+					<!-- Employment section -->
+	  				<section class="profile-section">
+						
+	  				</section> <!-- /Capability section -->
+
+					<!-- Capability section -->
+	  				<section class="profile-section">
+						
+	  				</section> <!-- /Capability section -->
+
+					<!-- Contact section -->
+	  				<section class="profile-section">
+						
+	  				</section> <!-- /Contact section -->
+
+	  			</section> <!-- /#profile-container -->
+
+	  		</main>
+
+		</div> <!-- /#app -->
+	</body>
+</html>
