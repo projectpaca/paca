@@ -14,12 +14,20 @@
 		<div id="app">
 
 			<header id="top-bar">
+				<div class="top-bar-bell">
+					<i class="far fa-bell"></i>
+				</div> <!-- /.top-bar-bell -->
 
-				
+				<div class="top-bar-profile">
+					{# Kanske omge nedan med vars en div #}
+					<i class="fas fa-user-circle"></i>
+					{# Ändra så småningom till {{ firstname}} och {{lastname }} #}
+					<p>{{ name }}</p>
+					<i class="fas fa-angle-down"></i>
+				</div> <!-- /.top-bar-profile -->
 			</header>
 
 	  		<aside>
-	  			
 	  			<div class="logo">
 					<img src="" alt="">	
 	  			</div> <!-- /.logo -->
@@ -69,10 +77,19 @@
 
 
 	  		</aside>
+			
 
-	  		<main>
+	  		<main>{# main background = appens bakgrundsfärg #}
 	  			
 	  			<section id="profile-container">
+
+	  				<nav class="profile-nav">
+	  					<ul class="profile-nav-ul"> {# eller använd .profile-nav ul #}
+	  						<li><a href="" class="profile-nav-a">Profil</a></li>
+	  						<li><a href="" class="profile-nav-a">Anställning</a></li>
+	  						<li><a href="" class="profile-nav-a">Kompetens</a></li>
+	  						<li><a href="" class="profile-nav-a">Kontakt</a></li>
+	  				</nav> <!-- /.profile-nav -->
 
 	  				<header class="profile-header">
 
@@ -88,19 +105,44 @@
 					<!-- Profile overview -->
 	  				<section class="profile-section">
 
-	  					<ul>
-	  						<li>Telefonnummer</li>
-	  						<li>{{ phone }}</li>
-	  						<li>E-postadress</li>
-	  						<li>{{ email }}</li>
-	  						<li>Anställnings-ID</li>
-	  						<li>{{ empid }}</li>
-	  						<li>Behörighet</li>
-	  						<li></li>
-	  						<li>Anställningsform</li>
-	  						<li>{{ emp_type}}</li>
-	  						<li>Kompetenser</li>
-	  						<li>{{ dep_empid }}</li>
+						<!-- Basic information -->
+	  					<ul class="profile-list">
+	  						{% for i in person %}
+		  						<li>Telefonnummer
+		  							<ul>
+		  								<li>{{ phone }}</li>
+		  							</ul>
+		  						</li>
+		  						<li>E-postadress
+									<ul>
+										<li>{{ email }}</li>
+									</ul>
+		  						</li>
+		  						<li>Anställnings-ID
+		  							<ul>
+		  								<li>{{ empid }}</li>
+									</ul>
+		  						</li>
+		  						<li>Anställningsform
+		  							<ul>
+		  								<li>{{ emp_type}}</li>
+		  							</ul>
+		  						</li>
+		  						<li>Kompetenser
+		  							<ul>
+		  								<li>{{ dep_empid }}</li>
+		  							</ul>
+		  						</li>
+	  						{% endfor %}
+	  					</ul> <!-- /.profile-list -->
+
+						<!-- Emergency contacts -->
+	  					<ol>
+	  						{% for i in next_of_kin %}
+		  						<li>{{ name }}</li>
+		  						<li>{{ phone }}</li>
+	  						{% endfor %}
+	  					</ol>
 						
 	  				</section> <!-- /Profile overview -->
 
