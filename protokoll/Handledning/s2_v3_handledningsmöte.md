@@ -10,12 +10,12 @@ Grupp 5
 
 ## Tidrapport
 Antal rapporterade timmar i sprinten (i procent av 55h)
-* Milo Bengtsson: 29h30m (53,6 % av 55h)
-* Hanna Fellwing: 20h15m (36,8 %)
-* Lisa Wasslöv: 22h15m (40,5 %)
-* Victor Dahl: 17h45m (32,3 %)
+* Milo Bengtsson: 
+* Hanna Fellwing: 
+* Lisa Wasslöv: 
+* Victor Dahl: 
 
-Gruppens timmar sammanlagt: 89h45m (40,7 % av 220 h)
+Gruppens timmar sammanlagt: 
 
 ## Arbete sedan senaste handledningsmöte
 * Viss timrapportering saknas i ovanstående rapport (t.ex. Hannas arbete, 3h, från gårdagen.
