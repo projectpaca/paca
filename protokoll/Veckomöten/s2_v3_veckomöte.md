@@ -71,3 +71,4 @@ ___
     - Ska vi ändra till nästa sprint?
     - Hur påverkar detta tillförlitligheten?
 * Mål: jämnare tidsåtgång till projektet. 18 timmar i veckan. Det finns ett liv utanför Paca. NEIN. AL IS LIFE.
+
