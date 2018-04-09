@@ -10,65 +10,63 @@ Grupp 5
 
 ## Tidrapport
 Antal rapporterade timmar i sprinten (i procent av 55h)
-* Milo Bengtsson: 
-* Hanna Fellwing: 
-* Lisa Wasslöv: 
-* Victor Dahl: 
+* Milo Bengtsson: 47h30m
+* Hanna Fellwing: 34h30m
+* Lisa Wasslöv: 32h45m
+* Victor Dahl: 46h15m
 
-Gruppens timmar sammanlagt: 
+Gruppens timmar sammanlagt: 161h
 
 ## Arbete sedan senaste handledningsmöte
-* Viss timrapportering saknas i ovanstående rapport (t.ex. Hannas arbete, 3h, från gårdagen.
-* Att döma av hur många timmar gruppen redan har spenderat (40 % efter en vecka), så är det inte osannolikt att timbudgeten inte räcker till denna sprint. Eftersom timbudgeten på 55h (220h för alla fyra medlemmar) inte uppnåddes i förra sprinten, så är denna sprint en möjlighet för gruppen att ta igen tiden som saknades.
 
 ### Milo Bengtsson
-PACA-43 DOC - Designdokument/Användargränssnitt 4h  5h
-PACA-39 DOC - Designdokument/Inledning  1h  1h
-PACA-47 DOC - Dokumentgranskning - Inledning    1h  30m
-PACA-48 DOC - Dokumentgranskning - Process  2h  4h
-PACA-49 DOC - Dokumentgranskning - Riktlinjer för dokument  1h  3h
-PACA-72 Gruppmöte - genomgång 5/4   4h  1h
-PACA-53 HTML - Skapa struktur   8h  2h
-PACA-70 Handledningsmöte 4/4    2h  30m
-PACA-73 Självgranskning Designdokument  4h  2h
+PACA-43 DOC - Designdokument/Användargränssnitt
+PACA-39 DOC - Designdokument/Inledning
+PACA-47 DOC - Dokumentgranskning - Inledning
+PACA-48 DOC - Dokumentgranskning - Process
+PACA-49 DOC - Dokumentgranskning - Riktlinjer för dokument
+PACA-72 Gruppmöte - genomgång 5/4
+PACA-53 HTML - Skapa struktur
+PACA-70 Handledningsmöte 4/4
+PACA-73 Självgranskning Designdokument
 PACA-71 Veckomöte 4/4
 
 
 ### Hanna Fellwing
-PACA-43 DOC - Designdokument/Användargränssnitt 4h  3h
-PACA-41 DOC - Designdokument/Digitalisering av diagram  3h  1h
-PACA-61 DOC - Designdokument/Systemdiagram  3h  1h
-PACA-45 DOC - VoV/Inledning 1h  30m
-PACA-15 Drop in-hjälp Webb  6h  45m
-PACA-72 Gruppmöte - genomgång 5/4   4h  1h
-PACA-53 HTML - Skapa struktur   8h  1h
-PACA-70 Handledningsmöte 4/4    2h  30m
-PACA-57 JavaScript research 10h 1h30m
-PACA-73 Självgranskning Designdokument  4h  2h
+PACA-43 DOC - Designdokument/Användargränssnitt
+PACA-41 DOC - Designdokument/Digitalisering av diagram
+PACA-61 DOC - Designdokument/Systemdiagram
+PACA-45 DOC - VoV/Inledning
+PACA-15 Drop in-hjälp Webb
+PACA-72 Gruppmöte - genomgång 5/4 
+PACA-53 HTML - Skapa struktur
+PACA-70 Handledningsmöte 4/4
+PACA-57 JavaScript research
+PACA-73 Självgranskning Designdokument
 PACA-71 Veckomöte 4/4
 
 
 ### Lisa Wasslöv
-PACA-52 DB - Vidareutveckling av databas    8h  3h30m
-PACA-44 DOC - Designdokument/ER-diagram 4h  3h
-PACA-68 DOC – RS-ändringar av inlämningar i S1  3h  1h15m
-PACA-74 Förberedelser Testfall  3h  3h
-PACA-72 Gruppmöte - genomgång 5/4   4h  1h
+PACA-52 DB - Vidareutveckling av databas
+PACA-44 DOC - Designdokument/ER-diagram
+PACA-68 DOC – RS-ändringar av inlämningar i S1
+PACA-74 Förberedelser Testfall
+PACA-72 Gruppmöte - genomgång 5/4
 PACA-70 Handledningsmöte 4/4    2h  30m
 PACA-60 Kravidentifikation Python   8h  2h
 PACA-71 Veckomöte 4/4
 
 
 ### Victor Dahl
-PACA-58 CRUD Python 16h 2h30m
-PACA-52 DB - Vidareutveckling av databas    8h  5h
-PACA-50 DOC - Dokumentgranskning - Checklista för granskningsmöte   1h  1h
-PACA-47 DOC - Dokumentgranskning - Inledning    1h  30m
-PACA-48 DOC - Dokumentgranskning - Process  2h  5h
-PACA-72 Gruppmöte - genomgång 5/4   4h  1h
-PACA-70 Handledningsmöte 4/4    2h  30m
-PACA-60 Kravidentifikation Python   8h  3h
-PACA-31 Ramverk och andra förberedelser 16h 14h
+PACA-58 CRUD Python
+PACA-52 DB - Vidareutveckling av databas
+PACA-50 DOC - Dokumentgranskning - Checklista för granskningsmöte
+PACA-47 DOC - Dokumentgranskning - Inledning
+PACA-48 DOC - Dokumentgranskning - Process
+PACA-72 Gruppmöte - genomgång 5/4
+PACA-70 Handledningsmöte 4/4
+PACA-60 Kravidentifikation Python
+PACA-31 Ramverk och andra förberedelser
 PACA-71 Veckomöte 4/4
 
 
@@ -92,5 +90,5 @@ Kommentar om hur man ligger till med arbetet i förhållande till planeringen. T
 
 
 ## Övriga punkter
-
+* För att underlätta användartestning, rita gärna upp scenarion inför testningen
 
