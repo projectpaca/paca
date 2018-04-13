@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        {% if title %}
+            <title>{{ title }} | PACA</title>
+        {% else %}
+            <title>PACA</title>
+        {% endif %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div id="app">
+
+            <header id="topbar">
+                <div class="topbar-bell">
+                    <i class="far fa-bell"></i>
+                </div> <!-- /.top-bar-bell -->
+
+                <div class="topbar-profile">
+                    {# Kanske omge nedan med vars en div #}
+                    <i class="fas fa-user-circle"></i>
+                    {# Ändra så småningom till {{ firstname}} och {{lastname }} #}
+                    {% if current_user.is_anonymous %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                    {% else %}
+                        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+                </div> <!-- /.top-bar-profile -->
+
+            </header> <!-- /#topbar -->
+
+            <aside>
+                <figure class="logo">
+                    <img src="http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/3408-alpaca-1191300-1280.jpg" alt="Alpaca">
+                </figure> <!-- /.logo -->
+                
+                <nav id="main-menu">
+
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('index') }}" class="nav-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="nav-item">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul> 
+                </nav> <!-- /#main-menu -->
+
+            </aside>
+            
+            <main>
+                {% block main %}{% endblock %}
+            </main>
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+
+        </div> <!-- /#app -->
+    </body>
+</html>
