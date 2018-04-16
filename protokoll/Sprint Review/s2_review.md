@@ -90,16 +90,16 @@
 4. RS-möte
 	1. Vem ska ansvara för vilken del i granskningen?
 		OBS! Alla ska även skriva "Generellt dokument".
-
 		* Dokument generellt
 			- ALLA
 			- Fråga kring enhetlighet i "Generellt dokument"
 				[ ] Victor
 		* Kodfiler
-			[ ]
+			[ ] Milo
 		* Projektplan
-			
+			[X] Hanna
 		* Kravdokument
+			[ ] Victor
 		* Designdokument
 			[X] Hanna
 		* VoV-dokument
@@ -108,5 +108,5 @@
 			[ ] Victor
 		* Kodgranskningsdokument
 			[ ] Milo
-		* Övriga artefakter
 	2. PowerPoint
+		[X] Hanna
