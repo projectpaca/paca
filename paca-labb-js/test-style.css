@@ -1,0 +1,24 @@
+body{
+    background-color: white;
+    color: black;
+}
+
+#navID li{
+    padding: 10px;
+    margin: 0;
+    border: 0px;
+}
+
+.link {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  background-color: gainsboro;
+  cursor: pointer;
+    text-decoration-line: none;
+}
+
+.active, .link:hover {
+  background-color: #666;
+  color: white;
+}
