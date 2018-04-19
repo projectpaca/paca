@@ -26,9 +26,10 @@
 * Milo: 	
 
 
-## Hemsidan
+## Hemsidan (för denna sprint)
 Vi planerar att bygga hemsidan i denna ordning:
 * Inloggningssida
 	* https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html
 * Profilsida
 * Lista alla medlemmar
+* Enkel schemavy
