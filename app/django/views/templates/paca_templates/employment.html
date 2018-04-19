@@ -1,5 +1,5 @@
 <!--
-    MAIN PROFILE PAGE
+    PROFILE PAGE "ANSTÄLLNING"
 
     .container-nav
     .container-header
@@ -12,8 +12,8 @@
 {% block main %}
     <nav class="container-nav">
         <ul> {# eller använd .profile-nav ul #}
-            <li><a href="" class="current">Profil</a></li>
-            <li><a href="">Anställning</a></li>
+            <li><a href="">Profil</a></li>
+            <li><a href="" class="current">Anställning</a></li>
             <li><a href="">Kompetens</a></li>
             <li><a href="">Kontakt</a></li>
         </ul>
@@ -22,18 +22,10 @@
     <header class="container-header">
 
         <div class="profile-header-person">
-            <h2>{{ person.firstname|capitalize }} {{person.lastname|capitalize }}</h2>
+            <h2>Anställning</h2>
 
-            <div class="employment-type"> 
-                <i class="fas fa-user"></i>
-                <p>
-                    {% if person.emp_type %}
-                        {{ person.emp_type|capitalize }}
-                    {% else %}
-                        Anställd
-                    {% endif %}
-                </p> {# rights or emp_type? #}
-            </div> <!-- /.employment-type -->
+                <p>{{ person.firstname|capitalize }} {{person.lastname|capitalize }}</p> 
+ 
         </div> <!-- /.profile-header-person -->
         
         {# {% if user == current_user %}
@@ -61,51 +53,51 @@
     <section id="profile-section" class="container-section">
 
         <ul>
-            <li>Telefonnummer
+            <li> 
                 <ul>
                     <li>
-                        {% if person.phone %}
-                            {{ person.phone }}
+                        {% if person. %}
+                            {{ person. }}
                         {% else %}
-                            Telefonnummer saknas
+                            
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>E-postadress
+            <li>
                 <ul>
                     <li>
-                        {% if person.email %}
-                            {{ person.email }}
+                        {% if person. %}
+                            {{ person. }}
                         {% else %}
-                            E-postadress saknas
+                            
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Anställnings-ID
+            <li>
                 <ul>
                     <li>
-                        {% if person.empid %}
-                            {{ person.empid }}
+                        {% if person. %}
+                            {{ person. }}
                         {% else %}
-                            Telefonnummer saknas
+                            
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Anställningsform
+            <li>
                 <ul>
                     <li>
-                        {% if person.emp_type %}
-                            {{ person.emp_type }}
+                        {% if person. %}
+                            {{ person.e }}
                         {% else %}
-                            Anställningsform saknas
+                            
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Kompetensområden
+            <li>Kompetenser
                 <ul>
                     <li>
                         {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
@@ -114,30 +106,13 @@
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
                             {% endfor %}
                         {% else %}
-                            Områden saknas
+                            Kompetenser saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
         </ul>
 
-        <div class="emergency-contacts">
-            <h3>Närmaste anhöriga</h3>
-            {% if next_of_kin %} {# or 'if next_of_kin != None'? Requires that we send data to variable next_of_kin #}
-                <ol>
-                    {% for i in next_of_kin %}
-                    <li>
-                        <ul>
-                            <li>{{ i.name }}</li>
-                            <li>{{ i.phone }}</li>
-                        </ul>
-                    </li>
-                    {% endfor %}
-                </ol>
-            {% else %}
-                Det finns inga angivna närmaste anhöriga.
-            {% endif %}
-        </div> <!-- /.emergency-contacts -->
     </section> <!-- /.profile-section -->
-
+    
 {% endblock %}
