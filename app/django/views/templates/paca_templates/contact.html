@@ -1,5 +1,5 @@
 <!--
-    PROFILE PAGE "KOMPETENS"
+    PROFILE PAGE "KONTAKT"
 
     .container-nav
     .container-header
@@ -14,15 +14,15 @@
         <ul> {# eller använd .profile-nav ul #}
             <li><a href="">Profil</a></li>
             <li><a href="">Anställning</a></li>
-            <li><a href="" class="current">Kompetens</a></li>
-            <li><a href="">Kontakt</a></li>
+            <li><a href="">Kompetens</a></li>
+            <li><a href="" class="current">Kontakt</a></li>
         </ul>
     </nav> <!-- /.profile-nav -->
 
     <header class="container-header">
 
         <div class="profile-header-person">
-            <h2>Kompetens</h2>
+            <h2>Kontakt</h2>
 
                 <p>{{ person.firstname|capitalize }} {{person.lastname|capitalize }}</p> 
  
@@ -34,7 +34,6 @@
             </div> <!-- /.edit-profile -->
         {% endif %} #}
 
-
     </header> <!-- /.profile-header -->
 
     <section id="profile-section" class="container-section">
@@ -44,7 +43,7 @@
                 <ul>
                     <li>
                         {% if person. %}
-                            {{ person. }}
+                            {{ person.phone }}
                         {% else %}
                             
                         {% endif %}
