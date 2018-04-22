@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: milobengan@gmail.com
+Date: Sat, 21 Apr 2018 15:13:48 -0000
+Message-ID: <152432362805.12512.13232833023489811697@milos-mbp.lan>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/4vj-fa02dfb0ea9563942a6d/
+
+Your username, in case you've forgotten: milobengtsson
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

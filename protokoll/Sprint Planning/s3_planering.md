@@ -32,8 +32,13 @@
 
 ## Hemsidan (för denna sprint)
 Vi planerar att bygga hemsidan i denna ordning:
-1. Inloggningssida
-	* [I enlighet med denna guide](https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html)
-2. Profilsida
-3. Lista alla medlemmar
-4. Enkel schemavy
+1. Inloggningssida (admin och user)
+2. Profilsida (user)
+3. Lista alla medlemmar (admin)
+4. Enkel schemavy (user)
+
+[X] Starta ett Django-projekt
+[X] Skapa en admin-vy
+[ ] Inloggningssida för users (kopplar till user models)
+[ ]
+
