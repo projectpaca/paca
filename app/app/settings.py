@@ -39,15 +39,15 @@ PREREQ_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS [
+PROJECT_APPS = [
     # VÅRA APPLIKATIONER HÄR
+    'users',
     # 'account',
     # 'dashboard',
     # 'department',
     # 'fullcalender',
     # 'news',
     # 'sent_emails',
-    'users',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
@@ -148,4 +148,3 @@ LOGOUT_REDIRECT_URL = 'home'
 # https://wsvincent.com/django-user-authentication-tutorial-password-reset/
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
-
