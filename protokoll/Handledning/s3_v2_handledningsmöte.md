@@ -9,6 +9,7 @@ Grupp 5
 * Lisa Wasslöv
 * Victor Dahl
 
+
 Förra veckan präglades till en början av rätt stor förvirring kring Django och hur vi skulle planera denna sprint. Genom att ta det gemensamma beslutet att *samtliga* gruppmedlemmar ska sätta sig in i Django, har vi observerat en rad positiva effekter:
 * Vi tipsar varandra om lärorika tutorials och guider på webben.
 * Vi har fått bättre grepp om vad vi behöver (och *inte* behöver) göra samt hur vi gör det.
@@ -40,6 +41,7 @@ Planeringen i övrigt har varit väsentligen mindre specifik än förra sprinten
     3. Projektplan
 
 ___
+
 
 ## Veckan som gått
 Först presenteras varje gruppmedlems loggade tid, samt de issues som loggats, under den föregående veckan. Därefter sammanfattas det genom att jämföra personens loggade tid med förväntad tid (18h).
@@ -97,6 +99,7 @@ Antal rapporterade timmar under sprinten än så länge (i procent av 55h)
 Gruppens totalt loggade timmar under S3: 87h55m (40 %) av 220h
 
 
+
 ## Planerat arbete kommande vecka
 Victor kommer åka på semester på onsdag, så det är crunching time tills dess!
 
@@ -111,6 +114,7 @@ Fokus på testning
 
 ### Lisa Wasslöv
 Fokus på testning
+
 
 
 ## Övriga punkter
