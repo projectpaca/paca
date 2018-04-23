@@ -8,7 +8,6 @@ Grupp 5
 * Hanna Fellwing
 * Lisa Wasslöv
 * Victor Dahl
-___
 
 Förra veckan präglades till en början av rätt stor förvirring kring Django och hur vi skulle planera denna sprint. Genom att ta det gemensamma beslutet att *samtliga* gruppmedlemmar ska sätta sig in i Django, har vi observerat en rad positiva effekter:
 * Vi tipsar varandra om lärorika tutorials och guider på webben.
@@ -87,7 +86,6 @@ Hanna Fellwing har arbetat 101% av förväntad tid under S3 V1.
 
 Lisa Wasslöv har arbetat 106% av förväntad tid under S3 V1. 
 
-___
 
 ## Hela sprinten
 Antal rapporterade timmar under sprinten än så länge (i procent av 55h)
@@ -98,7 +96,6 @@ Antal rapporterade timmar under sprinten än så länge (i procent av 55h)
 
 Gruppens totalt loggade timmar under S3: 87h55m (40 %) av 220h
 
-___
 
 ## Planerat arbete kommande vecka
 Victor kommer åka på semester på onsdag, så det är crunching time tills dess!
@@ -115,7 +112,6 @@ Fokus på testning
 ### Lisa Wasslöv
 Fokus på testning
 
-___
 
 ## Övriga punkter
 
