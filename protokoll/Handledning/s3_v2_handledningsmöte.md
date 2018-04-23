@@ -46,44 +46,44 @@ ___
 Först presenteras varje gruppmedlems loggade tid, samt de issues som loggats, under den föregående veckan. Därefter sammanfattas det genom att jämföra personens loggade tid med förväntad tid (18h).
 
 ### Milo Bengtsson (26h40m)
-PACA-82 Demo 2 (6h)
-PACA-88 Django (9h)
-PACA-53 HTML - Skapa struktur (2h40m)
-PACA-86 Omarbetning av dokument efter RS2 (1h30m)
-PACA-87 Planeringsmöte 19/4 (30m)
-PACA-81 RS – Granskning av andra gruppers dokumentation inför RS2 (2h)
-PACA-84 Retrospektmöte 2 17/4 (2h30m)
-PACA-83 Sprint planning 3 (2h30m)
+* PACA-82 Demo 2 (6h)
+* PACA-88 Django (9h)
+* PACA-53 HTML - Skapa struktur (2h40m)
+* PACA-86 Omarbetning av dokument efter RS2 (1h30m)
+* PACA-87 Planeringsmöte 19/4 (30m)
+* PACA-81 RS – Granskning av andra gruppers dokumentation inför RS2 (2h)
+* PACA-84 Retrospektmöte 2 17/4 (2h30m)
+vPACA-83 Sprint planning 3 (2h30m)
 
 Milo Bengtsson har arbetat 148 % av förväntad tid under S3 V1.
 
 ### Victor Dahl (24h)
-PACA-58 CRUD Python (3h30m)
-PACA-88 Django (15h45m)
-PACA-87 Planeringsmöte 19/4 (45m)
-PACA-84 Retrospektmöte 2 17/4 (2h30m)
-PACA-83 Sprint planning 3 (1h30m)
+* PACA-58 CRUD Python (3h30m)
+* PACA-88 Django (15h45m)
+* PACA-87 Planeringsmöte 19/4 (45m)
+* PACA-84 Retrospektmöte 2 17/4 (2h30m)
+* PACA-83 Sprint planning 3 (1h30m)
 
 Victor Dahl har arbetat 133% av förväntad tid under S3 V1.
 
 ### Hanna Fellwing (18h15m)
-PACA-31 Back-end research (2h)
-PACA-85 DOC - Användbarhetsanalys (1h)
-PACA-40 DOC - Designdokument/Grovjobb diagram (1h)
-PACA-57 JavaScript (7h)
-PACA-86 Omarbetning av dokument efter RS2 (1h30m)
-PACA-87 Planeringsmöte 19/4 (45m)
-PACA-84 Retrospektmöte 2 17/4 (2h30m)
-PACA-83 Sprint planning 3 (2h30m)
+* PACA-31 Back-end research (2h)
+* PACA-85 DOC - Användbarhetsanalys (1h)
+* PACA-40 DOC - Designdokument/Grovjobb diagram (1h)
+* PACA-57 JavaScript (7h)
+* PACA-86 Omarbetning av dokument efter RS2 (1h30m)
+* PACA-87 Planeringsmöte 19/4 (45m)
+* PACA-84 Retrospektmöte 2 17/4 (2h30m)
+* PACA-83 Sprint planning 3 (2h30m)
 
 Hanna Fellwing har arbetat 101% av förväntad tid under S3 V1.
 
 ### Lisa Wasslöv (19h)
-PACA-31 Back-end research (11h15m)
-PACA-87 Planeringsmöte 19/4 (45m)
-PACA-81 RS – Granskning av andra gruppers dokumentation inför RS2 (2h)
-PACA-84 Retrospektmöte 2 17/4 (2h30m)
-PACA-83 Sprint planning 3 (2h30m)
+* PACA-31 Back-end research (11h15m)
+* PACA-87 Planeringsmöte 19/4 (45m)
+* PACA-81 RS – Granskning av andra gruppers dokumentation inför RS2 (2h)
+* PACA-84 Retrospektmöte 2 17/4 (2h30m)
+* PACA-83 Sprint planning 3 (2h30m)
 
 Lisa Wasslöv har arbetat 106% av förväntad tid under S3 V1. 
 

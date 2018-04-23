@@ -20,54 +20,54 @@ Gruppens timmar sammanlagt: 161h
 ## Arbete sedan senaste handledningsmöte
 
 ### Milo Bengtsson
-PACA-43 DOC - Designdokument/Användargränssnitt
-PACA-39 DOC - Designdokument/Inledning
-PACA-47 DOC - Dokumentgranskning - Inledning
-PACA-48 DOC - Dokumentgranskning - Process
-PACA-49 DOC - Dokumentgranskning - Riktlinjer för dokument
-PACA-72 Gruppmöte - genomgång 5/4
-PACA-53 HTML - Skapa struktur
-PACA-70 Handledningsmöte 4/4
-PACA-73 Självgranskning Designdokument
-PACA-71 Veckomöte 4/4
+* PACA-43 DOC - Designdokument/Användargränssnitt
+* PACA-39 DOC - Designdokument/Inledning
+* PACA-47 DOC - Dokumentgranskning - Inledning
+* PACA-48 DOC - Dokumentgranskning - Process
+* PACA-49 DOC - Dokumentgranskning - Riktlinjer för dokument
+* PACA-72 Gruppmöte - genomgång 5/4
+* PACA-53 HTML - Skapa struktur
+* PACA-70 Handledningsmöte 4/4
+* PACA-73 Självgranskning Designdokument
+* PACA-71 Veckomöte 4/4
 
 
 ### Hanna Fellwing
-PACA-43 DOC - Designdokument/Användargränssnitt
-PACA-41 DOC - Designdokument/Digitalisering av diagram
-PACA-61 DOC - Designdokument/Systemdiagram
-PACA-45 DOC - VoV/Inledning
-PACA-15 Drop in-hjälp Webb
-PACA-72 Gruppmöte - genomgång 5/4 
-PACA-53 HTML - Skapa struktur
-PACA-70 Handledningsmöte 4/4
-PACA-57 JavaScript research
-PACA-73 Självgranskning Designdokument
-PACA-71 Veckomöte 4/4
+* PACA-43 DOC - Designdokument/Användargränssnitt
+* PACA-41 DOC - Designdokument/Digitalisering av diagram
+* PACA-61 DOC - Designdokument/Systemdiagram
+* PACA-45 DOC - VoV/Inledning
+* PACA-15 Drop in-hjälp Webb
+* PACA-72 Gruppmöte - genomgång 5/4 
+* PACA-53 HTML - Skapa struktur
+* PACA-70 Handledningsmöte 4/4
+* PACA-57 JavaScript research
+* PACA-73 Självgranskning Designdokument
+* PACA-71 Veckomöte 4/4
 
 
 ### Lisa Wasslöv
-PACA-52 DB - Vidareutveckling av databas
-PACA-44 DOC - Designdokument/ER-diagram
-PACA-68 DOC – RS-ändringar av inlämningar i S1
-PACA-74 Förberedelser Testfall
-PACA-72 Gruppmöte - genomgång 5/4
-PACA-70 Handledningsmöte 4/4    2h  30m
-PACA-60 Kravidentifikation Python   8h  2h
-PACA-71 Veckomöte 4/4
+* PACA-52 DB - Vidareutveckling av databas
+* PACA-44 DOC - Designdokument/ER-diagram
+* PACA-68 DOC – RS-ändringar av inlämningar i S1
+* PACA-74 Förberedelser Testfall
+* PACA-72 Gruppmöte - genomgång 5/4
+* PACA-70 Handledningsmöte 4/4    2h  30m
+* PACA-60 Kravidentifikation Python   8h  2h
+* PACA-71 Veckomöte 4/4
 
 
 ### Victor Dahl
-PACA-58 CRUD Python
-PACA-52 DB - Vidareutveckling av databas
-PACA-50 DOC - Dokumentgranskning - Checklista för granskningsmöte
-PACA-47 DOC - Dokumentgranskning - Inledning
-PACA-48 DOC - Dokumentgranskning - Process
-PACA-72 Gruppmöte - genomgång 5/4
-PACA-70 Handledningsmöte 4/4
-PACA-60 Kravidentifikation Python
-PACA-31 Ramverk och andra förberedelser
-PACA-71 Veckomöte 4/4
+* PACA-58 CRUD Python
+* PACA-52 DB - Vidareutveckling av databas
+* PACA-50 DOC - Dokumentgranskning - Checklista för granskningsmöte
+* PACA-47 DOC - Dokumentgranskning - Inledning
+* PACA-48 DOC - Dokumentgranskning - Process
+* PACA-72 Gruppmöte - genomgång 5/4
+* PACA-70 Handledningsmöte 4/4
+* PACA-60 Kravidentifikation Python
+* PACA-31 Ramverk och andra förberedelser
+* PACA-71 Veckomöte 4/4
 
 
 ## Planerat arbete kommande vecka
