@@ -32,10 +32,15 @@ Datum: 23 april
 		* Är de individuella appar eller samma?
 		* Hur kommer de representeras på hemsidan?
 		* Hitta en väg som inte är redundant och ger en tydlig encapsulation av applikatoner
+* Ägarskap för applikationer
+		* Varje applikation ska ha en README.txt som innehåller:
+				* ÄGARSKAP -man tar ägarskap om man jobbar på en app)
+				* SYFTE - Beskrivning av vad appen ska hantera on inte
+				* KOMMENTARER -arbetslogg, to-do lista och liknande
 
-
+		
 ## Applications
-Observera, en applikation ska enbart göra en sak, och göra den väl
+Observera, en applikation ska enbart göra en sak, och göra den väl.
 * userauth
 		* In- & utloggning, registrering, byta lösenord
 * dashboard
