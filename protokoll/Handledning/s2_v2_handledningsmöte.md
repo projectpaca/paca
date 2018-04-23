@@ -23,43 +23,43 @@ Gruppens timmar sammanlagt: 89h45m (40,7 % av 220 h)
 * Att döma av hur många timmar gruppen redan har spenderat (40 % efter en vecka), så är det inte osannolikt att timbudgeten inte räcker till denna sprint. Eftersom timbudgeten på 55h (220h för alla fyra medlemmar) inte uppnåddes i förra sprinten, så är denna sprint en möjlighet för gruppen att ta igen tiden som saknades.
 
 ### Milo Bengtsson
-PACA-43	DOC - Designdokument/Användargränssnitt
-PACA-42	DOC - Designdokument/Användningsfallsdiagram	
-PACA-41	DOC - Designdokument/Digitalisering av diagram	
-PACA-39	DOC - Designdokument/Inledning
-PACA-69	DOC - Sammanfogning av konkurrentanalys
-PACA-68	DOC – RS-ändringar av inlämningar i S1
-PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
-PACA-13	Retrospektmöte
-PACA-32	S2 Planering
+* PACA-43	DOC - Designdokument/Användargränssnitt
+* PACA-42	DOC - Designdokument/Användningsfallsdiagram	
+* PACA-41	DOC - Designdokument/Digitalisering av diagram	
+* PACA-39	DOC - Designdokument/Inledning
+* PACA-69	DOC - Sammanfogning av konkurrentanalys
+* PACA-68	DOC – RS-ändringar av inlämningar i S1
+* PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
+* PACA-13	Retrospektmöte
+* PACA-32	S2 Planering
 
 ### Hanna Fellwing
-PACA-43	DOC - Designdokument/Användargränssnitt
-PACA-42	DOC - Designdokument/Användningsfallsdiagram	
-PACA-39	DOC - Designdokument/Inledning
-PACA-61	DOC - Designdokument/Systemdiagram
-PACA-15	Drop in-hjälp Webb	
-PACA-65	Drop-in Dokumentation
-PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
-PACA-13	Retrospektmöte	
-PACA-32	S2 Planering
+* PACA-43	DOC - Designdokument/Användargränssnitt
+* PACA-42	DOC - Designdokument/Användningsfallsdiagram	
+* PACA-39	DOC - Designdokument/Inledning
+* PACA-61	DOC - Designdokument/Systemdiagram
+* PACA-15	Drop in-hjälp Webb	
+* PACA-65	Drop-in Dokumentation
+* PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
+* PACA-13	Retrospektmöte	
+* PACA-32	S2 Planering
 
 ### Lisa Wasslöv
-PACA-52	DB - Vidareutveckling av databas
-PACA-68	DOC – RS-ändringar av inlämningar i S1
-PACA-60	Kravidentifikation Python	
-PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
-PACA-13	Retrospektmöte
-PACA-32	S2 Planering
-PACA-67	Skapa Issues delmoment S2
+* PACA-52	DB - Vidareutveckling av databas
+* PACA-68	DOC – RS-ändringar av inlämningar i S1
+* PACA-60	Kravidentifikation Python	
+* PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
+* PACA-13	Retrospektmöte
+* PACA-32	S2 Planering
+* PACA-67	Skapa Issues delmoment S2
 
 ### Victor Dahl
-PACA-52	DB - Vidareutveckling av databas
-PACA-65	Drop-in Dokumentation
-PACA-60	Kravidentifikation Python
-PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
-PACA-13	Retrospektmöte
-PACA-32	S2 Planering
+* PACA-52	DB - Vidareutveckling av databas
+* PACA-65	Drop-in Dokumentation
+* PACA-60	Kravidentifikation Python
+* PACA-34	RS – Granskning av andra gruppers dokumentation inför RS
+* PACA-13	Retrospektmöte
+* PACA-32	S2 Planering
 
 ## Planerat arbete kommande vecka
 Kommentar om hur man ligger till med arbetet i förhållande till planeringen. Texten kan också beskriva aktuella utmaningar och vilka strategier man har för att hantera dessa.

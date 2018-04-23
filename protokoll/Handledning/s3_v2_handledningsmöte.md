@@ -104,12 +104,16 @@ ___
 Victor kommer åka på semester på onsdag, så det är crunching time tills dess!
 
 ### Milo Bengtsson
+Fokus på webbplatsen
 
 ### Victor Dahl
+Fokus på webbplatsen
 
 ### Hanna Fellwing
+Fokus på testning
 
 ### Lisa Wasslöv
+Fokus på testning
 
 ___
 
