@@ -1,0 +1,51 @@
+# Planeringsmöte Django
+Datum: 23 april
+
+
+## Närvarande
+* Lisa W
+* Victor D
+* Hanna F
+
+
+## Definitioner
+* Application
+		* == encapsulation
+		* == some bit of functionality
+* Site == Several applications
+
+
+## Diskussion
+* Struktur
+		* Funktioner i python ska endast göra en sak, och göra den väl. På samma sätt ska en applikation endas göra en sak.
+		* "Should this be its own application?" (yes = separate application)
+				* Is it otrhogonal to the rest of the project?
+				* Will I need similar functionality on other sites?
+				* Is it completely unrelated to the app’s focus?
+* Separeringen av applikationer gör att flera kan jobba med back-end parallellt!
+* Namngivning av applikationer
+		* Namnen bör varaså tydliga att man förstår vad den gör, gärna baserat på metod, modell eller aktivitet 
+		* PEP8: Modules should have short, all-lowercase names. Underscores can be used in the module name if it improves readability.
+* home.html som nu ligger i "GitHub\paca\app_v1.0\users\templates" är en landingpage och bör flyttas till dashboard eller fungera som en redirect
+* Notis vs Nyheter
+		* Ska vi ha både notiser och nyheter?
+		* Är de individuella appar eller samma?
+		* Hur kommer de representeras på hemsidan?
+		* Hitta en väg som inte är redundant och ger en tydlig encapsulation av applikatoner
+
+
+## Applications
+Observera, en applikation ska enbart göra en sak, och göra den väl
+* userauth
+		* In- & utloggning, registrering, byta lösenord
+* dashboard
+		* Landingpage, presenterar de viktigaste från övriga appar på ett översiktligt sätt
+		* Finns ev. färdiga appar för detta!
+* fullcalendar
+		* presenterar egna och tillgängliga skift, tillåter bokning, sparar ändringar i pass
+* notifications
+		* Notiser om bokade pass, nyheter från chef (personliga/allmänna)
+* account
+		* Profil-relaterade sidor här?
+* department
+		* Hantera avdelningar
