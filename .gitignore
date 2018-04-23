@@ -1,7 +1,8 @@
-﻿C:\Users\victor.dahl\Documents\GitHub\paca\doc_templates/
-C:\Users\victor.dahl\Documents\GitHub\paca\Protokoll/
-Protokoll/Mötesanteckningar (7:3).md
-*.gitignore
-.DS_Store
+﻿protokoll/
 docs/.DS_Store
 archive/
+protokoll/Mötesanteckningar (7:3).md
+
+*.gitignore
+.DS_Store
+
