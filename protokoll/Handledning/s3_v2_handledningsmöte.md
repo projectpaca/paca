@@ -54,7 +54,7 @@ Först presenteras varje gruppmedlems loggade tid, samt de issues som loggats, u
 * PACA-87 Planeringsmöte 19/4 (30m)
 * PACA-81 RS – Granskning av andra gruppers dokumentation inför RS2 (2h)
 * PACA-84 Retrospektmöte 2 17/4 (2h30m)
-vPACA-83 Sprint planning 3 (2h30m)
+* PACA-83 Sprint planning 3 (2h30m)
 
 Milo Bengtsson har arbetat 148 % av förväntad tid under S3 V1.
 
@@ -116,10 +116,14 @@ Fokus på testning
 Fokus på testning
 
 
-
 ## Övriga punkter
 
+### Dokumentation
+* Mycket dokumentation gör att vi går mer in i vattenfallsmodellen, men det är inget vi riktigt kan hjälpa eftersom dokumentation är obligatoriskt. 
+* Vi känner dock inte att vi har haft användning för all dokumentation.
+* Dokumentationen hade kunnat vara mycket kortare
+    - Dokumentgranskningsdokumentet hade kunnat innehålla två bilagor: dokumentmall (som implementerar alla riktlinjer) och checklista för granskning. Texten i själva dokumentet hade kunnat vara väsentligen kortare, och bygga på mer referenser än att skriva egen text.
+    - Kodgranskningsdokumentet hade kunnat vara en sida av referenser bara, istället för flera sidor av "Rätt vs Fel sätt att skriva kod".
 
-
-
-
+### Demo
+* Vi insåg vår tidsbrist i back-end, och svarade genom att omfördela gruppens resurser så att alla mer eller mindre jobbade med Django. 
