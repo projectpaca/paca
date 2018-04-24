@@ -1,14 +1,14 @@
 # README
 
-## ÄGARSKAP
-Filen ägs just nu av:
+## ï¿½GARSKAP
+Filen ï¿½gs just nu av: VICTOR
 
 
 ## STATUS
-
+Jobbar med views och sÃ¥nt
 
 ## SYFTE
-Denna applikations syfte är:
+Denna applikations syfte Ã¤r att hantera CRUD kalender.
 
 
 ## KOMMENTARER/TO-DO

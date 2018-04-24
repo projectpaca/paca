@@ -1,6 +1,7 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    path('fullcalendar/', views.fullcalender.as_view(), name='fullcalender'),
+    path( r'', views.fullcalender, name='fullcalender'),
 ]

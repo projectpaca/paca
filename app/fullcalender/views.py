@@ -8,8 +8,8 @@ class fullcalender(generic.CreateView):
     template_name = 'fullcalender.html'
 """
 
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from django.shortcuts import render
 
-class fullcalender (request):
-    return HttpResponse("Hello, world. This is the FULLCALENDAR!")
-
+def fullcalender (request):
+    return render(request, 'templates/calender.html')
