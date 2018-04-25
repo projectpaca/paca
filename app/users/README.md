@@ -1,7 +1,7 @@
 # README
 
 ## ÄGARSKAP
-Filen ägs just nu av:
+Filen ägs just nu av: Milo
 
 
 ## STATUS
