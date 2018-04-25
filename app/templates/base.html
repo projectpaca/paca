@@ -4,7 +4,7 @@
         <title>
             {% if title %}
                 {{ title }} | PACA
-            {% else %} 
+            {% else %}
                 PACA
             {% endif %}
         </title>
@@ -12,7 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href= "{#{ url_for('static', filename='style.css') }#}" >
+        <link rel="stylesheet" href='style.css'>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
     </head>
@@ -29,11 +30,13 @@
                     <i class="fas fa-user-circle"></i>
                     {# Ändra så småningom till {{ firstname}} och {{lastname }} #}
                     {% if current_user.is_anonymous %}
-                        <a href="{{ url_for('login') }}">Login</a>
+
+                        <a href="{#{ url_for('login') }#}">Login</a>
                     {% else %}
-                        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                        <a href="{{ url_for('logout') }}">Logout</a>
-                    {% endif %}
+                        <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
+                        <a href="{#{ url_for('logout') }#}">Logout</a>
+                    {% endif %}-->
+
                 </div> <!-- /.top-bar-profile -->
             </header> <!-- /#topbar -->
 
@@ -41,20 +44,20 @@
                 <figure class="logo">
                     <img src="http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/3408-alpaca-1191300-1280.jpg" alt="Alpaca">
                 </figure> <!-- /.logo -->
-                
+
                 <nav id="main-menu">
 
                     <ul>
                         <li>
-                            <a href="{{ url_for('index') }}" class="nav-item">
+                            <a href="{#{ url_for('index') }#}" class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="nav-item">Dashboard</span>
                             </a>
                         </li>
-                    </ul> 
+                    </ul>
                 </nav> <!-- /#main-menu -->
             </aside>
-            
+
             <main>
                 <section class="container">
                     {% block main %}{% endblock %}
@@ -62,7 +65,7 @@
             </main>
 
         {% block flash %}
-            {% with messages = get_flashed_messages() %}
+            {#{% with messages TEST = get_flashed_messages() %}#}
             {% if messages %}
             <ul>
                 {% for message in messages %}
@@ -70,9 +73,10 @@
                 {% endfor %}
             </ul>
             {% endif %}
-            {% endwith %}
+            {#{% endwith %}#}
             {% block content %}{% endblock %}
         {% endblock %}
+        #}
 
         </div> <!-- /#app -->
     </body>

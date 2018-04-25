@@ -42,10 +42,10 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     # VÅRA APPLIKATIONER HÄR
     'users',
+    'fullcalender',
     # 'account',
     # 'dashboard',
     # 'department',
-    # 'fullcalender',
     # 'news',
     # 'sent_emails',
 ]
@@ -69,9 +69,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Look for templates at project level
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
-            ],
+        'DIRS': [os.path.join(BASE_DIR, '/templates')],
+        ## TROR ATT DIRS ÄR FEL. BORDE vara APP/TEMPLATES ##
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,7 +133,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = '/static'
 
 # Custom user profiles
 # https://wsvincent.com/django-custom-user-model-tutorial/

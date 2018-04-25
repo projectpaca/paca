@@ -5,7 +5,8 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+  Hi {{ user.username }}! (This file is placed in users/templates)
+  <p><a href="{% url 'fullcalender' %}">Fullcalender!</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>

@@ -12,4 +12,4 @@ class fullcalender(generic.CreateView):
 from django.shortcuts import render
 
 def fullcalender (request):
-    return render(request, 'templates/calender.html')
+    return render(request, 'fullcalender/calender.html')
