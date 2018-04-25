@@ -1,13 +1,23 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}
+    Kalender
+{% endblock %}
 
 {% block content %}
   Hi {{ user.username }}!
-  <br>  Här kommer kalendern att visas!
+ <link rel="stylesheet" type="text/css" href="../../static/fullcalender/style/fullcalendar.min.css">
+        
+    <script src="../../static/fullcalender/js/moment.min.js"></script>
+    <script src="../../static/fullcalender/js/jquery.min.js"></script>
+    <script src="../../static/fullcalender/js/fullcalendar.min.js"></script>
+    <script src="../../static/fullcalender/js/full_calendar.js"></script>
+
+  <div id='calendar'></div><!-- #/calendar -->  
 {% endblock %}
 
+<!-- 
 {% block main %}
 {% if user.is_authenticated %}
 
@@ -19,3 +29,5 @@
   <a href="{% url 'signup' %}">signup</a>
 {% endif %}
 {% endblock %}
+
+-->

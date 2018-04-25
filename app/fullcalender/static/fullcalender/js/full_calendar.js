@@ -6,7 +6,7 @@ $(function() {
 
     $('#calendar').fullCalendar({
         timeZone: 'local',
-        defaultView: 'month',
+        defaultView: 'agendaWeek',
         fixedWeekCount: false,
         firstDay: 0, 
         // sätter första dagen i månaden & veckan till måndag
@@ -60,14 +60,6 @@ $(function() {
         ],
         // översätter namnen på dagarna till svenska
 
-        /*
-        columnHeaderFormat: {
-            week: 'ddd M/D',
-            day: 'dddd M/D'
-        },
-        - En funktion jag ej fick att fungera, men tänkt att det ska visa första tre bokstäverna på dagen samt datumet i veckovy och i dagvy visa hela namnet på dagen och datum
-        */
-
         titleFormat: 'MMMM YYYY',
         // för att visa hela namnet på månaden samt året till vänster uppe i header
         timeFormat: 'h(:mm)',
@@ -117,20 +109,6 @@ $(function() {
         titeln, startiden blir den dag/tid användaren valt och sluttid där användaren släppt/inmatat
         tid eller datum */
         
-
-      /*  select: function(start, end, jsEvent, view) {
-            var title = prompt("Skriv in namnet på detta event", "Nytt event");
- 
-            if (title !== null) {
-            // Create event
-                var event = {
-                        title: title.trim() !== "" ? title : "Nytt event",
-                        start: start,
-                        end: end
-                    };
-                $calendar.fullCalendar("renderEvent", event, true);
-            }
-        } */
     })
 
 });
