@@ -3,5 +3,5 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    path( r'', views.fullcalender, name='fullcalender'),
+    path( r'', views.fullcalendar, name='fullcalendar'),
 ]

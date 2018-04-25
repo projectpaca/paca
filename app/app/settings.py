@@ -42,7 +42,7 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     # VÅRA APPLIKATIONER HÄR
     'users',
-    'fullcalender',
+    'fullcalendar',
     # 'account',
     # 'dashboard',
     # 'department',
