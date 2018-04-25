@@ -50,7 +50,7 @@ $(function() {
         monthNames: [
             'Januari', 'Februari', 'Mars',
             'April', 'Maj', 'Juni', 'Juli',
-            'Augusti', 'September','Oktober',
+            'Augusti', 'September', 'Oktober',
             'November', 'December'
         ],
         // översätter namnen på månaderna till svenska
@@ -72,7 +72,7 @@ $(function() {
         
         select: function(start, end) {
             var duration = (end - start) / 1000;
-            if(duration === 1800) {
+            if (duration === 1800) {
             // sätter default varaktighet till en timme
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
@@ -85,6 +85,28 @@ $(function() {
                     start: start,
                     end: end
                 };
+                
+                /*
+                    Ska göra ett ajax-anrop till Django,
+                    som ska spara händelsen i databasen.
+                */
+                $.ajax({
+                    url: "/calendar/new",
+                    data: {
+                        title: "TEST"
+                    }
+                }).done(function (data) {
+                    // Denna funktionen körs när man får ett svar på ajax-anropet
+                    // Parametern "data" är den information som kommer från Django
+                    
+                    if (data === true) {
+                        alert("Din bokning har sparats!")
+                    } else if (data === false) {
+                        alert("FEL! Din bokning sparades inte...")
+                    } else {
+                        pass
+                    }
+                });
 
                 $('#calendar').fullCalendar('renderEvent', {
                     start: start,
