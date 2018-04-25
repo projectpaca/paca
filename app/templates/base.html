@@ -13,13 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href= "{#{ url_for('static', filename='style.css') }#}" >
-        <link rel="stylesheet" href='style.css'>
+        <link rel="stylesheet" type="text/css" href='{% static 'style.css' %}'>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
     </head>
     <body>
-      <p> THIS IS BASE HTML from app/templates. </p>
         <div id="app">
 
             <header id="topbar">
@@ -51,9 +49,21 @@
 
                     <ul>
                         <li>
-                            <a href="{#{ url_for('index') }#}" class="nav-item">
+                            <a href='/' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="nav-item">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/fullcalender' class="nav-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="fullcalender">Kalender</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/account' class="nav-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="account">(ej konfad) Min Profil</span>
                             </a>
                         </li>
                     </ul>
@@ -62,7 +72,8 @@
 
             <main>
                 <section class="container">
-                    {% block main %}{% endblock %}
+                    {% block content %}{% endblock %}
+                    <!-- CONTENT ÄR DET STORA FÖNSTRET I CENTER -->
                 </section> <!-- /.container -->
             </main>
 
@@ -76,7 +87,8 @@
             </ul>
             {% endif %}
             {#{% endwith %}#}
-            {% block content %}{% endblock %}
+            {% block main %}{% endblock %}
+            <!-- MAIN ligger längst ner i vänstra asiden -->
         {% endblock %}
         #}
 

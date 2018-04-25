@@ -22,7 +22,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 6fr;
   grid-template-rows: 65px 1fr;
-  grid-template-areas: 
+  grid-template-areas:
             "aside header"
             "aside main";
 }
@@ -234,7 +234,7 @@ main {
 /* Register */
 
 #register{
-  overflow-y: scroll; 
+  overflow-y: scroll;
   height: 500px;
 }
 
@@ -283,7 +283,3 @@ input[type=checkbox] {
 .employment-type p {
   padding-left: 10px;
 }
-
-
-
-

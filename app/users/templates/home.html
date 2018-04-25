@@ -4,8 +4,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}! (This file is placed in users/templates)
+  Hi {{ user.username }}!
+  <br> Detta är vår nuvarande landingpage.
+  <br> Den ligger i appen users/ eftersom det var så inloggningen konfades.
+{% endblock %}
+
+{% block main %}
+  {% if user.is_authenticated %}
   <p><a href="{% url 'fullcalender' %}">Fullcalender!</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}

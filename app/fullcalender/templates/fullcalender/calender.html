@@ -4,8 +4,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+  Hi {{ user.username }}!
+  <br>  Här kommer kalendern att visas!
+{% endblock %}
+
+{% block main %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}! (This is the FULL CALENDER view!)
+
   <p><a href="{% url 'home' %}">HOME</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
