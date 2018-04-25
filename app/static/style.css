@@ -157,7 +157,6 @@ main {
 .container {
   margin: auto auto;
   max-width: 85%;
-  overflow: scroll;
   height: 85%;
 
   /* Vertical centering */
