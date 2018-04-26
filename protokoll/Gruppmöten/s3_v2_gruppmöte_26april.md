@@ -53,5 +53,3 @@ d = dependency
 * `django.contrib.auth.models.Group` är ett generellt sätt att kategorisera användare så att man kan tillämpa permissions (eller andra labels) till dessa användare. 
 * En användare i en grupp får automatiskt de rättigheterna som definierats för den gruppen.
 * Rättigheterna definieras genom att skicka över 
-
-
