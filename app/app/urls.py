@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('fullcalendar/', include('fullcalender.urls')),
     path('account/', include('django.contrib.auth.urls')),
+    # path('account/', include('django.contrib.auth.urls', 'accounts.urls')),
+    # All urls defined in /accounts/urls.py come after the url 'account/'.
 ]
