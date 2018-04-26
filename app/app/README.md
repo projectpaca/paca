@@ -1,14 +1,12 @@
-# README
+# README: /app
 
-## ÄGARSKAP
-Filen ägs just nu av:
+## Ownership
 
-
-## STATUS
+## Status
 
 
-## SYFTE
-Denna applikations syfte är:
+## Purpose
+This folder contains all files related to the whole website. 
 
-
-## KOMMENTARER/TO-DO
+## To Do
+[] Implement redirects to ensure that e.g. inputting "/account/" won't lead to an error page, but rather redirect to /account/user/ or /dashboard.

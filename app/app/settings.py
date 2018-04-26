@@ -40,14 +40,8 @@ PREREQ_APPS = [
 ]
 
 PROJECT_APPS = [
-    # VÅRA APPLIKATIONER HÄR
     'userauth',
     'fullcalender',
-    # 'account',
-    # 'dashboard',
-    # 'department',
-    # 'news',
-    # 'sent_emails',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS

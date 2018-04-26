@@ -1,22 +1,22 @@
 <!--
 	LOG IN
 
+	Log in view for users yet to be authenticated.
+
 	/templates/registration/login.html
 -->
-{% extends "base.html" %}
+{% extends "unauth_base.html" %}
 
-	{% block content %}
-		<section class="container-section">
-			<h2>Login</h2>
+	{% block unauth_content %}
+		<h2>Login</h2>
 
-			<form method="post">
-			  {% csrf_token %}
-			  {{ form.as_p }}
-			  <button type="submit">Logga in</button>
-			</form>
+		<form method="post">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+		  <button type="submit">Logga in</button>
+		</form>
 
-			<p>
-				<a href="/admin/"
-
-		</section> <!-- /.container-section -->
+		<p>
+			<a href="/account/password_reset/">Glömt ditt lösenord?</a>
+		</p>
 	{% endblock %}
