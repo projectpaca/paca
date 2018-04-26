@@ -1,3 +1,7 @@
+<!-- 
+    BASE
+-->
+
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="sv">
@@ -28,14 +32,14 @@
                 <div class="topbar-profile">
                     {# Kanske omge nedan med vars en div #}
                     <i class="fas fa-user-circle"></i>
-                    {# Ändra så småningom till {{ firstname}} och {{lastname }} #}
-                    {% if current_user.is_anonymous %}
-
-                        <a href="{#{ url_for('login') }#}">Login</a>
+                    {# Lägg så småningom till {{ user.first_name }} och {{ user.last_name }} #}
+                    {% if user.is_authenticated %}
+                        <a href="/account">Profil</a> 
+                        <a href="{% url 'password_change' %}">Byt lösenord</a>
+                        <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}
-                        <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
-                        <a href="{#{ url_for('logout') }#}">Logout</a>
-                    {% endif %}-->
+                        <a href="{% url 'login' %}">Logga in</a>
+                    {% endif %}
 
                 </div> <!-- /.top-bar-profile -->
             </header> <!-- /#topbar -->
@@ -46,26 +50,27 @@
                 </figure> <!-- /.logo -->
 
                 <nav id="main-menu">
-
                     <ul>
                         <li>
-                            <a href='/' class="nav-item">
+                            <a href="/" class="nav-item"> {# nav-item in both anchor and span tags? #}
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="nav-item">Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href='/fullcalender' class="nav-item">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span class="fullcalender">Kalender</span>
+                            <a href="/fullcalendar" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="nav-item">Kalender</span>
                             </a>
                         </li>
-                        <li>
-                            <a href='/account' class="nav-item">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span class="account">(ej konfad) Min Profil</span>
-                            </a>
-                        </li>
+                        {% if user.is_staff or user.is_superuser %}
+                            <li>
+                                <a href="/admin" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                                    <i class="fas fa-cog"></i>
+                                    <span class="nav-item">Administrering</span>
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </nav> <!-- /#main-menu -->
             </aside>
@@ -77,20 +82,6 @@
                 </section> <!-- /.container -->
             </main>
 
-        {% block flash %}
-            {#{% with messages TEST = get_flashed_messages() %}#}
-            {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {#{% endwith %}#}
-            {% block main %}{% endblock %}
-            <!-- MAIN ligger längst ner i vänstra asiden -->
-        {% endblock %}
-        #}
 
         </div> <!-- /#app -->
     </body>

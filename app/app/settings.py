@@ -41,7 +41,7 @@ PREREQ_APPS = [
 
 PROJECT_APPS = [
     # VÅRA APPLIKATIONER HÄR
-    'users',
+    'userauth',
     'fullcalender',
     # 'account',
     # 'dashboard',
@@ -70,8 +70,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Look for templates at project level
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        ## TROR ATT DIRS ÄR FEL. BORDE vara APP/TEMPLATES ##
-
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,18 +132,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
 # Custom user profiles
 # https://wsvincent.com/django-custom-user-model-tutorial/
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'userauth.CustomUser'
 
 # Redirect links for login and logout
 # https://wsvincent.com/django-custom-user-model-tutorial/
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'login'
 
 # E-mail config
 # https://wsvincent.com/django-user-authentication-tutorial-password-reset/

@@ -1,0 +1,22 @@
+<!--
+	LOG IN
+
+	/templates/registration/login.html
+-->
+{% extends "base.html" %}
+
+	{% block content %}
+		<section class="container-section">
+			<h2>Login</h2>
+
+			<form method="post">
+			  {% csrf_token %}
+			  {{ form.as_p }}
+			  <button type="submit">Logga in</button>
+			</form>
+
+			<p>
+				<a href="/admin/"
+
+		</section> <!-- /.container-section -->
+	{% endblock %}
