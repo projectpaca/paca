@@ -72,9 +72,9 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 
 #### Kontakt
 * [X] Nav
-* [] Header
-* [] Section
-    - []
+* [ ] Header
+* [ ] Section
+    - [ ]
 
 ## Models
 De databastabeller som vi behöver är:
