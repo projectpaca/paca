@@ -17,7 +17,7 @@
             <li><a href="" class="current">Kompetens</a></li>
             <li><a href="">Kontakt</a></li>
         </ul>
-    </nav> <!-- /.profile-nav -->
+    </nav> <!-- /.container-nav -->
 
     <header class="container-header">
 
@@ -26,9 +26,9 @@
 
                 <p>{{ user.get_full_name|capitalize }}</p> 
  
-        </div> <!-- /.profile-header-person -->
+        </div> <!-- /.container-header-title -->
 
-    </header> <!-- /.profile-header -->
+    </header> <!-- /.container-header -->
 
     <section id="profile-section" class="container-section">
 
@@ -70,7 +70,7 @@
                 <ul>
                     <li>
                         {% if user. %}
-                            {{ user.e }}
+                            {{ user. }}
                         {% else %}
                             
                         {% endif %}
@@ -80,7 +80,6 @@
             <li>Kompetenser
                 <ul>
                     <li>
-                        {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
                         {% if departments %}
                             {% for i in departments %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
@@ -93,6 +92,6 @@
             </li>
         </ul>
 
-    </section> <!-- /.profile-section -->
+    </section> <!-- /#profile-section.container-section -->
     
 {% endblock %}

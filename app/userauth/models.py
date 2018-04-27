@@ -55,7 +55,18 @@ class CustomUser(AbstractUser):
 # class EmergencyContacts():
 # 	''''''
 # 	# References CustomUser and is deleted if FK is deleted
-# 	employee = models.ForeignKey('CustomUser', on_delete=CASCADE)
+# 	empid_f = models.ForeignKey('CustomUser', on_delete=CASCADE)
+
+
+# class LangComp():
+# 	''''''
+# 	empid_f = models.ForeignKey('CustomUser', on_delete=CASCADE)
+# 	LANGUAGE_CHOICES = (
+# 		('')
+# 		)
+# 	language = models.CharField(choices=LANGUAGE_CHOICES)
+
+
 
 
 

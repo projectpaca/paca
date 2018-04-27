@@ -17,7 +17,7 @@
             <li><a href="">Kompetens</a></li>
             <li><a href="">Kontakt</a></li>
         </ul>
-    </nav> <!-- /.profile-nav -->
+    </nav> <!-- /.container-nav -->
 
     <header class="container-header">
 
@@ -52,9 +52,9 @@
                         Information om anställningsnivå saknas
 
                     {% endif %}
-                </p> {# rights or emp_type? #}
+                </p> 
             </div> <!-- /.employment-type -->
-        </div> <!-- /.profile-header-person -->
+        </div> <!-- /.container-header-title -->
         
 
         {# <div class="container-header-image">
@@ -71,7 +71,7 @@
             </a>
         </div> #}
 
-    </header> <!-- /.profile-header -->
+    </header> <!-- /.container-header -->
 
     <section id="profile-section" class="container-section">
 
@@ -125,7 +125,6 @@
             <li>Avdelningar
                 <ul>
                     <li>
-                        {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
                         {% if user.groups %}
                             {% for i in user.groups %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
@@ -155,6 +154,7 @@
                 Det finns inga angivna närmaste anhöriga.
             {% endif %}
         </div> <!-- /.emergency-contacts -->
-    </section> <!-- /.profile-section -->
+        
+    </section> <!-- /#profile-section.container-section -->
 
 {% endblock %}
