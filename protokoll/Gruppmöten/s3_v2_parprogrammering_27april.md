@@ -50,10 +50,10 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 * [ ] Header
     - [X] Div med namn och anställningstyp
     - [ ] Bild + två knappar ("ändra" och "ta bort)
-* [] Section
+* [ ] Section
     - [X] Telefonnummer
     - [X] E-postadress
-    - [] Anställnings-ID
+    - [ ] Anställnings-ID
     - [X] Anställningsform
     - [X] Kompetenser
     - [X] Närmaste anhöriga
@@ -62,13 +62,13 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 
 #### Kompetenser
 * [X] Nav
-* [] Header
-* [] Section
-    - [] Avdelning
-    - [] Språk
-    - [] Certifikat
-    - [] Annan relevant utbildning
-    - [] Körkort
+* [ ] Header
+* [ ] Section
+    - [ ] Avdelning
+    - [ ] Språk
+    - [ ] Certifikat
+    - [ ] Annan relevant utbildning
+    - [ ] Körkort
 
 #### Kontakt
 * [X] Nav
