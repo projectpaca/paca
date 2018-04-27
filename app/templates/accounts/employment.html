@@ -21,21 +21,16 @@
 
     <header class="container-header">
 
-        <div class="profile-header-person">
-            <h2>Anställning</h2>
+        <div class="container-header-title">
+            <h1>Anställning</h1>
 
-                <p>{{ person.firstname|capitalize }} {{person.lastname|capitalize }}</p> 
+                <p>{{ user.get_full_name|capitalize }}</p> 
  
         </div> <!-- /.profile-header-person -->
         
-        {# {% if user == current_user %}
-            <div class="edit-profile">
-                <p><a href="{{ url_for('edit_profile') }}">Redigera</a></p>
-            </div> <!-- /.edit-profile -->
-        {% endif %} #}
 
-        <div class="profile-header-img">
-            <img src="#" alt="{{ user.firstname|capitalize }} {{ user.lastname|capitalize }}s profilbild">
+        {# <div class="container-header-image">
+            <img src="#" alt="{{ user.first_name|capitalize }} {{ user.last_name|capitalize }}s profilbild">
 
             <a id="upload_img" href="#" title="Ladda upp en ny profilbild">
                 <button>Ändra</button>
@@ -46,7 +41,7 @@
                     Ta bort
                 </button>
             </a>
-        </div>
+        </div> #}
 
     </header> <!-- /.profile-header -->
 
@@ -55,58 +50,64 @@
         <ul>
             <li> 
                 <ul>
-                    <li>
-                        {% if person. %}
-                            {{ person. }}
+                    <li>Anställnings-ID
+                        {% if user.empid %}
+                            {{ user.empid }}
                         {% else %}
-                            
+                            Anställnings-ID saknas
+                        {% endif %}
+                    </li>
+                </ul>
+                <ul>
+                    <li>Anställningsdatum
+                        {% if user.join_date %}
+                            {{ user.join_date }}
+                        {% else %}
+                            Anställningsdatum saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
             <li>
                 <ul>
-                    <li>
-                        {% if person. %}
-                            {{ person. }}
+                    <li>Anställningsnivå
+                        {% if user.is_active %} 
+
+                            {% if user.is_staff %} 
+                                {% if user.is_superuser %} <!-- superuser and staff -->
+                                    Chef
+                                {% else %}
+                                    Administratör
+                                {% endif %}
+                            {% endif %}
+
+                            {% elif user.is_superuser %} <!-- superuser and not staff -->
+                                Chef
+
+                            {% else %} <!-- not superuser and not staff -->
+                                Anställd 
+
+                            {% endif %}
+
+                        {% elif not user.is_active %}
+                            Inaktiv
+
                         {% else %}
-                            
+                            Information om anställningsnivå saknas
+
                         {% endif %}
                     </li>
                 </ul>
             </li>
             <li>
                 <ul>
-                    <li>
-                        {% if person. %}
-                            {{ person. }}
-                        {% else %}
-                            
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                    <li>
-                        {% if person. %}
-                            {{ person.e }}
-                        {% else %}
-                            
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-            <li>Kompetenser
-                <ul>
-                    <li>
-                        {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
-                        {% if departments %}
-                            {% for i in departments %}
+                    <li>Avdelningar
+                        {% if user.groups %}
+                            {% for i in user.groups %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
                             {% endfor %}
                         {% else %}
-                            Kompetenser saknas
+                            Avdelningar saknas
                         {% endif %}
                     </li>
                 </ul>

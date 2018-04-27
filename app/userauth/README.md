@@ -23,4 +23,5 @@ The aim of this application is to:
 
 
 ## To Do
-[] 
+[] EmergencyContacts as M:1, and have `employee`(FK empid), `name`, `relationship`, `phone`, `phone_type`. We do NOT implement the prio column.
+[] `language` has to be broken out to an individual table

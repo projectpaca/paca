@@ -90,7 +90,7 @@
                             {% if user.empid %}
                                 {{ user.empid }}
                             {% else %}
-                                Telefonnummer saknas
+                                AnställningsID saknas
                             {% endif %}
                         </li>
                     </ul>
@@ -99,24 +99,23 @@
             <li>Anställningsform
                 <ul>
                     <li>
-                        <!--{% if user.emp_type %}
+                        {% if user.emp_type %}
                             {{ user.emp_type }}
                         {% else %}
                             Anställningsform saknas
-                        {% endif %}-->
+                        {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Kompetensområden
+            <li>Avdelningar
                 <ul>
                     <li>
-                        {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
-                        {% if departments %}
-                            {% for i in departments %}
+                        {% if user.groups %}
+                            {% for i in user.groups %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
                             {% endfor %}
                         {% else %}
-                            Områden saknas
+                            Avdelningar saknas
                         {% endif %}
                     </li>
                 </ul>
