@@ -74,7 +74,7 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 * [X] Nav
 * [ ] Header
 * [ ] Section
-    - [ ]
+    - [ ] ...
 
 ## Models
 De databastabeller som vi behöver är:
