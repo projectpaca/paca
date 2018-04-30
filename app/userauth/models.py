@@ -24,8 +24,8 @@ class CustomUser(AbstractUser):
 	# EMP_TYPE_CHOICES = (
 	#         ('full time', 'heltid'),
 	#         ('part time', 'deltid'),
-	#         ('hourly paid', 'timanställning')
-	#         ('probationary', 'provanställning')
+	#         ('hourly paid', 'timanställning'),
+	#         ('probationary', 'provanställning'),
 	#     )
 	# emp_type = models.CharField(max_length=1, choices=EMP_TYPE_CHOICES)
  #    # emp_date = join_date (default)
