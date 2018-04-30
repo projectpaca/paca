@@ -10,6 +10,7 @@ class fullcalendar(generic.CreateView):
 
 #from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Event
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
@@ -18,5 +19,6 @@ def fullcalendar (request):
 def new_shift(request):
     if request.method == 'GET':
         event_id = request.GET['event_id'] #NOTERA namn på event_id
+        booked_event
     
     return render(request, .8000/calendar/new)
