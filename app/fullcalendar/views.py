@@ -13,3 +13,10 @@ from django.shortcuts import render
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
+
+
+def new_shift(request):
+    if request.method == 'GET':
+        event_id = request.GET['event_id'] #NOTERA namn på event_id
+    
+    return render(request, .8000/calendar/new)

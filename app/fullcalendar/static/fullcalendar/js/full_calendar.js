@@ -41,8 +41,8 @@ $(function() {
         events: [
             {
                 title: 'TEST',
-                start: '2018-04-20',
-                end: '2018-04-20',
+                start: '2018-04-20T12:00:00',
+                end: '2018-04-20T18:00:00',
             }
         ], //ett hårdkodat event för test **
         displayEventTime: true,
