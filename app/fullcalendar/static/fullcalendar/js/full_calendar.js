@@ -1,5 +1,5 @@
 //JavaScript kod från ramverket FullCalendar
-// För projektet PACA, skivet av Hanna 
+// För projektet PACA, skivet av Hanna
 $(function() {
 
   // funktionen startar
@@ -8,7 +8,7 @@ $(function() {
         timeZone: 'local',
         defaultView: 'agendaWeek',
         fixedWeekCount: false,
-        firstDay: 0, 
+        firstDay: 0,
         // sätter första dagen i månaden & veckan till måndag
         weekNumbers: true,
         weekNumberTitle: 'Vecka',
@@ -69,7 +69,7 @@ $(function() {
         droppable: true,
         selectable: true,
         selectHelper: true,
-        
+
         select: function(start, end) {
             var duration = (end - start) / 1000;
             if (duration === 1800) {
@@ -85,12 +85,43 @@ $(function() {
                     start: start,
                     end: end
                 };
-                
+            console.log(title, start, end)
+
                 /*
                     Ska göra ett ajax-anrop till Django,
                     som ska spara händelsen i databasen.
                 */
                 $.ajax({
+                  // type = ‘GET’, denna gör att sidan ej visas !?
+                   url: "/calendar/new",
+                   data: {title: title}
+                   }).done(function (data) {
+                       // Denna funktionen körs när man får ett svar på ajax-anropet
+                       // Parametern "data" är den information som kommer från Django
+
+                       if (data === true) {
+                           alert("Din bokning har sparats!")
+                       } else if (data === false) {
+                           alert("FEL! Din bokning sparades inte...")
+                       } else {
+                           pass
+                       }
+                   });
+
+                $('#calendar').fullCalendar('renderEvent', {
+                    start: start,
+                    end: end,
+                    title: title
+                },  'stick',
+                    true);
+            }
+            $('#calendar').fullCalendar('unselect');
+        },
+
+
+
+
+              /*  $.ajax({
                     url: "/calendar/new",
                     data: {
                         title: "TEST"
@@ -98,7 +129,7 @@ $(function() {
                 }).done(function (data) {
                     // Denna funktionen körs när man får ett svar på ajax-anropet
                     // Parametern "data" är den information som kommer från Django
-                    
+
                     if (data === true) {
                         alert("Din bokning har sparats!")
                     } else if (data === false) {
@@ -116,21 +147,21 @@ $(function() {
                     true);
             }
             $('#calendar').fullCalendar('unselect');
-        },
-        
+        },*/
+
         eventRender: function(event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
         },
         loading: function() {
-      
+
         }
-        
-        /* räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är 
+
+        /* räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är
         tillräckligt lång och att det finns en instriven titel. Titeln på eventet blir den angivna
         titeln, startiden blir den dag/tid användaren valt och sluttid där användaren släppt/inmatat
         tid eller datum */
-        
+
     })
 
 });
@@ -146,5 +177,3 @@ $('#calendar').fullCalendar({
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
 
 });
-
-                   

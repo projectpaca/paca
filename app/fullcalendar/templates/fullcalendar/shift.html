@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Passdetaljer
+{% endblock %}
+
+{% block content %}
+
+  <h1>{{ event.title }}</h1>
+  <ul>
+    <li> {{ event.start }}</li>
+    <li> {{ event.end }} </li>
+  </ul>
+
+{% endblock %}
