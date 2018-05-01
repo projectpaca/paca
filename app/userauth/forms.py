@@ -8,6 +8,7 @@ from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
 	'''Subclasses the existing UserCreationForm and specifying it to use our new CustomUser model.'''
+	
 
 	class Meta(UserCreationForm.Meta):
 		model = CustomUser

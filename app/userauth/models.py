@@ -9,48 +9,51 @@ class CustomUser(AbstractUser):
 	'''Extends AbstractUser and specifies that all its objects come from the CustomUserManager.'''
 	objects = CustomUserManager()
 
-	# # Identifiers
-	# pnr = models.IntegerField(
-	# 	'Personnummer', 
-	#     max_length=12, 
-	#     )
+	# Identifiers
+	pnr = models.IntegerField(
+		'Personnummer', 
+	    blank=True,
+	    help_text='Format: ååååmmddnnnn' 
+	    )
 
-	# # Employment
-	# empid = models.IntegerField(
-	# 	'Anställnings-ID', 
-	# 	max_length=None,
-	# 	primary_key=True,
-	# 	)
-	# EMP_TYPE_CHOICES = (
-	#         ('full time', 'heltid'),
-	#         ('part time', 'deltid'),
-	#         ('hourly paid', 'timanställning'),
-	#         ('probationary', 'provanställning'),
-	#     )
-	# emp_type = models.CharField(max_length=1, choices=EMP_TYPE_CHOICES)
- #    # emp_date = join_date (default)
+	# Employment
+	empid = models.CharField(
+		'Anställnings-ID', 
+		max_length=20,
+		)
+	EMP_TYPE_CHOICES = (
+	        ('full time', 'heltid'),
+	        ('part time', 'deltid'),
+	        ('hourly paid', 'timanställning'),
+	        ('probationary', 'provanställning'),
+	    )
+	emp_type = models.CharField(
+		max_length=20, 
+		choices=EMP_TYPE_CHOICES,
+		null=True)
+    # emp_date = join_date (default)
 
- #    # Contact
-	# street = models.CharField(
- #    	'Gatunamn och -nummer', 
- #    	max_length=100, 
- #    	blank=True,
- #    	)
-	# postcode = models.CharField(
-	# 	'Postnummer', 
-	# 	max_length=5, 
-	# 	blank=True,
-	# 	)
-	# city = models.CharField(
-	# 	'Ort', 
-	# 	max_length=50, 
-	# 	blank=True,
-	# 	)
-	# phone = models.IntegerField(
-	# 	'Telefonnummer', 
-	# 	max_length=20, 
-	# 	blank=True,
-	# 	)
+    # Contact
+	street = models.CharField(
+    	'Gatunamn och -nummer', 
+    	max_length=100, 
+    	blank=True,
+    	)
+	postcode = models.CharField(
+		'Postnummer', 
+		max_length=5, 
+		blank=True,
+		)
+	city = models.CharField(
+		'Ort', 
+		max_length=50, 
+		blank=True,
+		)
+	phone = models.CharField(
+		'Telefonnummer', 
+		max_length=20, 
+		blank=True,
+		)
 
 # class EmergencyContacts():
 # 	''''''
