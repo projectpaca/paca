@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %} Kalender {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="../../static/fullcalendar/style/fullcalendar.min.css">
+    <script src="../../static/fullcalendar/js/moment.min.js"></script>
+    <script src="../../static/fullcalendar/js/jquery.min.js"></script>
+    <script src="../../static/fullcalendar/js/fullcalendar.min.js"></script>
+    <script src="../../static/fullcalendar/js/full_calendar.js"></script>
+    <div id='calendar'></div><!-- #/calendar -->
+{% endblock %}

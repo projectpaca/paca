@@ -35,7 +35,7 @@
                     {% else %}
                         <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
                         <a href="{#{ url_for('logout') }#}">Logout</a>
-                    {% endif %}-->
+                    {% endif %}
 
                 </div> <!-- /.top-bar-profile -->
             </header> <!-- /#topbar -->
@@ -55,15 +55,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href='/fullcalender' class="nav-item">
+                            <a href='/fullcalendar' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span class="fullcalender">Kalender</span>
+                                <span class="fullcalendar">Kalender</span>
                             </a>
                         </li>
                         <li>
                             <a href='/account' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span class="account">(ej konfad) Min Profil</span>
+                                <span class="account">(Profil)</span>
                             </a>
                         </li>
                     </ul>
@@ -90,7 +90,7 @@
             {% block main %}{% endblock %}
             <!-- MAIN ligger längst ner i vänstra asiden -->
         {% endblock %}
-        #}
+
 
         </div> <!-- /#app -->
     </body>
