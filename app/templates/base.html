@@ -33,7 +33,7 @@
                     <i class="fas fa-user-circle"></i>
                     {# Lägg så småningom till {{ user.first_name }} och {{ user.last_name }} #}
                     {% if user.is_authenticated %}
-                        <a href="/account">Profil</a> 
+                        {#<a href="{% url 'profile' %}">Profil</a>#}
                         <a href="{% url 'password_change' %}">Byt lösenord</a>
                         <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}

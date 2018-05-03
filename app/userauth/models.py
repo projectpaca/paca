@@ -7,31 +7,32 @@ class CustomUserManager(UserManager):
 
 class CustomUser(AbstractUser):
 	'''Extends AbstractUser and specifies that all its objects come from the CustomUserManager.'''
-	objects = CustomUserManager()
 
-	# Identifiers
-	pnr = models.IntegerField(
-		'Personnummer', 
-	    blank=True,
-	    help_text='Format: ååååmmddnnnn' 
-	    )
-
+	# First Name and Last Name do not cover name patterns
+	# around the globe.
+	email = models.EmailField(unique=True)
+	name = models.CharField(
+		'Name of User', 
+		blank=True, 
+		max_length=255,
+	)
 	# Employment
 	empid = models.CharField(
 		'Anställnings-ID', 
 		max_length=20,
-		)
+		unique=True,
+	)
 	EMP_TYPE_CHOICES = (
-	        ('full time', 'heltid'),
-	        ('part time', 'deltid'),
-	        ('hourly paid', 'timanställning'),
-	        ('probationary', 'provanställning'),
-	    )
+	    ('full time', 'Heltid'),
+	    ('part time', 'Deltid'),
+	    ('hourly paid', 'Timanställning'),
+	    ('probationary', 'Provanställning'),
+	)
 	emp_type = models.CharField(
 		max_length=20, 
 		choices=EMP_TYPE_CHOICES,
-		null=True)
-    # emp_date = join_date (default)
+		null=True
+	)
 
     # Contact
 	street = models.CharField(
@@ -54,6 +55,13 @@ class CustomUser(AbstractUser):
 		max_length=20, 
 		blank=True,
 		)
+
+
+	USERNAME_FIELD = 'email'
+	REQUIRED_FIELDS = ['empid']
+
+	def __str__(self):
+		return self.name
 
 # class EmergencyContacts():
 # 	''''''

@@ -41,7 +41,7 @@ PREREQ_APPS = [
 
 PROJECT_APPS = [
     'userauth',
-    'fullcalender',
+    'fullcalendar',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
