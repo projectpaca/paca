@@ -13,7 +13,6 @@ class CustomUser(AbstractUser):
 	email = models.EmailField(unique=True)
 	name = models.CharField(
 		'Name of User', 
-		blank=True, 
 		max_length=255,
 	)
 	# Employment
@@ -31,7 +30,7 @@ class CustomUser(AbstractUser):
 	emp_type = models.CharField(
 		max_length=20, 
 		choices=EMP_TYPE_CHOICES,
-		null=True
+		null=True,
 	)
 
     # Contact
