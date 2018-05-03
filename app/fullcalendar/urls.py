@@ -10,7 +10,7 @@ urlpatterns = [
     # Allt här ligger efter /calendar
     path( r'', views.fullcalendar, name='fullcalendar'),
 
-    path( r'new$', NewShift.as_view()),
+    #path( r'new$', NewShift.as_view()),
     #path( r'new', views.new_shift, name='new_shift'),
         # Ska new$ peka på fullcalendar igen
         # eller gör det så att sidan laddas om?
