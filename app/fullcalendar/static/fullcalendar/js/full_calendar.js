@@ -1,14 +1,14 @@
 //JavaScript kod från ramverket FullCalendar
-// För projektet PACA, skivet av Hanna 
+// För projektet PACA, skivet av Hanna
 $(function() {
 
   // funktionen startar
 
     $('#calendar').fullCalendar({
         timeZone: 'local',
-        defaultView: 'month',
+        defaultView: 'agendaWeek',
         fixedWeekCount: false,
-        firstDay: 0, 
+        firstDay: 0,
         // sätter första dagen i månaden & veckan till måndag
         weekNumbers: true,
         weekNumberTitle: 'Vecka',
@@ -41,8 +41,8 @@ $(function() {
         events: [
             {
                 title: 'TEST',
-                start: '2018-04-20',
-                end: '2018-04-20',
+                start: '2018-04-20T12:00:00',
+                end: '2018-04-20T18:00:00',
             }
         ], //ett hårdkodat event för test **
         displayEventTime: true,
@@ -50,7 +50,7 @@ $(function() {
         monthNames: [
             'Januari', 'Februari', 'Mars',
             'April', 'Maj', 'Juni', 'Juli',
-            'Augusti', 'September','Oktober',
+            'Augusti', 'September', 'Oktober',
             'November', 'December'
         ],
         // översätter namnen på månaderna till svenska
@@ -59,14 +59,6 @@ $(function() {
             'Fre', 'Lör', 'Sön'
         ],
         // översätter namnen på dagarna till svenska
-
-        /*
-        columnHeaderFormat: {
-            week: 'ddd M/D',
-            day: 'dddd M/D'
-        },
-        - En funktion jag ej fick att fungera, men tänkt att det ska visa första tre bokstäverna på dagen samt datumet i veckovy och i dagvy visa hela namnet på dagen och datum
-        */
 
         titleFormat: 'MMMM YYYY',
         // för att visa hela namnet på månaden samt året till vänster uppe i header
@@ -77,10 +69,10 @@ $(function() {
         droppable: true,
         selectable: true,
         selectHelper: true,
-        
+
         select: function(start, end) {
             var duration = (end - start) / 1000;
-            if(duration === 1800) {
+            if (duration === 1800) {
             // sätter default varaktighet till en timme
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
@@ -93,6 +85,28 @@ $(function() {
                     start: start,
                     end: end
                 };
+            console.log(title, start, end)
+
+                /*
+                    Ska göra ett ajax-anrop till Django,
+                    som ska spara händelsen i databasen.
+                */
+                $.ajax({
+                  // type = ‘GET’, denna gör att sidan ej visas !?
+                   url: "/calendar/new",
+                   data: {title: title}
+                   }).done(function (data) {
+                       // Denna funktionen körs när man får ett svar på ajax-anropet
+                       // Parametern "data" är den information som kommer från Django
+
+                       if (data === true) {
+                           alert("Din bokning har sparats!")
+                       } else if (data === false) {
+                           alert("FEL! Din bokning sparades inte...")
+                       } else {
+                           pass
+                       }
+                   });
 
                 $('#calendar').fullCalendar('renderEvent', {
                     start: start,
@@ -103,34 +117,51 @@ $(function() {
             }
             $('#calendar').fullCalendar('unselect');
         },
-        
+
+
+
+
+              /*  $.ajax({
+                    url: "/calendar/new",
+                    data: {
+                        title: "TEST"
+                    }
+                }).done(function (data) {
+                    // Denna funktionen körs när man får ett svar på ajax-anropet
+                    // Parametern "data" är den information som kommer från Django
+
+                    if (data === true) {
+                        alert("Din bokning har sparats!")
+                    } else if (data === false) {
+                        alert("FEL! Din bokning sparades inte...")
+                    } else {
+                        pass
+                    }
+                });
+
+                $('#calendar').fullCalendar('renderEvent', {
+                    start: start,
+                    end: end,
+                    title: title
+                },  'stick',
+                    true);
+            }
+            $('#calendar').fullCalendar('unselect');
+        },*/
+
         eventRender: function(event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
         },
         loading: function() {
-      
+
         }
-        
-        /* räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är 
+
+        /* räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är
         tillräckligt lång och att det finns en instriven titel. Titeln på eventet blir den angivna
         titeln, startiden blir den dag/tid användaren valt och sluttid där användaren släppt/inmatat
         tid eller datum */
-        
 
-      /*  select: function(start, end, jsEvent, view) {
-            var title = prompt("Skriv in namnet på detta event", "Nytt event");
- 
-            if (title !== null) {
-            // Create event
-                var event = {
-                        title: title.trim() !== "" ? title : "Nytt event",
-                        start: start,
-                        end: end
-                    };
-                $calendar.fullCalendar("renderEvent", event, true);
-            }
-        } */
     })
 
 });
@@ -146,5 +177,3 @@ $('#calendar').fullCalendar({
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
 
 });
-
-                   
