@@ -87,7 +87,7 @@ class MyUserAdmin(AuthUserAdmin):
             }
         )
     )
-    list_display = ("name", "empid", "emp_type", "is_superuser")
+    list_display = ("name", "empid", "emp_type", "is_active", "is_staff", "is_superuser")
     search_fields = ["name"]
     add_fieldsets = (
         (None, {
