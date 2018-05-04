@@ -6,10 +6,14 @@ from django.utils import timezone
 
 class Event (models.Model):
     """ Grundläggande DB schema för calender """
+    # Gör table för vem som är bokad på vilket pass
+
+    title = models.CharField(max_length=100)
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
         # models.CharField(max_length=20)
-    title = models.CharField(max_length=100)
+    # Antal platser på passet
+
 
     def __str__(self):
         # It’s important to add __str__() methods to your models, not only for your
