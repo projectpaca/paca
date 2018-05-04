@@ -1,6 +1,6 @@
 //JavaScript kod från ramverket FullCalendar
 // För projektet PACA, skivet av Hanna
-$(function() {
+$(function () {
 
   // funktionen startar
 
@@ -22,8 +22,8 @@ $(function() {
         // anpassar kalendern till fönstret
 
         header: {
-            left: 'title',
-            center: 'prev, next',
+            left: 'prev, next',
+            center: 'title',
             right: 'month, agendaWeek, agendaMonth'
         },
         // fixerar headern så månaden står till vänster, pilarna för nästa & föregående i mitten och månad/vecka till höger
@@ -42,9 +42,14 @@ $(function() {
             {
                 title: 'TEST',
                 start: '2018-04-20T12:00:00',
-                end: '2018-04-20T18:00:00',
+                end: '2018-04-20T18:00:00'
             }
         ], //ett hårdkodat event för test **
+        eventSources: [
+            {
+                url: 'events'
+            }
+        ],
         displayEventTime: true,
         // senare när eventen har inskrivna start- och sluttid så kommer dessa visas
         monthNames: [
@@ -70,108 +75,71 @@ $(function() {
         selectable: true,
         selectHelper: true,
 
-        select: function(start, end) {
+        select: function (start, end) {
             var duration = (end - start) / 1000;
             if (duration === 1800) {
             // sätter default varaktighet till en timme
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
             }
-            var title = prompt('Event Title:');
-            var eventData;
-            if (title && title.trim()) {
-                eventData = {
-                    title: title,
-                    start: start,
-                    end: end
-                };
-            console.log(title, start, end)
+            var title = prompt('Skriv in titel på passet:');
+        }
+    });
 
                 /*
                     Ska göra ett ajax-anrop till Django,
                     som ska spara händelsen i databasen.
                 */
-                $.ajax({
-                  // type = ‘GET’, denna gör att sidan ej visas !?
-                   url: "/calendar/new",
-                   data: {title: title}
-                   }).done(function (data) {
+    $.ajax({
+        url: "new",
+        // type: 'POST',
+        data: {
+            start: start,
+            end: end,
+            title: title
+        },
+        dataType: 'JSON'
+    }).done(function (data) {
                        // Denna funktionen körs när man får ett svar på ajax-anropet
                        // Parametern "data" är den information som kommer från Django
+        $("#calendar").fullCalendar('renderEvent', {
+            start: start,
+            end: end,
+            title: title 
+        }, 'stick',
+                        true);
+    });
+});
+$('#calendar').fullCalendar('unselect');  
+        
+           /*
 
-                       if (data === true) {
-                           alert("Din bokning har sparats!")
-                       } else if (data === false) {
-                           alert("FEL! Din bokning sparades inte...")
-                       } else {
-                           pass
-                       }
-                   });
-
-                $('#calendar').fullCalendar('renderEvent', {
-                    start: start,
-                    end: end,
-                    title: title
-                },  'stick',
-                    true);
-            }
-            $('#calendar').fullCalendar('unselect');
-        },
-
-
-
-
-              /*  $.ajax({
-                    url: "/calendar/new",
-                    data: {
-                        title: "TEST"
-                    }
-                }).done(function (data) {
-                    // Denna funktionen körs när man får ett svar på ajax-anropet
-                    // Parametern "data" är den information som kommer från Django
-
-                    if (data === true) {
-                        alert("Din bokning har sparats!")
-                    } else if (data === false) {
-                        alert("FEL! Din bokning sparades inte...")
-                    } else {
-                        pass
-                    }
-                });
-
-                $('#calendar').fullCalendar('renderEvent', {
-                    start: start,
-                    end: end,
-                    title: title
-                },  'stick',
-                    true);
-            }
-            $('#calendar').fullCalendar('unselect');
-        },*/
-
-        eventRender: function(event, element) {
+        eventRender: function (event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
         },
-        loading: function() {
+        loading: function () {
 
         }
 
-        /* räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är
+        räknar ut hur länge ett event är från start- och sluttid. Kontrollerar att eventet är
         tillräckligt lång och att det finns en instriven titel. Titeln på eventet blir den angivna
         titeln, startiden blir den dag/tid användaren valt och sluttid där användaren släppt/inmatat
         tid eller datum */
 
-    })
 
-});
 
 $('#calendar').fullCalendar('next');
 // för att komma till nästa vecka eller månad
 
 $('#calendar').fullCalendar({
-    navLinks: true,
-    navLinkDayClick: function(date, jsEvent) {
+    eventSources: [
+        {
+            url: 'events'
+        }
+    ],
+    
+    DayClick: function (date, jsEvent) {
         console.log('day', date.format()); // date is a moment
         console.log('coords', jsEvent.pageX, jsEvent.pageY);
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
