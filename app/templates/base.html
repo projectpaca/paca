@@ -1,4 +1,4 @@
-<!-- 
+<!--
     The base layout for authenticated user views
 -->
 <!DOCTYPE html>
@@ -37,12 +37,7 @@
                         <a href="{% url 'password_change' %}">Byt lösenord</a>
                         <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}
-<<<<<<< HEAD
-                        <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
-                        <a href="{#{ url_for('logout') }#}">Logout</a>
-=======
                         <a href="{% url 'login' %}">Logga in</a>
->>>>>>> userauth2
                     {% endif %}
 
                 </div> <!-- /.top-bar-profile -->
