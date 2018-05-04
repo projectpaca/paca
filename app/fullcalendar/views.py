@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 from django.shortcuts import get_object_or_404, render
 from .models import Event
 # from django.db import connection
 from django.http import JsonResponse
-=======
 """
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -16,12 +14,10 @@ class fullcalendar(generic.CreateView):
 
 from django.shortcuts import get_object_or_404, render
 from .models import Event
->>>>>>> userauth2
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
 
-<<<<<<< HEAD
 def events(request):
     """ Hämtar alla event från databasen """
     return JsonResponse(list(Event.objects.all().values()),safe=False)
@@ -58,7 +54,6 @@ def new(title, start, end):
     #return {"start": start, "end": end, "title": title}
 ###
 
-=======
 
 class NewShift():
     def new(request):
@@ -67,7 +62,6 @@ class NewShift():
             booked_event"""
         return render(request, 'fullcalendar/calendar.html')
         #return render(request, .8000/calendar/new)'''
->>>>>>> userauth2
 
 def detail(request, shift_id):
     # Inte fått denna att funka
