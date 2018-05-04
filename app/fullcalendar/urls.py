@@ -1,7 +1,6 @@
 from django.urls import path
 from django.views.generic import TemplateView
 from . import views
-from .views import NewShift
 
 # app_name = 'fullcalendar'
 # Detta är namespacing!
@@ -10,7 +9,13 @@ urlpatterns = [
     # Allt här ligger efter /calendar
     path( r'', views.fullcalendar, name='fullcalendar'),
 
-    #path( r'new$', NewShift.as_view()),
+    #Hämtar alla events i JSON format
+    path(r'events', views.events),
+
+    # Sparar ett nytt event till databasen
+    path( r'new', views.new),
+        #NewShift.as_view()),
+
     #path( r'new', views.new_shift, name='new_shift'),
         # Ska new$ peka på fullcalendar igen
         # eller gör det så att sidan laddas om?

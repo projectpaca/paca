@@ -8,6 +8,7 @@ class Event (models.Model):
     """ Grundläggande DB schema för calender """
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
+        # models.CharField(max_length=20)
     title = models.CharField(max_length=100)
 
     def __str__(self):

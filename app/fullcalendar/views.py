@@ -1,27 +1,30 @@
-"""
-from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views import generic
-
-class fullcalendar(generic.CreateView):
-    success_url = reverse_lazy('login')
-    template_name = 'fullcalendar.html'
-"""
-
 from django.shortcuts import get_object_or_404, render
 from .models import Event
+from django.db import connection
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
 
+def events(request):
+    """ Hämtar alla event från databasen """
+    # connect till databasen
+    with connection.cursor() as cursor:
+        # Skicka SELECT sats
+        cursor.execute("SELECT * FROM Events")
+        # Hämta & returnera som JSON
+        return json.dumps(cursor.fetchall())
 
-class NewShift():
-    def new(request):
-        """if request.method == 'GET':
-            event_id = request.GET['event_id'] #NOTERA namn på event_id
-            booked_event"""
-        return render(request, 'fullcalendar/calendar.html')
-        #return render(request, .8000/calendar/new)'''
+def new(request):
+    """if request.method == 'GET':
+        event_id = request.GET['event_id'] #NOTERA namn på event_id
+        booked_event"""
+    title = request.get("title")
+    start = request.get("start")
+    end = request.get("end")
+
+    events = calendar.new(title, start, end)
+    return json.dumps(events)
+    #return render(request, .8000/calendar/new)'''
 
 def detail(request, shift_id):
     # Inte fått denna att funka
