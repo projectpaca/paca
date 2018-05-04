@@ -1,0 +1,160 @@
+<!--
+    MAIN PROFILE PAGE
+
+    .container-nav
+    .container-header
+    .profile-section
+
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <nav class="container-nav">
+        <ul> {# eller använd .profile-nav ul #}
+            <li><a href="" class="current">Profil</a></li>
+            <li><a href="">Anställning</a></li>
+            <li><a href="">Kompetens</a></li>
+            <li><a href="">Kontakt</a></li>
+        </ul>
+    </nav> <!-- /.container-nav -->
+
+    <header class="container-header">
+
+        <div class="container-header-title">
+            <h1>{{ user.name|capitalize }}</h1>
+
+            <div class="employment-type"> 
+                <i class="fas fa-user"></i>
+                <p>
+                    {% if user.is_active %} 
+
+                        {% if user.is_staff %} 
+                            {% if user.is_superuser %} <!-- superuser and staff -->
+                                Chef
+                            {% else %}
+                                Administratör
+                            {% endif %}
+                        {% endif %}
+
+                        {% elif user.is_superuser %} <!-- superuser and not staff -->
+                            Chef
+
+                        {% else %} <!-- not superuser and not staff -->
+                            Anställd 
+
+                        {% endif %}
+
+                    {% elif not user.is_active %}
+                        Inaktiv
+
+                    {% else %}
+                        Information om anställningsnivå saknas
+
+                    {% endif %}
+                </p> 
+            </div> <!-- /.employment-type -->
+        </div> <!-- /.container-header-title -->
+        
+
+        {# <div class="container-header-image">
+            <img src="#" alt="{{ user.first_name|capitalize }} {{ user.last_name|capitalize }}s profilbild">
+
+            <a id="upload_img" href="#" title="Ladda upp en ny profilbild">
+                <button>Ändra</button>
+            </a>
+
+            <a id="delete_img" href="#" title="Ta bort din profilbild och få tillbaka bilden av Al!">
+                <button>
+                    Ta bort
+                </button>
+            </a>
+        </div> #}
+
+    </header> <!-- /.container-header -->
+
+    <section id="profile-section" class="container-section">
+
+        <ul>
+            <li>Telefonnummer
+                <ul>
+                    <li>
+                        {% if user.phone %}
+                            {{ user.phone }}
+                        {% else %}
+                            Telefonnummer saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>E-postadress
+                <ul>
+                    <li>
+                        {% if user.email %}
+                            {{ user.email }}
+                        {% else %}
+                            E-postadress saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            {% if user.username = request.user.username or user.is_staff or user.is_superuser %}
+                <li>Anställnings-ID
+                    <ul>
+                        <li>
+                            {% if user.empid %}
+                                {{ user.empid }}
+                            {% else %}
+                                Telefonnummer saknas
+                            {% endif %}
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
+            <li>Anställningsform
+                <ul>
+                    <li>
+                        {% if user.emp_type %}
+                            {{ user.emp_type }}
+                        {% else %}
+                            Anställningsform saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>Avdelningar
+                <ul>
+                    <li>
+                        {% if user.groups %}
+                            {% for i in user.groups %}
+                                {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
+                            {% endfor %}
+                        {% else %}
+                            Avdelningar saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="emergency-contacts">
+            <h3>Närmaste anhöriga</h3>
+            {% if emergency_contacts %}
+                <ol>
+                    {% for i in emergency_contacts %}
+                        <li>
+                            <ul>
+                                <li>{{ i.name }}</li>
+                                <li>{{ i.phone }}</li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                Det finns inga angivna närmaste anhöriga.
+            {% endif %}
+        </div> <!-- /.emergency-contacts -->
+        
+    </section> <!-- /#profile-section.container-section -->
+
+{% endblock %}

@@ -1,0 +1,119 @@
+<!--
+    PROFILE PAGE "ANSTÄLLNING"
+
+    .container-nav
+    .container-header
+    .profile-section
+
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <nav class="container-nav">
+        <ul> {# eller använd .profile-nav ul #}
+            <li><a href="">Profil</a></li>
+            <li><a href="" class="current">Anställning</a></li>
+            <li><a href="">Kompetens</a></li>
+            <li><a href="">Kontakt</a></li>
+        </ul>
+    </nav> <!-- /.container-nav -->
+
+    <header class="container-header">
+
+        <div class="container-header-title">
+            <h1>Anställning</h1>
+
+                <p>{{ user.name|capitalize }}</p> 
+ 
+        </div> <!-- /.container-header-title -->
+        
+
+        {# <div class="container-header-image">
+            <img src="#" alt="{{ user.first_name|capitalize }} {{ user.last_name|capitalize }}s profilbild">
+
+            <a id="upload_img" href="#" title="Ladda upp en ny profilbild">
+                <button>Ändra</button>
+            </a>
+
+            <a id="delete_img" href="#" title="Ta bort din profilbild och få tillbaka bilden av Al!">
+                <button>
+                    Ta bort
+                </button>
+            </a>
+        </div> #}
+
+    </header> <!-- /.container-header -->
+
+    <section id="profile-section" class="container-section">
+
+        <ul>
+            <li> 
+                <ul>
+                    <li>Anställnings-ID
+                        {% if user.empid %}
+                            {{ user.empid }}
+                        {% else %}
+                            Anställnings-ID saknas
+                        {% endif %}
+                    </li>
+                </ul>
+                <ul>
+                    <li>Anställningsdatum
+                        {% if user.join_date %}
+                            {{ user.join_date }}
+                        {% else %}
+                            Anställningsdatum saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>Anställningsnivå
+                        {% if user.is_active %} 
+
+                            {% if user.is_staff %} 
+                                {% if user.is_superuser %} <!-- superuser and staff -->
+                                    Chef
+                                {% else %}
+                                    Administratör
+                                {% endif %}
+                            {% endif %}
+
+                            {% elif user.is_superuser %} <!-- superuser and not staff -->
+                                Chef
+
+                            {% else %} <!-- not superuser and not staff -->
+                                Anställd 
+
+                            {% endif %}
+
+                        {% elif not user.is_active %}
+                            Inaktiv
+
+                        {% else %}
+                            Information om anställningsnivå saknas
+
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>Avdelningar
+                        {% if user.groups %}
+                            {% for i in user.groups %}
+                                {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
+                            {% endfor %}
+                        {% else %}
+                            Avdelningar saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </section> <!-- /#profile-section.container-section -->
+    
+{% endblock %}

@@ -9,7 +9,7 @@
 
 {% extends "base.html" %}
 
-{% block main %}
+{% block content %}
     <nav class="container-nav">
         <ul> {# eller använd .profile-nav ul #}
             <li><a href="" class="current">Profil</a></li>
@@ -22,16 +22,16 @@
     <header class="container-header">
 
         <div class="profile-header-person">
-            <h2>{{ person.firstname|capitalize }} {{person.lastname|capitalize }}</h2>
+            <h2>{{ user.first_name|capitalize }} {{user.last_name|capitalize }}</h2> {# get_full_name()? #}
 
             <div class="employment-type"> 
                 <i class="fas fa-user"></i>
                 <p>
-                    {% if person.emp_type %}
-                        {{ person.emp_type|capitalize }}
+                    <!--{% if user.emp_type %}
+                        {{ user.emp_type|capitalize }} 
                     {% else %}
                         Anställd
-                    {% endif %}
+                    {% endif %}-->
                 </p> {# rights or emp_type? #}
             </div> <!-- /.employment-type -->
         </div> <!-- /.profile-header-person -->
@@ -43,7 +43,7 @@
         {% endif %} #}
 
         <div class="profile-header-img">
-            <img src="#" alt="{{ user.firstname|capitalize }} {{ user.lastname|capitalize }}s profilbild">
+            <img src="#" alt="{{ user.first_name|capitalize }} {{ user.last_name|capitalize }}s profilbild">
 
             <a id="upload_img" href="#" title="Ladda upp en ny profilbild">
                 <button>Ändra</button>
@@ -64,8 +64,8 @@
             <li>Telefonnummer
                 <ul>
                     <li>
-                        {% if person.phone %}
-                            {{ person.phone }}
+                        {% if user.phone %}
+                            {{ user.phone }}
                         {% else %}
                             Telefonnummer saknas
                         {% endif %}
@@ -75,46 +75,47 @@
             <li>E-postadress
                 <ul>
                     <li>
-                        {% if person.email %}
-                            {{ person.email }}
+                        {% if user.email %}
+                            {{ user.email }}
                         {% else %}
                             E-postadress saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Anställnings-ID
-                <ul>
-                    <li>
-                        {% if person.empid %}
-                            {{ person.empid }}
-                        {% else %}
-                            Telefonnummer saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
+            {% if user.username = request.user.username or user.is_staff or user.is_superuser %}
+                <li>Anställnings-ID
+                    <ul>
+                        <li>
+                            {% if user.empid %}
+                                {{ user.empid }}
+                            {% else %}
+                                AnställningsID saknas
+                            {% endif %}
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}
             <li>Anställningsform
                 <ul>
                     <li>
-                        {% if person.emp_type %}
-                            {{ person.emp_type }}
+                        {% if user.emp_type %}
+                            {{ user.emp_type }}
                         {% else %}
                             Anställningsform saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            <li>Kompetensområden
+            <li>Avdelningar
                 <ul>
                     <li>
-                        {# Get depid_f(dep_empid) of empid_f(depemp_id) == emp_id(person), then get name(department) where dep_id(department) == depid_f(depemp_id) #}
-                        {% if departments %}
-                            {% for i in departments %}
+                        {% if user.groups %}
+                            {% for i in user.groups %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
                             {% endfor %}
                         {% else %}
-                            Områden saknas
+                            Avdelningar saknas
                         {% endif %}
                     </li>
                 </ul>

@@ -1,0 +1,90 @@
+<!--
+    PROFILE PAGE "KONTAKT"
+
+    .container-nav
+    .container-header
+    .profile-section
+
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <nav class="container-nav">
+        <ul> {# eller använd .profile-nav ul #}
+            <li><a href="">Profil</a></li>
+            <li><a href="">Anställning</a></li>
+            <li><a href="">Kompetens</a></li>
+            <li><a href="" class="current">Kontakt</a></li>
+        </ul>
+    </nav> <!-- /.container-nav -->
+
+    <header class="container-header">
+
+        <div class="profile-header-person">
+            <h2>Kontakt</h2>
+
+                <p>{{ user.get_full_name|capitalize }}</p> 
+ 
+        </div> <!-- /.container-header -->
+        
+        {# {% if user == current_user %}
+            <div class="edit-profile">
+                <p><a href="{{ url_for('edit_profile') }}">Redigera</a></p>
+            </div> <!-- /.edit-profile -->
+        {% endif %} #}
+
+    </header> <!-- /.container-header -->
+
+    <section id="profile-section" class="container-section">
+
+        <ul>
+            <li> 
+                <ul>
+                    <li>
+                        {% if user. %}
+                            {{ user.phone }}
+                        {% else %}
+                            
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>
+                        {% if user. %}
+                            {{ user. }}
+                        {% else %}
+                            
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>
+                        {% if user. %}
+                            {{ user. }}
+                        {% else %}
+                            
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>
+                        {% if user. %}
+                            {{ user.e }}
+                        {% else %}
+                            
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </section> <!-- /#profile-section.container-section -->
+    
+{% endblock %}

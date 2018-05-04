@@ -50,10 +50,17 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 * [ ] Header
     - [X] Div med namn och anställningstyp
     - [ ] Bild + två knappar ("ändra" och "ta bort)
+<<<<<<< HEAD
 * [ ] Section
     - [X] Telefonnummer
     - [X] E-postadress
     - [ ] Anställnings-ID
+=======
+* [] Section
+    - [X] Telefonnummer
+    - [X] E-postadress
+    - [] Anställnings-ID
+>>>>>>> userauth2
     - [X] Anställningsform
     - [X] Kompetenser
     - [X] Närmaste anhöriga
@@ -62,6 +69,7 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 
 #### Kompetenser
 * [X] Nav
+<<<<<<< HEAD
 * [ ] Header
 * [ ] Section
     - [ ] Avdelning
@@ -75,6 +83,21 @@ Nedan följer en outline av vad varje profilsida ska innehålla.
 * [ ] Header
 * [ ] Section
     - [ ] ...
+=======
+* [] Header
+* [] Section
+    - [] Avdelning
+    - [] Språk
+    - [] Certifikat
+    - [] Annan relevant utbildning
+    - [] Körkort
+
+#### Kontakt
+* [X] Nav
+* [] Header
+* [] Section
+    - []
+>>>>>>> userauth2
 
 ## Models
 De databastabeller som vi behöver är:
