@@ -37,6 +37,8 @@
                         <a href="{% url 'password_change' %}">Byt lösenord</a>
                         <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}
+                        <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
+                        <a href="{#{ url_for('logout') }#}">Logout</a>
                         <a href="{% url 'login' %}">Logga in</a>
                     {% endif %}
 
@@ -63,9 +65,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href='/account' class="nav-item">
+                            <a href='/admin' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="account">(Profil)</span>
+                            <a href="/fullcalendar" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="nav-item">Kalender</span>
                             </a>
                         </li>
                         {% if user.is_staff or user.is_superuser %}
