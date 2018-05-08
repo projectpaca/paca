@@ -38,10 +38,9 @@ Anledningen till att vi valt att inte ha *all* kommunikation i Slack är för at
 ## Arbetstider
 220 timmar per person totalt | 18 h per person/vecka
 
-I planeringsmöten, vilka inträffar innan varje ny sprint, planeras den kommande sprinten och dess schema. 
-__ngt om att vi planerar på gruppmötena (1 ggr/v), och ngt om dags-checkin?__
+I planeringsmöten, vilka inträffar innan varje ny sprint, planeras den kommande sprinten och dess ungefärliga schema. Utöver sprintplaneringen under en sprints första vecka, förväntas det även vara ett veckoplaneringsmöte i början av de återstående veckorna i sprinten. Detta för att följa upp sprintplaneringen, sammanfatta den föregående veckan inför veckans handledningsmöte samt utöka och specificera grovplaneringen av den kommande veckan.
 
-De arbetstider som mötena kommer att modelleras efter kommer, efter bestämmelser inom gruppen, att främst placeras i anslutning till schemalagda universitetsaktiviteter. Vidare kommer luncher att behandlas som luncher, vilket innebär att det inte kommer finnas någon förväntning på att diskutera projektet under måltiden. Det är däremot inget förbud mot att tala om det – så länge det sker organiskt. 
+Möten kommer främst placeras i anslutning till schemalagda universitetsaktiviteter. Vidare kommer luncher att behandlas som luncher, vilket innebär att det inte kommer finnas någon förväntning på att diskutera projektet under måltiden. Det är däremot inget förbud mot att tala om det – så länge det sker organiskt. 
 
 * Möten i anslutning till schemalagda universitetsaktiviteter
 * Lunch är lunch
@@ -56,55 +55,66 @@ Nedan är en lista över projektets deltagare, och på vilka dagar som de är up
 * Hanna Fellwing
 	* Helger och emellanåt vardagar
 	* Fasta helger och på behov under vardagar (blir ibland inringd, och tackar ja om det passar)
-	* XX
+	* Kommer arbeta med examensmiddagen
 * Lisa Wasslöv
 	* Varannan helg och varierande vardagar
 	* Fasta helger och inbokning av vardagspass
 	* Arbetar på IKEA, vilket innefattar transport till Svågertorp samt ofrånkomlig närvaro på plats.
+    * Kommer arbeta med examensmiddagen
 * Victor Dahl
 	* Fria tider
-	* XX
-	* XX
-	
+	* Får en hundvalp v19 (möten och parprogrammering får gärna ske hemma hos honom efter det)
+   
+
+
 ## Möten
+
+### Mötestyper
 Nedan följer en lista över de mötestyper som projektet innefattar, ordnade efter deras frekvens:
-* Planeringsmöte (Sprint Planning)
-* Sprint Review
-* Retrospect-möte
+* Sprint Planning
+* Sprint Review 
+    - Anslutning till Sprint Planning
+* Retrospektmöte
 * Handledningsmöte
-* Gruppmöte (officiella)
-* Gruppmöte (inofficiella)
+* Veckomöte
+* Gruppmöte
+    - Ifall ordinarie möten inte räcker till
 
 Övriga grupptillfällen, utan inbördes ordning:
 * Utbildning
-	* Laborationer
-	* Individuell insamling av kunskap
-	* Föreläsningar?
+	- Laborationer
+	- Individuell insamling av kunskap
+	- Föreläsningar
+    - Workshops 
 * Koddesign
+    - Planering av hur kodstrukturen ska se ut
 * Kodning
-* Omarbetning kod
-* Dokumentation
-* Omarbetning dokument
+    - Parprogrammering
 * Granskning
+    - 1-2 timmars möte i enlighet med granskningsdokument
 * Kravhantering
+    - Utformning av krav
 * Testning
+    - Testdagen (3/5) 
+    - Tester under sista sprinten
 
 
 ### Föra protokoll
+* Milo Bengtsson, ansvarig för dokumentation, skapar mallar och förbereder samtliga protokoll
+* Syfte:
+    - Fastställa dagordning
+    - Göra informationen tillgänglig till frånvarande gruppmedlemmar 
+    - Göra informationen tillgänglig för handledare
+    - Minnesanteckningar 
+* Protokoll ska finnas för:
+    - Sprint Review
+    - Sprint Planning
+    - Handledningsmöte
+    - Veckomöte
+* Mindre strikta anteckningar kan föras vid drop in-hjälp, självgranskningstillfällen och parprogrammering.
+* Milo Bengtsson ska skapa mallar för samtliga typer av protokoll
 
 
-
-vilken typ av möten kommer man att hålla (utöver handledning och retrospekt), hur fastställs agenda och vem håller i mötena, ska de dokumenteras? Hur får någon som varit frånvarande information om arbete som utförts eller beslut som fattats?
-
-Mall för alla typer av mötesanteckningar 
-
-### Mötestyper
-* Sprint-möte
-	* Planering av den kommande sprinten, inklusive inbokning av gruppmöten
-*
-
-Planering av möten sprint efter sprint (Boka möten en sprint i taget)
-En punktlista över saker (t.ex. känslotillstånd, )
 
 ___
 
@@ -144,24 +154,28 @@ Genom att börja definiera hela det önskade innehållet på applikationen, för
 
 
 ## Resurser
+* GitHub
+    - Versionshantering av kodfiler
+    - Färdiga eller statiska dokument, såsom inlämnad dokumentation och mallar, ska finnas här
+* YouTrack
+    - Tidsloggning
+* Slack
+    - Kommunikationskanal med varandra och med handledare kring projektrelaterade skaker
+* Google Drive
+    - Lagring och arbete med dokument innan inlämning
+    - Dokument som av andra skäl behöver uppdateras ständigt och ha flera personer samtidigt som arbetar på dem.
 
-### Github
 
-
-### YouTrack
-
-
-## Övrigt
 
 ## Godkännande
 Dokumentet är skrivet av Milo Bengtsson, i samverkan med resterande gruppmedlemmar.
 
-Följande gruppmedlemmar har <datum> tagit del av och godkänt det sociala kontraktet:
+Följande gruppmedlemmar har 2018-03-16 tagit del av och godkänt det sociala kontraktet:
 
-*
-*
-*
-*
+* Milo Bengtsson
+* Victor Dahl
+* Hanna Fellwing
+* Lisa Wasslöv
 
 
 
