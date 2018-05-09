@@ -5,9 +5,9 @@ $(function () {
     $('#calendar').fullCalendar({
         //visuell formatering av kalendern
         header: {
-            left: 'prev, next',
+            left: 'month,agendaWeek,agendaDay',
             center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+            right: 'prev, next'
         },
         weekNumbers: true,
         weekNumberTitle: 'Vecka',
@@ -49,7 +49,7 @@ $(function () {
         selectHelper: true,
 
         select: function (startDate, endDate, allDay, jsEvent, view) {
-            var duration = (end - start);
+            var duration = (endDate - startDate);
             if (duration === 30) {
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
