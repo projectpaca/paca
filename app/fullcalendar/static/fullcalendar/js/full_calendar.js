@@ -10,10 +10,13 @@ $(function () {
             right: 'prev, next'
         },
         weekNumbers: true,
+        firstDay: 0,
         weekNumberTitle: 'Vecka',
         defaultView: 'agendaWeek',
         titleFormat: 'MMMM YYYY',
         handleWindowResize: true,
+        slotEventOverlap: true,
+        eventLimit: true,
         
         //översätter default namn till svenska
         buttonText: {
@@ -36,9 +39,13 @@ $(function () {
         ],
         
         //tid och tidsformatering
-        timeZone: 'local',
         timeFormat: 'H:mm',
         displayEventTime: true,
+        
+        eventRender: function (event, element) {
+            var start = moment(event.start).fromNow();
+            element.attr('title', start);
+        },
         
         //funktionalitet i kalendern
         weekends: true,
@@ -48,63 +55,77 @@ $(function () {
         selectable: true,
         selectHelper: true,
 
-        select: function (startDate, endDate, allDay, jsEvent, view) {
-            var duration = (endDate - startDate);
+        select: function (start, end, jsEvent, view) {
+            endtime = $.fullCalendar.formatDate(end, 'h:mm tt');
+            starttime = $.fullCalendar.formatDate(start, 'ddd, MMM d, h:mm tt')
+            var duration = (starttime - endtime);
             if (duration === 30) {
                 end = start.add(30, 'mins');
-                return $('#calendar').fullCalendar('select', start, end);
-
+            return $('#calendar').fullCalendar('select', start, end);
             }
             
-            var title = prompt('Skriv in titel på passet:');
-            var eventData;
-            if (title && title.trim()) {
-                eventData = {
+            var title = prompt('Skriv in titel på passet:', "Nytt pass");
+
+            if (title != null) {
+                var event = {
                     title: title,
                     start: start,
                     end: end
                 };
-                console.log(title, start, end);
-
-                eventSources[
-                    {
-                        url: 'events'
-                    }
-                ];
-                
-                $('#calendar').fullCalendar('dayClick', function (date, jsEvent) {
-                    var chosenDate = date.format();
-                    $("#start").val(chosenDate);
-                    $("#end").val(chosenDate);
-                    $("#exampleModal").modal("show");
-                });
+            $("#calendar").fullCalendar('renderEvent', event, true,
+    ['stick']);
             };
+                
+               /* && title.trim()) {
+                var eventData = {
+                    title: title,
+                    start: start,
+                    end: end
+                }; */
+                console.log(title, start, end);        
     
             // Add event
-            $("#save-event").on("click", function () {
-                var title = $("#title").val();
-                var start = $("#start").val();
-                var end = $("#end").val();
-       
-                $.ajax({
-                    url: "/save-event",
-                    type: "POST",
-                    data: {
-                        start: start,
-                        end: end,
-                        title: title
-                    },
-                    dataType: "JSON"
-                }).done(function (data) {
-                    $("#calendar").fullCalendar("renderEvent", data);
-                    $("#exampleModal").modal("hide");
-                });
+        $.ajax({
+            url: "new",
+            type: "POST",
+            data: {
+                title: title,
+                start: start,
+                end: end,
+            },
+            dataType: "JSON"
+        }).done(function (data) {
+            $("#calendar").fullCalendar("renderEvent", data);
+        });
         
-        
-            });
-        }
-    });
-});
+    }, //select 
+    });// function fullcalendar
+});//function
         
 
 $('#calendar').fullCalendar('next');
+
+$('#calendar').fullCalendar({
+    eventSources: [
+        {
+            url: 'events'
+        }
+    ],
+
+    DayClick: function (date, jsEvent) {
+        console.log('day', date.format()); // date is a moment
+        console.log('coords', jsEvent.pageX, jsEvent.pageY);
+    } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
+
+});
+
+/*
+$("#calendar").fullCalendar('renderEvent', {
+                            start: start,
+                            end: end,
+                            title: title
+                            }
+ },
+    ['stick'],
+                        true);
+*/
