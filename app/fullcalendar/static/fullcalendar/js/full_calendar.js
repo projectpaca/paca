@@ -41,64 +41,61 @@ $(function () {
         //tid och tidsformatering
         timeFormat: 'H:mm',
         displayEventTime: true,
+        defaultTimedEventDuration: '02:00:00',
         
-        eventRender: function (event, element) {
-            var start = moment(event.start).fromNow();
-            element.attr('title', start);
-        },
+        
         
         //funktionalitet i kalendern
         weekends: true,
         editable: true,
+        droppable: true,
         eventDurationEditable: true,
         eventStartEditable: true,
         selectable: true,
         selectHelper: true,
 
         select: function (start, end, jsEvent, view) {
-            endtime = $.fullCalendar.formatDate(end, 'h:mm tt');
-            starttime = $.fullCalendar.formatDate(start, 'ddd, MMM d, h:mm tt')
-            var duration = (starttime - endtime);
-            if (duration === 30) {
+            var duration = (end - start) / 1000;
+            if (duration === 1800) {
                 end = start.add(30, 'mins');
-            return $('#calendar').fullCalendar('select', start, end);
+                return $('#calendar').fullCalendar('select', start, end);
             }
-            
             var title = prompt('Skriv in titel på passet:', "Nytt pass");
 
-            if (title != null) {
+            if (title !== null) {
                 var event = {
                     title: title,
                     start: start,
                     end: end
                 };
-            $("#calendar").fullCalendar('renderEvent', event, true,
-    ['stick']);
+                $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
+                
+                $('#calendar').fullCalendar('unselect');
             };
                 
-               /* && title.trim()) {
-                var eventData = {
-                    title: title,
-                    start: start,
-                    end: end
-                }; */
-                console.log(title, start, end);        
+            console.log(title, start, end);        
     
             // Add event
-        $.ajax({
-            url: "new",
-            type: "POST",
-            data: {
-                title: title,
-                start: start,
-                end: end,
-            },
-            dataType: "JSON"
-        }).done(function (data) {
-            $("#calendar").fullCalendar("renderEvent", data);
-        });
+            $.ajax({
+                url: "new",
+                type: "POST",
+                data: {
+                    title: title,
+                    start: start,
+                    end: end,
+                },
+                dataType: "JSON"
+            }).done(function (data) {
+                $("#calendar").fullCalendar("renderEvent", data);
+            });
+            
         
-    }, //select 
+        }, //select 
+        eventRender: function (event, element) {
+            var start = moment(event.start).fromNow();
+            element.attr('title', start);
+        },
+        
     });// function fullcalendar
 });//function
         
@@ -111,6 +108,7 @@ $('#calendar').fullCalendar({
             url: 'events'
         }
     ],
+    
 
     DayClick: function (date, jsEvent) {
         console.log('day', date.format()); // date is a moment
