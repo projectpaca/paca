@@ -6,9 +6,9 @@ $(function () {
     $('#calendar').fullCalendar({
         //visuell formatering av kalendern
         header: {
-            left: 'month,agendaWeek,agendaDay',
-            center: 'title',
-            right: 'prev, next'
+            left: '',
+            center: 'prev, title, next',
+            right: 'month,agendaWeek,agendaDay'
         },
         weekNumbers: true,
         firstDay: 0,
@@ -45,13 +45,16 @@ $(function () {
         defaultTimedEventDuration: '02:00:00',
         
         
-        
         //funktionalitet i kalendern
         weekends: true,
         editable: true,
         droppable: true,
         eventDurationEditable: true,
         eventStartEditable: true,
+        eventSources: [
+            {
+                url: 'events'
+            }],
         selectable: true,
         selectHelper: true,
 
@@ -63,20 +66,19 @@ $(function () {
                     start: start,
                     end: end
                 };
-
+            /*
             if (duration === 1800) {
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
-            }
-           // var title = prompt('Skriv in titel på passet:', "Nytt pass");
+            } */
 
             if (title !== null) {
                 $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
                 
                 $('#calendar').fullCalendar('unselect');
             }
-            console.log(title, start, end);        
-    
+            console.log(title, start, end);
+            
             // Add event
             $.ajax({
                 url: "new",
@@ -105,13 +107,6 @@ $(function () {
 $('#calendar').fullCalendar('next');
 
 $('#calendar').fullCalendar({
-    eventSources: [
-        {
-            url: 'events'
-        }
-    ],
-    
-
     DayClick: function (date, jsEvent) {
         console.log('day', date.format()); // date is a moment
         console.log('coords', jsEvent.pageX, jsEvent.pageY);
