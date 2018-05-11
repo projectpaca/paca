@@ -18,8 +18,11 @@ $(function () {
         handleWindowResize: true,
         slotEventOverlap: true,
         eventLimit: true,
+        //eventLimitClick: function ( cellInfo, jsEvent) {},
         
         //översätter default namn till svenska
+        allDayText: "Heldag",
+        noEventsMessage: "Inga händelser att visa",
         buttonText: {
             today: 'idag',
             month: 'månad',
@@ -98,7 +101,7 @@ $(function () {
         eventRender: function (event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
-        }
+        },
         
     });// function fullcalendar
 });//function
