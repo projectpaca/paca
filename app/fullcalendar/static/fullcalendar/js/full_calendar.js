@@ -1,3 +1,4 @@
+/*global $, jQuery*/
 $(function () {
 
   // funktionen startar
@@ -55,24 +56,25 @@ $(function () {
         selectHelper: true,
 
         select: function (start, end, jsEvent, view) {
-            var duration = (end - start) / 1000;
-            if (duration === 1800) {
-                end = start.add(30, 'mins');
-                return $('#calendar').fullCalendar('select', start, end);
-            }
-            var title = prompt('Skriv in titel på passet:', "Nytt pass");
-
-            if (title !== null) {
-                var event = {
+            var duration = (end - start) / 1000,
+                title = prompt('Skriv in titel på passet:', "Nytt pass"),
+                event = {
                     title: title,
                     start: start,
                     end: end
                 };
+
+            if (duration === 1800) {
+                end = start.add(30, 'mins');
+                return $('#calendar').fullCalendar('select', start, end);
+            }
+           // var title = prompt('Skriv in titel på passet:', "Nytt pass");
+
+            if (title !== null) {
                 $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
                 
                 $('#calendar').fullCalendar('unselect');
-            };
-                
+            }
             console.log(title, start, end);        
     
             // Add event
@@ -82,9 +84,9 @@ $(function () {
                 data: {
                     title: title,
                     start: start,
-                    end: end,
+                    end: end
                 },
-                dataType: "JSON"
+                dataType: "json"
             }).done(function (data) {
                 $("#calendar").fullCalendar("renderEvent", data);
             });
@@ -94,7 +96,7 @@ $(function () {
         eventRender: function (event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
-        },
+        }
         
     });// function fullcalendar
 });//function
@@ -116,14 +118,3 @@ $('#calendar').fullCalendar({
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
 
 });
-
-/*
-$("#calendar").fullCalendar('renderEvent', {
-                            start: start,
-                            end: end,
-                            title: title
-                            }
- },
-    ['stick'],
-                        true);
-*/
