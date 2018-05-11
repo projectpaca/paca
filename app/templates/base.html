@@ -58,21 +58,34 @@
                                 <span class="nav-item">Dashboard</span>
                             </a>
                         </li>
+                        <br>
                         <li>
-                            <a href='/fullcalendar' class="nav-item">
+                          <a href="/fullcalendar" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                              <i class="fas fa-calendar-alt"></i>
+                              <span class="nav-item">Kalender</span>
+                            </a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href='' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span class="fullcalendar">Kalender</span>
+                                <span class="nav-item">Profil</span>
                             </a>
                         </li>
                         <li>
-                            <a href='/admin' class="nav-item">
+                            <a href='' class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span class="account">(Profil)</span>
-                            <a href="/fullcalendar" class="nav-item"> {# nav-item in both anchor and span tags? #}
-                                <i class="fas fa-calendar-alt"></i>
-                                <span class="nav-item">Kalender</span>
+                                <span class="nav-item">Nyheter och notiser</span>
                             </a>
                         </li>
+                        <br>
+                        <li>
+                            <a href='' class="nav-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="nav-item">Profil</span>
+                            </a>
+                        </li>
+                        <br>
                         {% if user.is_staff or user.is_superuser %}
                             <li>
                                 <a href="/admin" class="nav-item"> {# nav-item in both anchor and span tags? #}
