@@ -78,13 +78,22 @@ $(function () {
             console.log(event); //logga vårt nya event
             
             // Add event
-            $.ajax({
-                url: "new",
-                type: "POST",
-                data: event, //(titel, start, end)
-                dataType: "json"
-            }).done(function (data) {
-                $("#calendar").fullCalendar("renderEvent", data);
+            
+            $("#save-event").on("click", function () {
+                var title = $("#title").val();
+                var start = $("#start").val();
+
+                $.ajax({
+                    //url: "new",
+                    url: "{{=URL('new')}}/?event=" + JSON.stringify(event),
+                   // type: "POST",
+                    data: event, //(titel, start, end)
+                    dataType: "json"
+                }).done(function (data) {
+                    $("#calendar").fullCalendar("renderEvent", data);
+                    $("#exampleModal").modal("hide");
+
+                });
             });
             
         
@@ -104,6 +113,11 @@ $('#calendar').fullCalendar({
     DayClick: function (date, jsEvent) {
         console.log('day', date.format()); // date is a moment
         console.log('coords', jsEvent.pageX, jsEvent.pageY);
-    } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
+    // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
+        var chosenDate = date.format();
+        $("#start").val(chosenDate);
+        $("#end").val(chosenDate);
+        $("#exampleModal").modal("show");
+    }
 
 });
