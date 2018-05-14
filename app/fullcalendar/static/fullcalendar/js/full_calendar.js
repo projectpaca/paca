@@ -66,31 +66,22 @@ $(function () {
                 title = prompt('Skriv in titel på passet:', "Nytt pass"),
                 event = {
                     title: title,
-                    start: start,
-                    end: end
+                    start: moment(start).format('YYYY-MM-DD hh:mm'), // datumformat 
+                    end: moment(end).format('YYYY-MM-DD hh:mm') // start/end är innan ett objekt med tid, behöver en sträng för att skicka med i ajax
                 };
-            /*
-            if (duration === 1800) {
-                end = start.add(30, 'mins');
-                return $('#calendar').fullCalendar('select', start, end);
-            } */
 
             if (title !== null) {
                 $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
                 
                 $('#calendar').fullCalendar('unselect');
             }
-            console.log(title, start, end);
+            console.log(event); //logga vårt nya event
             
             // Add event
             $.ajax({
                 url: "new",
                 type: "POST",
-                data: {
-                    title: title,
-                    start: start,
-                    end: end
-                },
+                data: event, //(titel, start, end)
                 dataType: "json"
             }).done(function (data) {
                 $("#calendar").fullCalendar("renderEvent", data);
@@ -101,7 +92,7 @@ $(function () {
         eventRender: function (event, element) {
             var start = moment(event.start).fromNow();
             element.attr('title', start);
-        },
+        }
         
     });// function fullcalendar
 });//function
