@@ -1,4 +1,21 @@
 /*global $, jQuery*/
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';'),
+            i = 0;
+        for (i; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
 $(function () {
 
   // funktionen startar
@@ -81,11 +98,20 @@ $(function () {
                 $('#calendar').fullCalendar('unselect');
             }
             console.log(event); // logga vårt nya event
+            // var csrftoken = Cookies.get('csrftoken');
+            var csrftoken = getCookie('csrftoken');
+            console.log(csrftoken);
+
             
             // Lägg till event
             $.ajax({
                 type: "POST",
-                url: "new",
+                // url: 'new',
+                url: "{{=URL('new')}}/?event=" + JSON.stringify(event),
+                headers: {   
+                    name: 'X_CSRFTOKEN', 
+                    value: this.csrftoken
+                },
                 //+ JSON.stringify(event),
                 data: event, // (titel, start, end)
                 dataType: "json",
@@ -103,7 +129,7 @@ $(function () {
         
     });// function fullcalendar
 });//function
-        
+
 
 $('#calendar').fullCalendar('next');
 

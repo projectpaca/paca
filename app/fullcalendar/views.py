@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import Event
 # from django.db import connection
 from django.http import JsonResponse
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 from django.shortcuts import get_object_or_404, render
@@ -14,6 +15,7 @@ def events(request):
     """ Hämtar alla event från databasen """
     return JsonResponse(list(Event.objects.all().values()),safe=False)
 
+@ensure_csrf_cookie
 def new(title, start, end):
     """ Skapar ny bokning """
     new_event = new(title="title", start="start", end="end")
