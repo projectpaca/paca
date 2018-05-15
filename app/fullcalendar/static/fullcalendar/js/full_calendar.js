@@ -85,8 +85,8 @@ $(function () {
 
                 $.ajax({
                     //url: "new",
-                    url: "{{=URL('new')}}/?event=" + JSON.stringify(event),
-                   // type: "POST",
+                    url: "{{=URL('new')/?event}}=" + JSON.stringify(event),
+                    type: "GET:POST",
                     data: event, //(titel, start, end)
                     dataType: "json"
                 }).done(function (data) {
@@ -111,8 +111,8 @@ $('#calendar').fullCalendar('next');
 
 $('#calendar').fullCalendar({
     DayClick: function (date, jsEvent) {
-        console.log('day', date.format()); // date is a moment
-        console.log('coords', jsEvent.pageX, jsEvent.pageY);
+       // console.log('day', date.format()); // date is a moment
+      //  console.log('coords', jsEvent.pageX, jsEvent.pageY);
     // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
         var chosenDate = date.format();
         $("#start").val(chosenDate);
