@@ -66,34 +66,32 @@ $(function () {
                 title = prompt('Skriv in titel på passet:', "Nytt pass"),
                 event = {
                     title: title,
-                    start: moment(start).format('YYYY-MM-DD hh:mm'), // datumformat 
-                    end: moment(end).format('YYYY-MM-DD hh:mm') // start/end är innan ett objekt med tid, behöver en sträng för att skicka med i ajax
+                    start: moment(start).format('YYYY-MM-DD hh:mm'), // få ett datumformat 
+                    end: moment(end).format('YYYY-MM-DD hh:mm') // end/start är innan ett objekt med tid, vi behöver en sträng för att skicka med i ajax
                 };
+            /*
+            if (duration === 1800) {
+                end = start.add(30, 'mins');
+                return $('#calendar').fullCalendar('select', start, end);
+            } */
 
             if (title !== null) {
                 $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
                 
                 $('#calendar').fullCalendar('unselect');
             }
-            console.log(event); //logga vårt nya event
+            console.log(event); // logga vårt nya event
             
-            // Add event
-            
-            $("#save-event").on("click", function () {
-                var title = $("#title").val();
-                var start = $("#start").val();
-
-                $.ajax({
-                    //url: "new",
-                    url: "{{=URL('new')/?event}}=" + JSON.stringify(event),
-                    type: "GET:POST",
-                    data: event, //(titel, start, end)
-                    dataType: "json"
-                }).done(function (data) {
-                    $("#calendar").fullCalendar("renderEvent", data);
-                    $("#exampleModal").modal("hide");
-
-                });
+            // Lägg till event
+            $.ajax({
+                type: "POST",
+                url: "new",
+                //+ JSON.stringify(event),
+                data: event, // (titel, start, end)
+                dataType: "json",
+                contentType: "json"
+            }).done(function (data) {
+                $("#calendar").fullCalendar("renderEvent", data);
             });
             
         
@@ -111,13 +109,8 @@ $('#calendar').fullCalendar('next');
 
 $('#calendar').fullCalendar({
     DayClick: function (date, jsEvent) {
-       // console.log('day', date.format()); // date is a moment
-      //  console.log('coords', jsEvent.pageX, jsEvent.pageY);
-    // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
-        var chosenDate = date.format();
-        $("#start").val(chosenDate);
-        $("#end").val(chosenDate);
-        $("#exampleModal").modal("show");
-    }
+        console.log('day', date.format()); // date is a moment
+        console.log('coords', jsEvent.pageX, jsEvent.pageY);
+    } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
 
 });
