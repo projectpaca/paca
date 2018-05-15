@@ -72,19 +72,25 @@ För hela projektet har gruppen totalt loggat 657h15m (75%) av 880h.
 Sprintens andra vecka innebär följande arbete:
 
 ### Milo Bengtsson
-
+* /userauth
+* Drop-in fredag webb/dokumentation
+* Kan koda fredag, lördag, söndag
 
 ### Victor Dahl
-
+* /fullcalendar
+* Kan koda fredag eftermiddag
 
 ### Hanna Fellwing
-
+* /fullcalendar
 
 ### Lisa Wasslöv
-
+* Se över kravdokumentet och ge förslag på ändringar av Must-krav
+* /accounts
+* Kan koda på fredag eftermiddag, söndag
 
 ---
 
 ## Övriga punkter
+
 
  
