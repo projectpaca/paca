@@ -4,23 +4,22 @@ from django.db.models import DateTimeField
 from django.utils import timezone
 
 
-class Event (models.Model):
+class Event(models.Model):
     """ Grundläggande DB schema för calender """
-    # Gör table för vem som är bokad på vilket pass
-
     title = models.CharField(max_length=100)
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
-        # models.CharField(max_length=20)
-    # Antal platser på passet
+    req_usr = models.int()
 
     def __str__(self):
-        # It’s important to add __str__() methods to your models, not only for your
-        # own convenience when dealing with the interactive prompt, but also
-        # because objects’ representations are used throughout Django’s
-        # automatically-generated admin.
         return self.title
 
-    #def shift_is_this_week (self):
-    #    return self.start >= timezone.now() <= datetime.timedelta(days=7)
-    #    TypeError: unorderable types: datetime.datetime() <= datetime.timedelta()
+class BookedUser(models.Model):
+    """ Visar vilka anställda som är bokade på vilka pass """
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    # Osäker på om user "CustomUser" är korrekt, eller om den
+    # behöver importeras åt något håll först?
+
+    def __str__(self):
+        return self.title

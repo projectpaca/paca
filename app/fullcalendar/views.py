@@ -1,18 +1,18 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Event
-# from django.db import connection
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.core.serializers import serialize
-
 from .models import Event
+
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
 
+
 def events(request):
     """ Hämtar alla event från databasen """
     return JsonResponse(list(Event.objects.all().values()),safe=False)
+
 
 @ensure_csrf_cookie
 def new_event(request):
@@ -20,10 +20,10 @@ def new_event(request):
     title = request.POST.get("title")
     start = request.POST.get("start")
     end = request.POST.get("end")
-    
+
     event = Event(title=title, start=start, end=end)
     event.save()
-    
+
     return JsonResponse({
         "title": title,
         "start": start,
