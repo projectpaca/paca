@@ -9,12 +9,13 @@ class Event(models.Model):
     title = models.CharField(max_length=100)
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
-    req_usr = models.int()
+    req_usr = models.PositiveIntegerField()
+    dept = models.CharField(max_length=20)
 
     def __str__(self):
         return self.title
 
-class BookedUser(models.Model):
+'''class BookedUser(models.Model):
     """ Visar vilka anställda som är bokade på vilka pass """
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -23,3 +24,4 @@ class BookedUser(models.Model):
 
     def __str__(self):
         return self.title
+'''
