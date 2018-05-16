@@ -12,13 +12,20 @@ class Event(models.Model):
     title = models.CharField(max_length=100)
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
+<<<<<<< HEAD
     req_usr = models.PositiveIntegerField()
     # dep = GenericForeignKey?
+||||||| merged common ancestors
+    req_usr = models.int()
+=======
+    req_usr = models.PositiveIntegerField()
+    dept = models.CharField(max_length=20)
+>>>>>>> 6f5a38e3f6af947758d71e8c73eef26fedadf8c9
 
     def __str__(self):
         return self.title
 
-class BookedUser(models.Model):
+'''class BookedUser(models.Model):
     """ Visar vilka anställda som är bokade på vilka pass """
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = GenericForeignKey('content_type', 'CustomUser')
@@ -27,3 +34,4 @@ class BookedUser(models.Model):
 
     def __str__(self):
         return self.title
+'''

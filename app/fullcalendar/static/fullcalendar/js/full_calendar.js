@@ -35,7 +35,6 @@ $(function () {
         handleWindowResize: true,
         slotEventOverlap: true,
         eventLimit: true,
-        //eventLimitClick: function ( cellInfo, jsEvent) {},
         
         //översätter default namn till svenska
         allDayText: "Heldag",
@@ -81,10 +80,14 @@ $(function () {
         select: function (start, end, jsEvent, view) {
             var duration = (end - start) / 1000,
                 title = prompt('Skriv in titel på passet:', "Nytt pass"),
+                req_usr = "1",
+                dept = 'kassa',
                 event = {
                     title: title,
                     start: moment(start).format('YYYY-MM-DD hh:mm'), // få ett datumformat 
-                    end: moment(end).format('YYYY-MM-DD hh:mm') // end/start är innan ett objekt med tid, vi behöver en sträng för att skicka med i ajax
+                    end: moment(end).format('YYYY-MM-DD hh:mm'), // end/start är innan ett objekt med tid, vi behöver en sträng för att skicka med i ajax
+                    req_usr: req_usr,
+                    dept: dept
                 };
             /*
             if (duration === 1800) {
@@ -108,13 +111,12 @@ $(function () {
                 type: "POST",
                 url: 'new',
                 //url: "{{=URL('new')}}?event=" + JSON.stringify(event),
-                headers: {   
+                headers: {
                     'X-CSRFToken': csrftoken
                 },
                 //+ JSON.stringify(event),
-                data: event, // (titel, start, end)
+                data: event, // (titel, start, end, req_usr, dept)
                 dataType: "json",
-                //contentType: "json",
                 success: function () {
                     alert("YEEEYYY!");
                 },
@@ -139,10 +141,22 @@ $(function () {
 
 $('#calendar').fullCalendar('next');
 
+/*$('#calendar').fullCalendar({
+    removeEvents:  pass
+}); */
+
+
+
 $('#calendar').fullCalendar({
     DayClick: function (date, jsEvent) {
         console.log('day', date.format()); // date is a moment
         console.log('coords', jsEvent.pageX, jsEvent.pageY);
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
-
+  /*  eventClick: function (event, jsEvent, view) {
+        if (confirm("Vill du ta bort detta pass?")) {
+           $('#calendar').fullCalendar('removeEvents', [idOrFilter], event);
+        } else {
+            pass
+        }
+    } */
 });
