@@ -3,9 +3,8 @@ from .models import Event
 # from django.db import connection
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.core.serializers import serialize
 
-
-from django.shortcuts import get_object_or_404, render
 from .models import Event
 
 def fullcalendar (request):
@@ -16,53 +15,17 @@ def events(request):
     return JsonResponse(list(Event.objects.all().values()),safe=False)
 
 @ensure_csrf_cookie
-def new(title, start, end):
+def new_event(request):
     """ Skapar ny bokning """
-    new_event = new(title="title", start="start", end="end")
-    new_event.save()
-    return {"start": start, "end": end, "title": title}
-
-
-
-    #title = request.get("title")
-    #start = request.get("start")
-    #end = request.get("end")
-
-    #cursor.execute("INSERT into events (title, start, end) VALUES ('{}', '{}', '{}')".format(title, start, end))
-    #return json.dumps(events)
-
-# PACA2
-    """jobForm = JobForm(request.POST or None)
-    if request.method == 'POST':
-        if jobForm.is_valid():
-            jobFo = jobForm.save()
-            new_job.manager.add(manager)
-            new_job.save()"""
-#### ANTON
-    #'''Create a calendar event'''
-    #db = pymysql.connect(DB_HOST,DB_USERNAME, DB_PASSWORD, DB_NAME, cursorclass=pymysql.cursors.DictCursor)
-    #cursor = db.cursor()
-    #cursor.execute("INSERT into events (title, start, end) VALUES ('{}', '{}', '{}')".format(title, start, end))
-    #db.commit()
-    #db.close()
-    #return {"start": start, "end": end, "title": title}
-###
-
-
-class NewShift():
-    def new(request):
-        """if request.method == 'GET':
-            event_id = request.GET['event_id'] #NOTERA namn på event_id
-            booked_event"""
-        return render(request, 'fullcalendar/calendar.html')
-        #return render(request, .8000/calendar/new)'''
-
-def detail(request, shift_id):
-    # Inte fått denna att funka
-    """ Denna funktion ska visa detaljer om ett specifikt pass """
-    event = get_object_or_404(Event, pk=event_id)
-    return render (request, 'fullcalendar/shift.html')
-
-    #https://docs.djangoproject.com/en/2.0/intro/tutorial03/
-    #https://docs.google.com/document/d/1_l-36sKyUWxNda1w3_TgmYIuzPVrlPftkxqQYeC7_6A/edit
-    #
+    title = request.POST.get("title")
+    start = request.POST.get("start")
+    end = request.POST.get("end")
+    
+    event = Event(title=title, start=start, end=end)
+    event.save()
+    
+    return JsonResponse({
+        "title": title,
+        "start": start,
+        "end": end
+    })

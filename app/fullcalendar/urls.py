@@ -13,10 +13,10 @@ urlpatterns = [
     path(r'events', views.events),
 
     # Sparar ett nytt event till databasen
-    path( r'new', views.new),
+    path( r'new', views.new_event),
     #path( r'new', views.new_shift, name='new_shift'),
 
 
-    path(r'<int:shift_id>', views.detail, name='detail'),
+  #  path(r'<int:shift_id>', views.detail, name='detail'),
     #path( r'new$', NewShift.as_view()),
 ]

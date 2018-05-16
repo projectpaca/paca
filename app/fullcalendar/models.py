@@ -14,10 +14,6 @@ class Event (models.Model):
         # models.CharField(max_length=20)
     # Antal platser på passet
 
-    start = models.DateTimeField('start')
-    end = models.DateTimeField('end')
-    title = models.CharField(max_length=100)
-
     def __str__(self):
         # It’s important to add __str__() methods to your models, not only for your
         # own convenience when dealing with the interactive prompt, but also

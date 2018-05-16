@@ -106,16 +106,22 @@ $(function () {
             // Lägg till event
             $.ajax({
                 type: "POST",
-                // url: 'new',
-                url: "{{=URL('new')}}/?event=" + JSON.stringify(event),
+                url: 'new',
+                //url: "{{=URL('new')}}?event=" + JSON.stringify(event),
                 headers: {   
-                    name: 'X_CSRFTOKEN', 
-                    value: this.csrftoken
+                    'X-CSRFToken': csrftoken
                 },
                 //+ JSON.stringify(event),
                 data: event, // (titel, start, end)
                 dataType: "json",
-                contentType: "json"
+                //contentType: "json",
+                success: function () {
+                    alert("YEEEYYY!");
+                },
+                error: function () {
+                    alert("nix inte idag...");
+                }
+                
             }).done(function (data) {
                 $("#calendar").fullCalendar("renderEvent", data);
             });
