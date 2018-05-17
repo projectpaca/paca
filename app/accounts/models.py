@@ -1,4 +1,4 @@
-from django.db import models
+'''from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
@@ -16,7 +16,7 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
-'''
+
 class UserInDepartment(models.Model):
     """ Vilka personer som jobbar i vilka avdelningar """
     dep =  # FK

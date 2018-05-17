@@ -3,12 +3,6 @@ from django.db import models
 from django.db.models import DateTimeField
 from django.utils import timezone
 
-from django.contrib.contenttypes.fields import GenericForeignKey
-from django.contrib.contenttypes.models import ContentType
-
-from django.contrib.contenttypes.fields import GenericRelation
-
-from accounts.models import Department
 
 
 class Event(models.Model):
@@ -17,7 +11,7 @@ class Event(models.Model):
     start = models.DateTimeField('start')
     end = models.DateTimeField('end')
     req_usr = models.PositiveIntegerField()
-    dept = GenericRelation(Department)
+    # dept = GenericRelation(Department)
     #dept = models.CharField(max_length=20)
 
     def __str__(self):
