@@ -35,6 +35,8 @@ $(function () {
         handleWindowResize: true,
         slotEventOverlap: true,
         eventLimit: true,
+        weekends: true,
+
         
         //översätter default namn till svenska
         allDayText: "Heldag",
@@ -62,16 +64,13 @@ $(function () {
         timeFormat: 'H:mm',
         displayEventTime: true,
         defaultTimedEventDuration: '02:00:00',
-        
-        
-        //funktionalitet i kalendern
-        weekends: true,
-        //editable: true,
-        eventDurationEditable: true,
-        eventStartEditable: true,
+                
+        //hämtar alla event från databasen
         eventSources: [{
             url: 'events'
         }],
+        
+        // när en håller musen över(hover) på ett pass så visas information, titel, start- och sluttid, i en ljusgul ruta
         eventMouseover: function (data, event, view) {
 
             tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#FFE4B5;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Titel: ' + data.title + '</br>' + 'Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '</br>' + 'Slutar: ' + data.end.format('YYYY-MM-DD hh:mm') + '</div>';
@@ -97,21 +96,25 @@ $(function () {
         },
             
         eventRender: function (event, element, view) {
-            
+            //om passet är för avdelning kassa är färgen grön
             if (event.title === 'Kassa') {
                 element.css('eventBackgroundColor', '#B2FF66');
                 
+            //om passet är för avdelning kassa är färgen för
             } else if (event.title === 'Lager') {
                 element.css('eventBackgroundColor', '#FF3333');
-            
+                
+            //om passet är för avdelning kassa är färgen blå
             } else if (event.title === 'Chark') {
                 element.css('eventBackgroundColor', '#66B2FF'); 
             }
 
         },
-        eventColor: '#FFCCCC'  
-    });
-});
+        // default färg på eventen
+        eventColor: '#FFCCCC' 
+        
+    }); //fullcalendar functionen
+}); // function
 
 $('#calendar').fullCalendar('next');
 
