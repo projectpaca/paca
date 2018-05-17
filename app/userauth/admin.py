@@ -25,6 +25,14 @@ class MyUserCreationForm(UserCreationForm):
         model = CustomUser
         #fields = UserCreationForm.Meta.fields + ("name", "empid", "emp_type",)
 
+    def clean_name(self):
+        name = self.cleaned_data["name"]
+        try:
+            CustomUser.objects.get(name=name)
+        except CustomUser.DoesNotExist:
+            return name
+
+        raise forms.ValidationError(self.error_messages["duplicate_username"])
     def clean_username(self):
         username = self.cleaned_data["username"]
         try:
@@ -59,13 +67,13 @@ class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
     fieldsets = (
-        ("User Profile", 
+        ("User Profile",
             {"fields": (
                 "name",
                 "username",
                 "email",
-                "empid", 
-                "emp_type", 
+                "empid",
+                "emp_type",
                 "password",
                 )
             }
@@ -75,7 +83,7 @@ class MyUserAdmin(AuthUserAdmin):
                 "phone",
                 "street",
                 "postcode",
-                "city", 
+                "city",
                 )
             }
         ),
@@ -84,7 +92,7 @@ class MyUserAdmin(AuthUserAdmin):
                 "is_active",
                 "is_staff",
                 "is_superuser",
-                "groups", 
+                "groups",
                 "user_permissions",
                 )
             }
