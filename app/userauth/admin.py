@@ -15,6 +15,7 @@ class MyUserCreationForm(UserCreationForm):
 
     error_message = UserCreationForm.error_messages.update(
         {
+            "duplicate_username": "This username har already been taken.",
             "duplicate_email": "This email has already been taken.",
             "duplicate_empid": "This employee ID has already been taken.",
         }
@@ -23,6 +24,15 @@ class MyUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
         #fields = UserCreationForm.Meta.fields + ("name", "empid", "emp_type",)
+
+    def clean_username(self):
+        username = self.cleaned_data["username"]
+        try:
+            CustomUser.objects.get(username=username)
+        except CustomUser.DoesNotExist:
+            return username
+
+        raise forms.ValidationError(self.error_messages["duplicate_username"])
 
     def clean_email(self):
         email = self.cleaned_data["email"]
@@ -52,6 +62,7 @@ class MyUserAdmin(AuthUserAdmin):
         ("User Profile", 
             {"fields": (
                 "name",
+                "username",
                 "email",
                 "empid", 
                 "emp_type", 
@@ -92,4 +103,4 @@ class MyUserAdmin(AuthUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ("wide",),
-            'fields': ("name", "email", "empid", "emp_type", "password1", "password2")}),)
+            'fields': ("username", "email", "empid", "emp_type", "password1", "password2")}),)

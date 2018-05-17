@@ -10,7 +10,13 @@ class CustomUser(AbstractUser):
 
 	# First Name and Last Name do not cover name patterns
 	# around the globe.
-	email = models.EmailField(unique=True)
+	username = models.CharField(
+		unique=True,
+		max_length=150,
+	)
+	email = models.EmailField(
+		unique=True,
+	)
 	name = models.CharField(
 		'Name of User', 
 		max_length=255,
@@ -56,8 +62,8 @@ class CustomUser(AbstractUser):
 		)
 
 
-	USERNAME_FIELD = 'email'
-	REQUIRED_FIELDS = ['empid']
+	#USERNAME_FIELD = 'email'
+	REQUIRED_FIELDS = ['empid', 'email']
 
 	def __str__(self):
 		return self.name
