@@ -43,7 +43,7 @@ PROJECT_APPS = [
     # VÅRA APPLIKATIONER HÄR
     'userauth',
     'fullcalendar',
-    # 'account',
+     'accounts',
     # 'dashboard',
     # 'department',
     # 'news',
