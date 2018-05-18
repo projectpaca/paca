@@ -10,7 +10,6 @@ from django.conf import settings
 class Department(models.Model):
     """ Företagets avdelningar """
     name = models.CharField(
-        verbose_name="namn",
         max_length=100,
         primary_key=True
         )
@@ -26,11 +25,12 @@ class Event(models.Model):
         on_delete=models.CASCADE
     )
     start = models.DateTimeField('start')
-    end = models.DateTimeField('end')
+    end = models.DateTimeField('slut')
     username = models.ForeignKey(
         get_user_model(),
         null=True,
         blank=True,
+        verbose_name="Bokad på",
         on_delete=models.CASCADE
     )
 
