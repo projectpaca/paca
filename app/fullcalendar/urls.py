@@ -10,4 +10,5 @@ urlpatterns = [
     path(r'events', views.events),
     # Sparar ett nytt event till databasen
     path( r'new', views.new_event),
+    path( r'upd_event', views.upd_event),
 ]

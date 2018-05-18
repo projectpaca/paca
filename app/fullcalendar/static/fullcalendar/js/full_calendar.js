@@ -1,4 +1,4 @@
-/* global $, jQuery
+/* global $, jQuery */
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -14,12 +14,9 @@ function getCookie(name) {
         }
     }
     return cookieValue;
-}*/
+}
 
 $(function () {
-
-  // funktionen startar
-
     $('#calendar').fullCalendar({
         //visuell formatering av kalendern
         header: {
@@ -36,9 +33,6 @@ $(function () {
         slotEventOverlap: true,
         eventLimit: true,
         weekends: true,
-
-        
-        //översätter default namn till svenska
         allDayText: "Heldag",
         noEventsMessage: "Inga händelser att visa",
         buttonText: {
@@ -47,32 +41,28 @@ $(function () {
             week: 'vecka',
             day: 'dag'
         },
-        // översätter namnen på månaderna till svenska
         monthNames: [
             'Januari', 'Februari', 'Mars',
             'April', 'Maj', 'Juni', 'Juli',
             'Augusti', 'September', 'Oktober',
             'November', 'December'
         ],
-        // översätter namnen på dagarna till svenska
         dayNamesShort: [
             'Mån', 'Tis', 'Ons', 'Tors',
             'Fre', 'Lör', 'Sön'
         ],
-        
-        //tid och tidsformatering
+
         timeFormat: 'H:mm',
         displayEventTime: true,
         defaultTimedEventDuration: '02:00:00',
-                
-        //hämtar alla event från databasen
+
         eventSources: [{
             url: 'events'
         }],
-        
+
         // när en håller musen över(hover) på ett pass så visas information, titel, start- och sluttid, i en ljusgul ruta
         eventMouseover: function (data, event, view) {
-            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#FFE4B5;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Titel: ' + data.title + '</br>' + 'Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '</br>' + 'Slutar: ' + data.end.format('YYYY-MM-DD hh:mm') + '</div>';
+            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#FFE4B5;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Pass:  ' + data.title_id + '</br> Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '</br> Slutar: ' + data.end.format('YYYY-MM-DD hh:mm') + '</div>';
             $("body").append(tooltip);
             $(this).mouseover(function (e) {
                 $(this).css('z-index', 10000);
@@ -83,12 +73,12 @@ $(function () {
                 $('.tooltiptopicevent').css('left', e.pageX + 20);
             });
         },
-        
+
         eventMouseout: function (data, event, view) {
             $(this).css('z-index', 8);
             $('.tooltiptopicevent').remove();
         },
-                                
+
         eventRender: function (event, element, view) {
             var skift = event.title_id;
             if (skift === 'Kassa') {
@@ -104,10 +94,51 @@ $(function () {
                 element.css('background-color', '#FFCCCC');
                 // Gör passet rosa om det inte stämmer med ovan IF-satser
             } // END IF SATS
-        } //eventRender ger färg efter avdelning
+        }, //eventRender ger färg efter avdelning
+
+         // $('#calendar').fullcalendar({
+        eventClick: function (event, jsEvent, view) {
+            if (confirm("Bekräfta bokning av pass")) {
+                console.log("boka mig på detta pass:");
+                console.log(event);
+                console.log(event.id);
+
+                var csrftoken = getCookie('csrftoken');
+                console.log("TOKEN:");
+                console.log(csrftoken);
+
+                pk = event.id
+                console.log(pk);
+                console.log("såg allt bra ut? ja okej");
+                $.ajax({
+                    type: "POST",
+                    url: 'upd_event',
+                    headers: {
+                        'X-CSRFToken': csrftoken
+                    },
+                    data: pk,
+                    // dataType: "json",
+                    success: function () {
+                        alert("YEEEYYY!");
+                    },
+                    error: function () {
+                        alert("nix inte idag...");
+                    }
+                }).done(function (data) {
+                    $("#calendar").fullCalendar("renderEvent", data);
+                    $("#myModal").modal("hide");
+                });
+
+            } else {
+                console.log("Ej bokat");
+                // pass;
+            }
+        }
     }); //fullcalendar functionen
 }); // function
 
+
+// NEDAN TAS BORT?
 $('#calendar').fullCalendar('next');
        /* select: function (start, end, jsEvent, view) {
             var duration = (end - start) / 1000,
@@ -116,27 +147,27 @@ $('#calendar').fullCalendar('next');
                 dept = 'kassa',
                 event = {
                     title: title,
-                    start: moment(start).format('YYYY-MM-DD hh:mm'), // få ett datumformat 
+                    start: moment(start).format('YYYY-MM-DD hh:mm'), // få ett datumformat
                     end: moment(end).format('YYYY-MM-DD hh:mm'), // end/start är innan ett objekt med tid, vi behöver en sträng för att skicka med i ajax
                     req_usr: req_usr,
                     dept: dept
                 };
-                
+
             if (duration === 1800) {
                 end = start.add(30, 'mins');
                 return $('#calendar').fullCalendar('select', start, end);
-            } 
+            }
 
             if (title !== null) {
                 $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
-                
+
                 $('#calendar').fullCalendar('unselect');
             }
             console.log(event); // logga vårt nya event
             // var csrftoken = Cookies.get('csrftoken');
             var csrftoken = getCookie('csrftoken');
             console.log(csrftoken);
-            
+
             $('#calendar').fullcalendar({
                 eventClick: function (event, jsEvent, view) {
                     if (alert("Vill du ta bort detta pass?")) {
@@ -144,14 +175,14 @@ $('#calendar').fullCalendar('next');
                     } else {
                         pass;
                     }
-                    
+
                     $('#calendar').fullCalendar('updateEvent', event);
 
-                }, 
-                
+                },
+
             }); */
 
-            
+
     /*        // Lägg till event
     $.ajax({
         type: "POST",
@@ -168,18 +199,18 @@ $('#calendar').fullCalendar('next');
         error: function () {
             alert("nix inte idag...");
         }
-                
+
     }).done(function (data) {
         $("#calendar").fullCalendar("renderEvent", data);
         $("#myModal").modal("hide");
 
     });
-            
-        
-}); //select 
+
+
+}); //select
 
 */
-        
+
 //    });// function fullcalendar
 // });//function
 
@@ -189,5 +220,5 @@ $('#calendar').fullCalendar({
         console.log('day', date.format()); // date is a moment
         console.log('coords', jsEvent.pageX, jsEvent.pageY);
     } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
- 
+
 });*/
