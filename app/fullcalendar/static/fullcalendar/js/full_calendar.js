@@ -107,7 +107,7 @@ $(function () {
                 console.log("TOKEN:");
                 console.log(csrftoken);
 
-                pk = event.id
+                pk = event.id;
                 console.log(pk);
                 console.log("såg allt bra ut? ja okej");
                 $.ajax({
@@ -137,9 +137,14 @@ $(function () {
     }); //fullcalendar functionen
 }); // function
 
+$('#calendar').fullCalendar('next');
 
 // NEDAN TAS BORT?
-$('#calendar').fullCalendar('next');
+
+// funktionen ovan ('next') kan ej tas bort, gör det möjligt att byta till nästa vecka och månad. 
+// Nedanstående kod har ingen funktion längre, men ligger hårt jobb bakom så nostalgist / Hanna
+
+
        /* select: function (start, end, jsEvent, view) {
             var duration = (end - start) / 1000,
                 title = prompt('Skriv in titel på passet:', "Nytt pass"),
