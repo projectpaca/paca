@@ -18,7 +18,7 @@ class CustomUser(AbstractUser):
 		unique=True,
 	)
 	name = models.CharField(
-		'Name of User', 
+		'Namn', 
 		max_length=255,
 	)
 	# Employment
@@ -34,6 +34,7 @@ class CustomUser(AbstractUser):
 	    ('probationary', 'Provanställning'),
 	)
 	emp_type = models.CharField(
+		'Anställningsform',
 		max_length=20, 
 		choices=EMP_TYPE_CHOICES,
 		null=True,
