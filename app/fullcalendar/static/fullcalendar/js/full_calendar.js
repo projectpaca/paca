@@ -1,4 +1,4 @@
-/*global $, jQuery*/
+/* global $, jQuery
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -14,7 +14,7 @@ function getCookie(name) {
         }
     }
     return cookieValue;
-}
+}*/
 
 $(function () {
 
@@ -72,10 +72,7 @@ $(function () {
         
         // när en håller musen över(hover) på ett pass så visas information, titel, start- och sluttid, i en ljusgul ruta
         eventMouseover: function (data, event, view) {
-
             tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#FFE4B5;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Titel: ' + data.title + '</br>' + 'Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '</br>' + 'Slutar: ' + data.end.format('YYYY-MM-DD hh:mm') + '</div>';
-
-
             $("body").append(tooltip);
             $(this).mouseover(function (e) {
                 $(this).css('z-index', 10000);
@@ -85,40 +82,33 @@ $(function () {
                 $('.tooltiptopicevent').css('top', e.pageY + 10);
                 $('.tooltiptopicevent').css('left', e.pageX + 20);
             });
-
-
         },
+        
         eventMouseout: function (data, event, view) {
             $(this).css('z-index', 8);
-
             $('.tooltiptopicevent').remove();
-
         },
-            
+                                
         eventRender: function (event, element, view) {
-            //om passet är för avdelning kassa är färgen grön
-            if (event.title === 'Kassa') {
-                element.css('eventBackgroundColor', '#B2FF66');
-                
-            //om passet är för avdelning kassa är färgen för
-            } else if (event.title === 'Lager') {
-                element.css('eventBackgroundColor', '#FF3333');
-                
-            //om passet är för avdelning kassa är färgen blå
-            } else if (event.title === 'Chark') {
-                element.css('eventBackgroundColor', '#66B2FF'); 
-            }
-
-        },
-        // default färg på eventen
-        eventColor: '#FFCCCC' 
-        
+            var skift = event.title_id;
+            if (skift === 'Kassa') {
+                element.css('background-color', '#B2FF66');
+                // Gör passet grönt om det är 'kassa'
+            } else if (skift === 'Lager') {
+                element.css('background-color', 'red');
+                // Gör passet grönt om det är 'kassa'
+            } else if (skift === 'Chark') {
+                element.css('background-color', '#66B2FF');
+                // Gör passet grönt om det är 'kassa'
+            } else {
+                element.css('background-color', '#FFCCCC');
+                // Gör passet rosa om det inte stämmer med ovan IF-satser
+            } // END IF SATS
+        } //eventRender ger färg efter avdelning
     }); //fullcalendar functionen
 }); // function
 
 $('#calendar').fullCalendar('next');
-
-
        /* select: function (start, end, jsEvent, view) {
             var duration = (end - start) / 1000,
                 title = prompt('Skriv in titel på passet:', "Nytt pass"),
