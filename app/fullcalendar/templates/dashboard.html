@@ -12,10 +12,19 @@
         {% else %}
             <h1>Hej!</h1>
         {% endif %}
+    </section>
 
+    <section class="container-section">
+
+    {% if events == '' %}
         {% for i in events %}
-        	{{ i }}
+        	<p>Pass: {{ i.title }}</p>
+            <p>Start: {{ i.start }}</p>
+            <p>Slut: {{ i.end }}</p>
         {% endfor %}
+    {% else %}
+        <p>Du har inga inbokade pass.</p>
+    {% endif %}
 
     </section> <!-- /.container-section -->
 {% endblock %}
