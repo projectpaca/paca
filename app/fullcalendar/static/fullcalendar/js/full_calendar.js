@@ -106,10 +106,14 @@ $(function () {
                 var csrftoken = getCookie('csrftoken');
                 console.log("TOKEN:");
                 console.log(csrftoken);
-
-                pk = event.id;
+                
+                
+                var pk = {
+                    "event_id": event.id
+                };
                 console.log(pk);
-                console.log("såg allt bra ut? ja okej");
+                console.log("Ovan är pass PK");
+
                 $.ajax({
                     type: "POST",
                     url: 'upd_event',
@@ -117,16 +121,16 @@ $(function () {
                         'X-CSRFToken': csrftoken
                     },
                     data: pk,
-                    // dataType: "json",
+                    dataType: "json",
                     success: function () {
                         alert("YEEEYYY!");
                     },
-                    error: function () {
+                    /* error: function () {
                         alert("nix inte idag...");
-                    }
+                    } */
                 }).done(function (data) {
                     $("#calendar").fullCalendar("renderEvent", data);
-                    $("#myModal").modal("hide");
+                    // $("#myModal").modal("hide");
                 });
 
             } else {
@@ -141,7 +145,7 @@ $('#calendar').fullCalendar('next');
 
 // NEDAN TAS BORT?
 
-// funktionen ovan ('next') kan ej tas bort, gör det möjligt att byta till nästa vecka och månad. 
+// funktionen ovan ('next') kan ej tas bort, gör det möjligt att byta till nästa vecka och månad.
 // Nedanstående kod har ingen funktion längre, men ligger hårt jobb bakom så nostalgist / Hanna
 
 

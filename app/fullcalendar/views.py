@@ -4,18 +4,6 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.core.serializers import serialize
 from .models import Event
 
-from django.http import HttpResponse
-
-
-# @ensure_csrf_cookie
-def upd_event(request):
-    """ Uppdaterar bokning """
-    # pk = request.POST.get("pk")
-    user = request.user.pk
-    # event = Event(postpk=postpk, user=user)
-    #event.save()
-    return request
-
 
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
@@ -24,6 +12,16 @@ def fullcalendar (request):
 def events(request):
     """ Hämtar alla event från databasen """
     return JsonResponse(list(Event.objects.all().values()),safe=False)
+
+
+def upd_event(request):
+    """ Uppdaterar bokning """
+    event_id = request.POST.get("event_id")
+    username = request.user.pk
+    print ("\nEvent_id:", event_id, "\nCurrentUser: ", username, "\n--------\n")
+
+    Event.objects.filter(pk=event_id).update(username=username)
+    fullcalendar(request)
 
 
 @ensure_csrf_cookie
@@ -49,7 +47,7 @@ def new_event(request):
 
 
 
-    # return JsonResponse ({}) ?
+    # return  JsonResponse ({}) ?
 
 '''
     username = models.ForeignKey(
