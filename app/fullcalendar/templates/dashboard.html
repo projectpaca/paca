@@ -1,0 +1,21 @@
+<!-- 
+    DASHBOARD
+
+    /templates/dashboard.html
+-->
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="container-section">
+        {% if user.is_authenticated %}
+            <h1>Hej, {{ user.name }}!</h1>
+        {% else %}
+            <h1>Hej!</h1>
+        {% endif %}
+
+        {% for i in events %}
+        	{% i ‰}
+        {% endfor %}
+        
+    </section> <!-- /.container-section -->
+{% endblock %}
