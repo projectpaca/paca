@@ -45,8 +45,9 @@ def new_event(request):
 
 
 def dashboard(request):
-    events = list(Event.objects.filter(username=request.user.pk).values())
-    return render (request, 'dashboard.html',{"events": events})
+    my_events = list(Event.objects.filter(username=request.user.pk).values())
+    available_events = list(Event.objects.filter(username=None).values())
+    return render (request, 'dashboard.html',{"my_events": events, "available_events": available_events})
 
 def profil(request):
     current_user = request.user.pk
