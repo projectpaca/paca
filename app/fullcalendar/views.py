@@ -51,4 +51,4 @@ def dashboard(request):
 
 def profil(request):
     user_info = CustomUser.objects.all().filter(id=request.user.pk).values()
-    return render (request, 'profile.html',{"user_info": user_info, "deps": deps})
+    return render (request, 'profile.html',{"user_info": user_info})
