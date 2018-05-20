@@ -10,40 +10,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <nav class="container-nav">
+    {% for i in user_info %}
+    <!-- <nav class="container-nav">
         <ul> {# eller använd .profile-nav ul #}
             <li><a href="" class="current">Profil</a></li>
             <li><a href="">Anställning</a></li>
             <li><a href="">Kompetens</a></li>
             <li><a href="">Kontakt</a></li>
         </ul>
-    </nav> <!-- /.profile-nav -->
+    </nav> /.profile-nav -->
 
     <header class="container-header">
 
         <div class="profile-header-person">
-            <h2>{{ user.first_name|capitalize }} {{user.last_name|capitalize }}</h2> {# get_full_name()? #}
-
-            <div class="employment-type"> 
+            <h2>{{ i.name }}</h2>
+            <div class="employment-type">
                 <i class="fas fa-user"></i>
                 <p>
-                    <!--{% if user.emp_type %}
-                        {{ user.emp_type|capitalize }} 
+                    {% if i.is_superuser %}
+                        {{ i.is_superuser }}
                     {% else %}
                         Anställd
-                    {% endif %}-->
+                    {% endif %}
                 </p> {# rights or emp_type? #}
             </div> <!-- /.employment-type -->
         </div> <!-- /.profile-header-person -->
-        
-        {# {% if user == current_user %}
-            <div class="edit-profile">
-                <p><a href="{{ url_for('edit_profile') }}">Redigera</a></p>
-            </div> <!-- /.edit-profile -->
-        {% endif %} #}
 
-        <div class="profile-header-img">
-            <img src="#" alt="{{ user.first_name|capitalize }} {{ user.last_name|capitalize }}s profilbild">
+      <!--  {# {% if user == current_user %}
+            <div class="edit-profile">
+                <p><a href=" url_for('edit_profile') ">Redigera</a></p>
+            </div>  /.edit-profile
+        {% endif %} #}-->
+
+        <!-- <div class="profile-header-img">
+            <img src="#" alt="{{ i.name }}s profilbild">
 
             <a id="upload_img" href="#" title="Ladda upp en ny profilbild">
                 <button>Ändra</button>
@@ -54,18 +54,18 @@
                     Ta bort
                 </button>
             </a>
-        </div>
-
+        </div> -->
+        {% endfor %}
     </header> <!-- /.profile-header -->
 
     <section id="profile-section" class="container-section">
-
+      {% for i in user_info %}
         <ul>
             <li>Telefonnummer
                 <ul>
                     <li>
-                        {% if user.phone %}
-                            {{ user.phone }}
+                        {% if i.phone %}
+                            {{ i.phone }}
                         {% else %}
                             Telefonnummer saknas
                         {% endif %}
@@ -75,43 +75,42 @@
             <li>E-postadress
                 <ul>
                     <li>
-                        {% if user.email %}
-                            {{ user.email }}
+                        {% if i.email %}
+                            {{ i.email }}
                         {% else %}
                             E-postadress saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
-            {% if user.username = request.user.username or user.is_staff or user.is_superuser %}
-                <li>Anställnings-ID
-                    <ul>
-                        <li>
-                            {% if user.empid %}
-                                {{ user.empid }}
-                            {% else %}
-                                AnställningsID saknas
-                            {% endif %}
-                        </li>
-                    </ul>
-                </li>
-            {% endif %}
+            <li>Anställnings-ID
+                <ul>
+                    <li>
+                        {% if i.empid %}
+                            {{ i.empid }}
+                        {% else %}
+                            AnställningsID saknas
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
             <li>Anställningsform
                 <ul>
                     <li>
-                        {% if user.emp_type %}
-                            {{ user.emp_type }}
+                        {% if i.emp_type %}
+                            {{ i.emp_type }}
                         {% else %}
                             Anställningsform saknas
                         {% endif %}
                     </li>
                 </ul>
             </li>
+
             <li>Avdelningar
                 <ul>
                     <li>
-                        {% if user.groups %}
-                            {% for i in user.groups %}
+                        {% if i.groups %}
+                            {% for i in i.groups %}
                                 {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
                             {% endfor %}
                         {% else %}
@@ -140,5 +139,5 @@
             {% endif %}
         </div> <!-- /.emergency-contacts -->
     </section> <!-- /.profile-section -->
-
+    {% endfor %}
 {% endblock %}

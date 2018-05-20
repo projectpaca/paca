@@ -1,0 +1,67 @@
+<!--
+    DASHBOARD
+
+    /templates/dashboard.html
+
+    An example output of a FullCalendar event looks like this
+    (for reference when writing variables related to events):
+    {'postcode': '',
+    'city': '',
+    'date_joined': datetime.datetime(2018, 5, 18, 15, 37, 39, tzinfo=<UTC>),
+    'last_name': '',
+    'last_login': datetime.datetime(2018, 5, 18, 15, 39, 10, 183939, tzinfo=<UTC>),
+    'password': 'pbkdf2_sha256$100000$X8VEixNVxJze$ZRQZMHQbDVwUAbWFkVHYb7kXKGe30LgPwBqHM8kdLik=',
+    'username': 'chefen',
+    'id': 4, 'street': '',
+    'first_name': '',
+    'is_superuser': True,
+    'is_staff': True,
+    'name': 'Chefen',
+    'empid': 'ANSTNUM',
+    'email': 'chefen@chef.se',
+    'emp_type': 'hourly paid',
+    'is_active': True,
+    'phone': ''}
+
+-->
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="container-section">
+        {% if user.is_authenticated %}
+            <h1>Hej, {{ user.name }}!</h1>
+        {% else %}
+            <h1>Hej!</h1>
+        {% endif %}
+    </section> <!-- /.container-section -->
+
+    <section class="container-section">
+        {% for i in user_info %}
+        	 <!-- <p>Pass: {{ i.title_id }}</p>
+            <p>Datum: {{ i.start|date:'D j/n' }}</p>
+            <p>Tid: {{ i.start|time:'H:i' }}-{{ i.end|time:'H:i' }}</p> -->
+
+            <p>Namn:   {{ i.username }} </p>
+            <p>Användarnamn:   {{ i.name }} </p>
+            <p>AnställningsID: {{ i.empid }} </p>
+            <p>Epost: {{ i.email }} </p>
+            <p>Telefon {{ i.phone }}</p>
+
+            <p>street: {{ i.street }} </p>
+            <p>Postnr: {{ i.postcode }}</p>
+            <p>Stad: {{ i.city }} </p>
+
+            <p> Joined: {{ i.date_joined|date:'Y-m-d' }} </p>
+            <p> Chef: {{ i.is_superuser }} </p>
+
+  <!--      'is_superuser': True,
+            'is_staff': True,
+
+-->
+
+
+        {% endfor %}
+    </section> <!-- /.container-section -->
+
+
+{% endblock %}
