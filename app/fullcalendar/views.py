@@ -19,7 +19,6 @@ def upd_event(request):
     event_id = request.POST.get("event_id")
     username = request.user.pk
     print ("\nEvent_id:", event_id, "\nCurrentUser: ", username, "\n--------\n")
-
     Event.objects.filter(pk=event_id).update(username=username)
     fullcalendar(request)
 
@@ -42,30 +41,10 @@ def new_event(request):
         "end": end,
         "req_usr": req_usr,
         "dept": dept
-
     })
 
 
-
-    # return  JsonResponse ({}) ?
-
-'''
-    username = models.ForeignKey(
-        get_user_model(),
-        null=True,
-        blank=True,
-        verbose_name="Bokad på",
-        on_delete=models.CASCADE
-    )
-
-    event = Event(title=title, start=start, end=end, req_usr=req_usr, dept=dept)
-    event.save()
-
-    return JsonResponse({
-        "title": title,
-        "start": start,
-        "end": end,
-        "req_usr": req_usr,
-        "dept": dept
-    })
-'''
+def dashboard(request):
+    events = list(Event.objects.filter(username=request.user.pk).values())
+    print("EVENTS:",events)
+    return render (request, 'dashboard.html',{"events": events})
