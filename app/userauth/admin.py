@@ -1,8 +1,13 @@
 from django import forms
+from django.http import HttpRequest
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import CustomUser
+from .models import CustomUser, EmergencyContacts
+
+
+# class EmergencyContactsInline(admin.TabularInline):
+#     model = EmergencyContacts
 
 
 class MyUserChangeForm(UserChangeForm):
@@ -61,11 +66,16 @@ class MyUserCreationForm(UserCreationForm):
         raise forms.ValidationError(self.error_messages['duplicate_empid'])
 
 
-
 @admin.register(CustomUser)
 class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
+
+    # def get_emergency_contacts(request):
+    #     '''Gets the emergency contacts of the current user.'''
+    #     emergency_contacts = EmergencyContacts.objects.filter(user_reference=request.user.username)
+    #     return emergency_contacts
+
     fieldsets = (
         ('User Profile',
             {'fields': (
@@ -87,6 +97,14 @@ class MyUserAdmin(AuthUserAdmin):
                 )
             }
         ),
+        # ('Emergency Contacts',
+        #     {'fields': (
+        #         'emergency_contacts.name',
+        #         'emergency_contacts.relationship',
+        #         'emergency_contacts.phone',
+        #         ) 
+        #     }
+        # ),
         ('Permissions',
             {'fields': (
                 'is_active',
@@ -102,13 +120,16 @@ class MyUserAdmin(AuthUserAdmin):
                 'last_login',
                 'date_joined',
                 )
-
             }
-        )
+        ),
+
     )
-    list_display = ('name', 'empid', 'emp_type', 'is_active', 'is_staff', 'is_superuser')
+    # inlines = [EmergencyContactsInline]
+    list_display = ('empid', 'name', 'emp_type', 'is_active', 'is_staff', 'is_superuser')
     search_fields = ['name']
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': ('username', 'name', 'email', 'empid', 'emp_type', 'password1', 'password2')}),)
+
+

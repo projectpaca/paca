@@ -23,12 +23,25 @@
     </section> <!-- /.container-section -->
 
     <section class="container-section">
-        {% for i in events %}
-        	<p>Pass: {{ i.title_id }}</p>
-            <p>Datum: {{ i.start|date:'D j/n' }}</p>
-            <p>Tid: {{ i.start|time:'H:i' }}-{{ i.end|time:'H:i' }}</p>
+        <h3>Mina pass</h3>
+        {% for i in my_events %}
+            <div class="dashboard-event">
+            	<p>Pass: {{ i.title_id }}</p>
+                <p>Datum: {{ i.start|date:'D j/n' }}</p>
+                <p>Tid: {{ i.start|time:'H:i' }}-{{ i.end|time:'H:i' }}</p>
+            </div>
         {% endfor %}
     </section> <!-- /.container-section --> 
 
+    <section class="container-section">
+        <h3>Lediga pass</h3>
+        {% for i in available_events %}
+            <div class="dashboard-event">
+                <p>Pass: {{ i.title_id }}</p>
+                <p>Datum: {{ i.start|date:'D j/n' }}</p>
+                <p>Tid: {{ i.start|time:'H:i' }}-{{ i.end|time:'H:i' }}</p>
+            </div>
+        {% endfor %}
+    </section> <!-- /.container-section -->
 
 {% endblock %}
