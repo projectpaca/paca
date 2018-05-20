@@ -9,6 +9,6 @@ urlpatterns = [
     path('events', views.events),
     path('new', views.new_event),
     path('upd_event', views.upd_event),
-    path('dash', views.dashboard),
+    path('dash', views.dashboard, name='index'),
     path('profil', views.profil),
 ]

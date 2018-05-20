@@ -3,20 +3,20 @@
 
     /templates/dashboard.html
 
-    An example output of a FullCalendar event looks like this 
+    An example output of a FullCalendar event looks like this
     (for reference when writing variables related to events):
-    {'id': 1, 
-    'title_id': 'Kassa', 
-    'start': datetime.datetime(2018, 5, 18, 8, 39, 15, tzinfo=<UTC>), 
-    'end': datetime.datetime(2018, 5, 18, 16, 39, 18, tzinfo=<UTC>), 
-    'username_id': 2} 
+    {'id': 1,
+    'title_id': 'Kassa',
+    'start': datetime.datetime(2018, 5, 18, 8, 39, 15, tzinfo=<UTC>),
+    'end': datetime.datetime(2018, 5, 18, 16, 39, 18, tzinfo=<UTC>),
+    'username_id': 2}
 -->
 {% extends "base.html" %}
 
 {% block content %}
     <section class="container-section">
         {% if user.is_authenticated %}
-            <h1>Hej, {{ user.name }}!</h1>
+            <h1>Dashboard!</h1>
         {% else %}
             <h1>Hej!</h1>
         {% endif %}
@@ -28,7 +28,7 @@
             <p>Datum: {{ i.start|date:'D j/n' }}</p>
             <p>Tid: {{ i.start|time:'H:i' }}-{{ i.end|time:'H:i' }}</p>
         {% endfor %}
-    </section> <!-- /.container-section --> 
+    </section> <!-- /.container-section -->
 
 
 {% endblock %}

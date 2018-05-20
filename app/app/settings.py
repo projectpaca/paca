@@ -143,7 +143,7 @@ AUTH_USER_MODEL = 'userauth.CustomUser'
 
 # Redirect links for login and logout
 # https://wsvincent.com/django-custom-user-model-tutorial/
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 
 # E-mail config

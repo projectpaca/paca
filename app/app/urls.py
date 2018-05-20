@@ -19,12 +19,10 @@ from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='dashboard.html'), name='dashboard'),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
-    #path('users/', include('userauth.urls')),
     path('fullcalendar/', include('fullcalendar.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    # path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # path('account/', include('django.contrib.auth.urls', 'accounts.urls')),
