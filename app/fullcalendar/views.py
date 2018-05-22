@@ -22,8 +22,31 @@ def upd_event(request):
     event_id = request.POST.get("event_id")
     username = request.user.pk
     print ("\nEvent_id:", event_id, "\nCurrentUser: ", username, "\n--------\n")
-    Event.objects.filter(pk=event_id).update(username=username)
-    fullcalendar(request)
+    available = Event.objects.filter(pk=event_id, username_id=None).values().exists()
+    if available == False:
+        # print("Passet är upptaget!")
+        #return JsonResponse(list(Event.objects.all().values()),safe=False)
+        raise Exception("Passet är upptaget!")
+        # return render(request, 'fullcalendar/calendar.html')
+    elif available == True:
+        print(" Passet är ledigt")
+        Event.objects.filter(pk=event_id).update(username_id=username)
+        return JsonResponse(list(Event.objects.all().values()),safe=False)
+        return render(request, 'fullcalendar/calendar.html')
+
+    # ledig_test = Event.objects.filter(pk=event_id).values().exists(username_id=None)
+    # print(type(ledig_test))
+    # print(ledig_test)
+
+    """
+    Hämta username as bokad_på på pass där pk = Event_id
+    IF bokad_på != "":
+        return "Pass upptaget!"
+    ELSE (bokad_på == ""):
+        event.objects.update pass.... (Event.objects.filter(pk=event_id).update(username=username))
+    fullcal(request)
+    """
+
 
 
 @ensure_csrf_cookie

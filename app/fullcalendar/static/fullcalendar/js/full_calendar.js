@@ -126,7 +126,7 @@ $(function () {
                     };
                 console.log("TOKEN:");
                 console.log(csrftoken);
-                
+
                 console.log(pk);
                 console.log("Ovan är pass PK");
 
@@ -138,7 +138,14 @@ $(function () {
                     },
                     data: pk,
                     dataType: "json",
-                    
+
+                    success: function () {
+                        $(".confirm-messages").text("Passet är bokat!").fadeIn();
+                    },
+                    error: function () {
+                        $(".error-messages").text("Bokning gick inte, passet är upptaget.").fadeIn();
+                    }
+
                 }).done(function (data) {
                     $("#calendar").fullCalendar("renderEvent", data);
                 });
