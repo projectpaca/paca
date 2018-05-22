@@ -29,6 +29,17 @@ $(function () {
         weekNumberTitle: 'Vecka',
         defaultView: 'agendaWeek',
         titleFormat: 'MMMM YYYY',
+        views: {
+            month: {
+                columnHeaderFormat: 'ddd'
+            },
+            week: {
+                columnHeaderFormat: 'ddd D/M'
+            },
+            day: {
+                columnHeaderFormat: 'dddd'
+            }
+        },
         handleWindowResize: true,
         slotEventOverlap: true,
         eventLimit: true,
@@ -51,8 +62,13 @@ $(function () {
             'Mån', 'Tis', 'Ons', 'Tors',
             'Fre', 'Lör', 'Sön'
         ],
+        dayNames: [
+            'Måndag', 'Tisdag', 'Onsdag',
+            'Torsdag', 'Fredag', 'Lördag', 'Söndag'
+        ],
 
         timeFormat: 'H:mm',
+        slotLabelFormat: 'HH:mm',
         displayEventTime: true,
         defaultTimedEventDuration: '02:00:00',
 
@@ -103,14 +119,13 @@ $(function () {
                 console.log(event);
                 console.log(event.id);
 
-                var csrftoken = getCookie('csrftoken');
+                var csrftoken = getCookie('csrftoken'),
+                    pk = {
+                        "event_id": event.id
+                    };
                 console.log("TOKEN:");
                 console.log(csrftoken);
                 
-                
-                var pk = {
-                    "event_id": event.id
-                };
                 console.log(pk);
                 console.log("Ovan är pass PK");
 
@@ -122,20 +137,13 @@ $(function () {
                     },
                     data: pk,
                     dataType: "json",
-                    success: function () {
-                        alert("YEEEYYY!");
-                    },
-                    /* error: function () {
-                        alert("nix inte idag...");
-                    } */
+                    
                 }).done(function (data) {
                     $("#calendar").fullCalendar("renderEvent", data);
-                    // $("#myModal").modal("hide");
                 });
 
             } else {
                 console.log("Ej bokat");
-                // pass;
             }
         }
     }); //fullcalendar functionen
