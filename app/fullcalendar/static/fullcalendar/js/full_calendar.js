@@ -116,8 +116,8 @@ $(function () {
             
         }, //eventRender ger färg efter avdelning
 
-        eventClick: function (data, event, jsEvent, view) {
-            if (confirm("Bekräfta bokning av pass" + '\n Pass:  ' + data.title_id + ' \n Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '\n Slutar: ' + data.end.format('YYYY-MM-DD hh:mm'))) {
+        eventClick: function (event, jsEvent, view) {
+            if (confirm("Bekräfta bokning av pass" + '\n Pass:  ' + event.title_id + ' \n Börjar: ' + event.start.format('YYYY-MM-DD hh:mm') + '\n Slutar: ' + event.end.format('YYYY-MM-DD hh:mm'))) {
                 console.log("boka mig på detta pass:");
                 console.log(event);
                 console.log(event.id);
