@@ -58,7 +58,7 @@ Hanna har totalt loggat 17h15m (96%) av 18h.
 * PACA-110 Retrospektmöte 3 (2h)
 * PACA-109 Sprint 4 Planering (1h30m)
 
-Lisa har totalt loggat 22h30 (125%) av 18h.
+Lisa har totalt loggat 10h (56%) av 18h.
 
 ## Hela projektet
 Time spent – 653h 25m
