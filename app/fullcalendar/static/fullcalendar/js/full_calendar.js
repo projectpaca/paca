@@ -143,11 +143,13 @@ $(function () {
 
                     success: function () {
                         $(".confirm-message").show();
-                        $(".confirm-message").text("Passet är bokat!").fadeIn();
+                        $(".confirm-message").text("Passet är bokat!").fadeIn().delay(5000).fadeOut();
+
                     },
                     error: function () {
                         $(".error-message").show();
-                        $(".error-message").text("Bokning gick inte, passet är upptaget.").fadeIn();
+                        $(".error-message").text("Bokning gick inte, passet är upptaget.").fadeIn().delay(5000).fadeOut();
+
                     }
 
                 }).done(function (data) {
