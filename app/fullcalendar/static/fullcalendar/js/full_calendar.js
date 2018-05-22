@@ -106,8 +106,8 @@ $(function () {
                 var csrftoken = getCookie('csrftoken');
                 console.log("TOKEN:");
                 console.log(csrftoken);
-                
-                
+
+
                 var pk = {
                     "event_id": event.id
                 };
@@ -123,11 +123,11 @@ $(function () {
                     data: pk,
                     dataType: "json",
                     success: function () {
-                        alert("YEEEYYY!");
+                        alert("Passet är bokat!");
                     },
-                    /* error: function () {
-                        alert("nix inte idag...");
-                    } */
+                    error: function () {
+                        alert("Bokning gick inte, är passet ledigt?");
+                    }
                 }).done(function (data) {
                     $("#calendar").fullCalendar("renderEvent", data);
                     // $("#myModal").modal("hide");
