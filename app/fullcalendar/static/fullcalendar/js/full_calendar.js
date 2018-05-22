@@ -1,4 +1,5 @@
 /* global $, jQuery */
+
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -6,7 +7,6 @@ function getCookie(name) {
             i = 0;
         for (i; i < cookies.length; i++) {
             var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                 break;
@@ -14,6 +14,7 @@ function getCookie(name) {
         }
     }
     return cookieValue;
+    // skapar en cookie
 }
 
 $(function () {
@@ -72,7 +73,6 @@ $(function () {
         minTime: '05:00:00',
         maxTime: '22:00:00',
         displayEventTime: true,
-        defaultTimedEventDuration: '02:00:00',
 
         eventSources: [{
             url: 'events'
@@ -90,7 +90,7 @@ $(function () {
             }).mousemove(function (e) {
                 $('.tooltiptopicevent').css('top', e.pageY + 10);
                 $('.tooltiptopicevent').css('left', e.pageX + 20);
-            });
+            }); //presenterar titel/avdelning, starttid och sluttid vid hover över pass
         },
 
         eventMouseout: function (data, event, view) {
@@ -105,10 +105,10 @@ $(function () {
                 // Gör passet grönt om det är 'kassa'
             } else if (skift === 'Lager') {
                 element.css('background-color', 'red');
-                // Gör passet grönt om det är 'kassa'
+                // Gör passet rött om det är 'lager'
             } else if (skift === 'Chark') {
                 element.css('background-color', '#66B2FF');
-                // Gör passet grönt om det är 'kassa'
+                // Gör passet blått om det är 'chark'
             } else {
                 element.css('background-color', '#FFCCCC');
                 // Gör passet rosa om det inte stämmer med ovan IF-satser
@@ -116,7 +116,6 @@ $(function () {
             
         }, //eventRender ger färg efter avdelning
 
-         // $('#calendar').fullcalendar({
         eventClick: function (data, event, jsEvent, view) {
             if (confirm("Bekräfta bokning av pass" + '\n Pass:  ' + data.title_id + ' \n Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '\n Slutar: ' + data.end.format('YYYY-MM-DD hh:mm'))) {
                 console.log("boka mig på detta pass:");
