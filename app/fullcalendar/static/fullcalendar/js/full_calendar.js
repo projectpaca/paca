@@ -123,10 +123,10 @@ $(function () {
                     data: pk,
                     dataType: "json",
                     success: function () {
-                        alert("Passet är bokat!");
+                        $(".confirm-messages").text("Passet är bokat!").fadeIn();
                     },
                     error: function () {
-                        alert("Bokning gick inte, är passet ledigt?");
+                        $(".error-messages").text("Bokning gick inte, passet är upptaget.").fadeIn();
                     }
                 }).done(function (data) {
                     $("#calendar").fullCalendar("renderEvent", data);
