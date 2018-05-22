@@ -110,12 +110,13 @@ $(function () {
             } else {
                 element.css('background-color', '#FFCCCC');
                 // Gör passet rosa om det inte stämmer med ovan IF-satser
-            } // END IF SATS
+            }// END IF SATS
+            
         }, //eventRender ger färg efter avdelning
 
          // $('#calendar').fullcalendar({
         eventClick: function (data, event, jsEvent, view) {
-            if (confirm("Bekräfta bokning av pass" + 'Pass:  ' + data.title_id + 'Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + 'Slutar: ' + data.end.format('YYYY-MM-DD hh:mm'))) {
+            if (confirm("Bekräfta bokning av pass" + '\n Pass:  ' + data.title_id + ' \n Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '\n Slutar: ' + data.end.format('YYYY-MM-DD hh:mm'))) {
                 console.log("boka mig på detta pass:");
                 console.log(event);
                 console.log(event.id);
@@ -140,10 +141,12 @@ $(function () {
                     dataType: "json",
 
                     success: function () {
-                        $(".confirm-messages").text("Passet är bokat!").fadeIn();
+                        $(".confirm-message").show();
+                        $(".confirm-message").text("Passet är bokat!").fadeIn();
                     },
                     error: function () {
-                        $(".error-messages").text("Bokning gick inte, passet är upptaget.").fadeIn();
+                        $(".error-message").show();
+                        $(".error-message").text("Bokning gick inte, passet är upptaget.").fadeIn();
                     }
 
                 }).done(function (data) {
