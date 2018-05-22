@@ -69,6 +69,8 @@ $(function () {
 
         timeFormat: 'H:mm',
         slotLabelFormat: 'HH:mm',
+        minTime: '05:00:00',
+        maxTime: '22:00:00',
         displayEventTime: true,
         defaultTimedEventDuration: '02:00:00',
 
