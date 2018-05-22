@@ -9,10 +9,6 @@ Grupp 5
 * Lisa Wasslöv
 * Victor Dahl
 
-## Resurser
-* [GitHub](https://github.com/projectpaca/paca)
-* [Google Drive](https://drive.google.com/drive/folders/1A4XK_FlGtjtoPnrWoc-HwR4RUzK5R1Vf?usp=sharing)
-
 ---
 
 ## Veckan som gått + Hela sprinten

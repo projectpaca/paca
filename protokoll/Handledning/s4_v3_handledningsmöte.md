@@ -9,6 +9,10 @@ Grupp 5
 * Lisa Wasslöv
 * Victor Dahl
 
+## Resurser
+* [GitHub](https://github.com/projectpaca/paca)
+* [Google Drive](https://drive.google.com/drive/folders/1A4XK_FlGtjtoPnrWoc-HwR4RUzK5R1Vf?usp=sharing)
+
 ---
 
 ## Veckan som gått
@@ -94,6 +98,12 @@ Sprintens tredje vecka innebär följande arbete:
 ---
 
 ## Övriga punkter
-
+* 18h/v har fungerat bra som mål – men det har varit svårt att hålla
+    - Antingen har man legat väldigt mycket under (i synnerhet i början)
+    - Eller så har man loggat mycket mer – mycket på grund av dokumentation
+* Hade vi bestämt oss för Django i början, så hade vi kunnat planera vårt arbete mycket bättre (research, att skriva models istället för att skriva databas i SQL, etc.)
+    - Eftersom alla använder sig av ett ramverk (t.ex. Django, Flask, Bottle, React.js), vore det inte bra med en föreläsning eller något liknande, där man går igenom de mest populära ramverken? 
+    - Alternativt skriva in det i projektguiden som förslag på beslut som ska tas i början av första sprinten.
+* Det vore bra om vi hade planerat ut *när* vi skulle genomföra våra individuella fördjupningar.
 
  
