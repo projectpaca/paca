@@ -306,3 +306,13 @@ input[type=checkbox] {
 .employment-type p {
   padding-left: 10px;
 }
+
+.error-message{
+    display: none;
+    background-color: orangered;
+}
+
+.confirm-message{
+    display: none;
+    background-color: lightgreen;
+}

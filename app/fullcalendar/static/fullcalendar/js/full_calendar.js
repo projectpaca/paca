@@ -75,6 +75,7 @@ $(function () {
         eventSources: [{
             url: 'events'
         }],
+        lazyFetching: true,
 
         // när en håller musen över(hover) på ett pass så visas information, titel, start- och sluttid, i en ljusgul ruta
         eventMouseover: function (data, event, view) {
@@ -113,8 +114,8 @@ $(function () {
         }, //eventRender ger färg efter avdelning
 
          // $('#calendar').fullcalendar({
-        eventClick: function (event, jsEvent, view) {
-            if (confirm("Bekräfta bokning av pass")) {
+        eventClick: function (data, event, jsEvent, view) {
+            if (confirm("Bekräfta bokning av pass" + 'Pass:  ' + data.title_id + 'Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + 'Slutar: ' + data.end.format('YYYY-MM-DD hh:mm'))) {
                 console.log("boka mig på detta pass:");
                 console.log(event);
                 console.log(event.id);
