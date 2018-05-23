@@ -46,7 +46,7 @@ PROJECT_APPS = [
     # 'accounts',
     # 'dashboard',
     # 'department',
-    # 'news',
+    'news',
     # 'sent_emails',
 ]
 
