@@ -64,6 +64,9 @@ class CustomUser(AbstractUser):
 		blank=True,
 		)
 
+	class Meta:
+		verbose_name = 'användare'
+		verbose_name_plural = 'användare'
 
 	#USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['empid', 'email']
@@ -91,6 +94,10 @@ class EmergencyContacts(models.Model):
 		'Telefonnummer', 
 		max_length=20,
 	)
+
+	class Meta:
+		verbose_name = 'anhörig'
+		verbose_name_plural = 'närmaste anhöriga'
 
 	def __str__(self):
 		return()
