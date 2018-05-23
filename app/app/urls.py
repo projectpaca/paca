@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 from django.conf.urls import url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -25,9 +26,11 @@ urlpatterns = [
     #path('users/', include('userauth.urls')),
     path('fullcalendar/', include('fullcalendar.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    path('news/', include('views.news')),
+    path('news/', include('news.urls')),
     # path('accounts/', include('django.contrib.auth.urls')),
 ]
+
+
 
 # path('account/', include('django.contrib.auth.urls', 'accounts.urls')),
 # All urls defined in /accounts/urls.py come after the url 'account/'.
