@@ -14,22 +14,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls import url
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from django.conf.urls import url
+from django.conf.urls.static import static
 
+from django.contrib.auth.models import Group
+
+admin.site.unregister(Group)
+
+admin.site.site_header = "PACA Adminportal"
+admin.site.site_title = "PACA Adminportal"
+admin.site.index_title = "Portalen där administratörer och chefer kan skapa nya, redigera och ta bort användare, arbetspass m.m."
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
     path('fullcalendar/', include('fullcalendar.urls')),
     path('users/', include('django.contrib.auth.urls')),
-<<<<<<< HEAD
-=======
-    path('news/', include('views.news')),
-    # path('accounts/', include('django.contrib.auth.urls')),
->>>>>>> lisa
-]
+    path('news/', include('news.urls')),
+    url('avatar/', include('avatar.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# path('account/', include('django.contrib.auth.urls', 'accounts.urls')),
-# All urls defined in /accounts/urls.py come after the url 'account/'.
+# if settings.DEBUG:
+#     # static files (images, css, javascript, etc.)
+#     urlpatterns += [
+#         url('media/(?P<path>.*)$', serve, {
+#             'document_root': settings.MEDIA_ROOT})
+#     ]

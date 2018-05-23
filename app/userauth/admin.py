@@ -82,29 +82,29 @@ class MyUserAdmin(AuthUserAdmin):
                 'name',
                 'username',
                 'email',
-                'empid',
-                'emp_type',
+                ('empid',
+                'emp_type'),
                 'password',
                 )
             }
         ),
         ('Personal info',
             {'fields': (
-                'phone',
-                'street',
+                ('street',
+                'phone'),
                 'postcode',
                 'city',
                 )
             }
         ),
-        # ('Emergency Contacts',
-        #     {'fields': (
-        #         'emergency_contacts.name',
-        #         'emergency_contacts.relationship',
-        #         'emergency_contacts.phone',
-        #         ) 
-        #     }
-        # ),
+        ('Emergency Contacts',
+            {'fields': (
+                ('EmergencyContacts.name',
+                'EmergencyContacts.relationship',
+                'EmergencyContacts.phone')
+                ) 
+            }
+        ),
         ('Permissions',
             {'fields': (
                 'is_active',
