@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from django.conf.urls import url
 
 
 urlpatterns = [
@@ -24,6 +25,7 @@ urlpatterns = [
     #path('users/', include('userauth.urls')),
     path('fullcalendar/', include('fullcalendar.urls')),
     path('users/', include('django.contrib.auth.urls')),
+    path('news/', include('views.news')),
     # path('accounts/', include('django.contrib.auth.urls')),
 ]
 
