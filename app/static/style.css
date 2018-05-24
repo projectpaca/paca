@@ -251,7 +251,7 @@ main {
   background-color: white;
   border: 1px solid #E0E7F3;
   border-radius: 5px;
-  padding: 2em 4em;
+  padding: 1.5em 3em;
   max-height: 80vh;
   overflow-y: scroll;
 }
@@ -260,6 +260,7 @@ main {
   background-color: white;
   padding: 2em 4em;
   margin-top: 1em;
+  overflow-y: hidden;
 }
 
 /* Profile */
