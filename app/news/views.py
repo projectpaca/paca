@@ -5,7 +5,8 @@ from .models import News
 
 def news(request):
 	''' '''
-	news = News.objects.all()
+	news = News.objects.all().values()
+	print (news)
 	return render(request, 'news/news_list.html', {"news":news})
 
 def news_detail(request, slug):

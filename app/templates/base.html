@@ -38,7 +38,7 @@
                     {# Lägg så småningom till {{ user.first_name }} och {{ user.last_name }} #}
                     {% if user.is_authenticated %}
                         {#<a href="{% url 'profile' %}">Profil</a>#}
-                        
+
                         <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}
                         <a href="{% url 'login' %}">Logga in</a>
@@ -80,12 +80,14 @@
                                     <span class="nav-item">Profil</span>
                                 </a>
                             </li>
+                            <!--
                             <li>
                                 <a href="/news" class="nav-item">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="nav-item">Nyheter</span>
                                 </a>
                             </li>
+                          -->
                             <br>
                             {% if user.is_staff or user.is_superuser %}
                                 <li>
