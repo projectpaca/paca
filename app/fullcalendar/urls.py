@@ -10,5 +10,6 @@ urlpatterns = [
     path('new', views.new_event),
     path('upd_event', views.upd_event),
     path('dash', views.dashboard, name='index'),
-    path('profil', views.profil),
+    path('profile/', views.profil),
+    path('profile/edit', views.edit_profile)
 ]

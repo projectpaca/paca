@@ -3,20 +3,22 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.core.serializers import serialize
 from userauth.models import CustomUser
+from django.contrib.auth.decorators import login_required
 
 from .models import Event, Department
 from django.contrib.auth import get_user_model
 
-
+@login_required
 def fullcalendar (request):
     return render(request, 'fullcalendar/calendar.html')
 
-
+@login_required
 def events(request):
     """ Hämtar alla event från databasen """
     return JsonResponse(list(Event.objects.all().values()),safe=False)
 
 
+@login_required
 def upd_event(request):
     """ Uppdaterar bokning """
     event_id = request.POST.get("event_id")
@@ -47,8 +49,6 @@ def upd_event(request):
     fullcal(request)
     """
 
-
-
 @ensure_csrf_cookie
 def new_event(request):
     """ Skapar ny bokning """
@@ -66,12 +66,41 @@ def new_event(request):
         "req_usr": req_usr,
         "dept": dept })
 
-
+@login_required
 def dashboard(request):
     my_events = list(Event.objects.filter(username=request.user.pk).values())
     available_events = list(Event.objects.filter(username=None).values())
     return render (request, 'dashboard.html',{"my_events": my_events, "available_events": available_events})
 
+@login_required
 def profil(request):
     user_info = CustomUser.objects.all().filter(id=request.user.pk).values()
-    return render (request, 'profile.html',{"user_info": user_info})
+    return render(request, 'profile.html', {"user_info": user_info})
+
+
+# @login_required
+# def edit_profile(request):
+#     if request.method == 'POST':
+#         form = EditProfileForm(request.POST, instance=request.CustomUser)
+#         if form.is_valid():
+#             form.save()
+#             message = "Dina ändringar har nu sparats!"
+#             return render(request, 'edit_profile.html', {'message':message, 'form':form})
+#         else:
+#             message=None
+#     form = EditProfileForm(request.POST or None, instance=request.CustomUser)
+#     args = {'form': form}
+#     return render(request, 'edit_profile.html', args)
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/profile')
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'edit_profile.html', args)
+

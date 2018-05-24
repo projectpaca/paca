@@ -28,6 +28,7 @@ admin.site.site_header = "PACA Adminportal"
 admin.site.site_title = "PACA Adminportal"
 admin.site.index_title = "Portalen där administratörer och chefer kan skapa nya, redigera och ta bort användare, arbetspass m.m."
 
+
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),

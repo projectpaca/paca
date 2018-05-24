@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700|Roboto+Slab');
 
 * {
   box-sizing: border-box;
@@ -85,7 +85,7 @@ ul.errorlist.nonfield > li {
 }
 
 .topbar-profile {
-  border-left: 1px solid #E0E7F3;
+  /* border-left: 1px solid #E0E7F3;*/
   padding: 0 2em 0 1em;
 }
 
@@ -118,7 +118,7 @@ aside {
   /*box-shadow: 3px 0px 56px -27px rgba(0,0,0,0.75);*/
 }
 
-.logo {
+.logo-al {
   border: 1px solid #E0E7F3;
   width:100px;
   height:100px;
@@ -127,15 +127,25 @@ aside {
   overflow: hidden;
 }
 
-.logo img {
+.logo-al img {
   width: auto;
   height: 100%;
   margin-left: -20px;
 }
 
+#logo {
+  text-decoration: none;
+}
+
+aside h1 {
+  font-family: 'Roboto Slab', serif;
+  color: #666;
+  text-align: center;
+}
+
 /* Main menu */
 #main-menu {
-  border-top: 1px solid #E0E7F3 ;
+  /*border-top: 1px solid #E0E7F3 ;*/
 }
 
 #main-menu ul, #main-menu li{
@@ -175,6 +185,7 @@ main {
   max-width: 60vw;
   position: relative;
   top: 25%;
+  overflow-y: scroll;
 }
 
 .container {
@@ -318,3 +329,54 @@ input[type=checkbox] {
     display: none;
     background-color: lightgreen;
 }
+
+/************ PROFIL **************/
+
+.profile-header-person {
+  padding: 2em 4em;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "a c"
+    "b .";
+}
+
+.profile-header-person h2 {
+  grid-area: a;
+}
+
+.employment-type {
+  grid-area: b;
+}
+
+.edit-profile {
+  grid-area: c;
+  text-align: right;
+  padding: 0;
+}
+
+.profile-list-section {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: auto;
+}
+
+.profile-list { /* ul */
+  display: block;
+  margin: 1em 0;
+}
+
+.profile-list li {
+  display: block;
+}
+
+.profile-list li:first-child {
+  font-weight: 700;
+}
+
+.profile-list li:nth-child(2) {
+  
+}
+

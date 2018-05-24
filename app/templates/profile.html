@@ -20,19 +20,23 @@
     </nav> /.profile-nav -->
 
     <header class="container-header">
-        <img src="{{ i.img }}" alt="{{ i.name }}s profilbild" class="avatar">
         <div class="profile-header-person">
             <h2>{{ i.name }}</h2>
             <div class="employment-type">
                 <i class="fas fa-user"></i>
                 <p>
                     {% if i.is_superuser %}
-                        {{ i.is_superuser }}
+                        Chef
+                    {% elif i.is_admin == True and i.is_superuser == False %}
+                        Admin
                     {% else %}
                         Anställd
                     {% endif %}
                 </p> {# rights or emp_type? #}
             </div> <!-- /.employment-type -->
+            <div class="edit-profile">
+                <a href="{% url 'password_change' %}">Byt lösenord</a>
+            </div>
         </div> <!-- /.profile-header-person -->
 
       <!--  {# {% if user == current_user %}
@@ -58,68 +62,122 @@
     </header> <!-- /.profile-header -->
 
     <section id="profile-section" class="container-section">
-      {% for i in user_info %}
-        <ul>
-            <li>Telefonnummer
-                <ul>
-                    <li>
-                        {% if i.phone %}
-                            {{ i.phone }}
-                        {% else %}
-                            Telefonnummer saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-            <li>E-postadress
-                <ul>
-                    <li>
-                        {% if i.email %}
-                            {{ i.email }}
-                        {% else %}
-                            E-postadress saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-            <li>Anställnings-ID
-                <ul>
-                    <li>
-                        {% if i.empid %}
-                            {{ i.empid }}
-                        {% else %}
-                            AnställningsID saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-            <li>Anställningsform
-                <ul>
-                    <li>
-                        {% if i.emp_type %}
-                            {{ i.emp_type }}
-                        {% else %}
-                            Anställningsform saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
+        {% for i in user_info %}
 
-            <li>Avdelningar
-                <ul>
-                    <li>
-                        {% if i.groups %}
-                            {% for i in i.groups %}
-                                {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
-                            {% endfor %}
-                        {% else %}
-                            Avdelningar saknas
-                        {% endif %}
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <div class="profile-list-section">
+            <ul class="profile-list">
+                <li>Användarnamn</li>
+                <li>
+                    {% if i.username %}
+                        {{ i.username }}
+                    {% else %}
+                        Användarnamn saknas
+                    {% endif %}
+                </li>
+            </ul>
 
+            <ul class="profile-list">
+                <li>E-postadress</li>
+                <li>
+                    {% if i.email %}
+                        {{ i.email }}
+                    {% else %}
+                        E-postadress saknas
+                    {% endif %}
+                </li>
+            </ul>
+
+            <ul class="profile-list">
+                <li>Telefonnummer</li>
+                <li>
+                    {% if i.phone %}
+                        {{ i.phone }}
+                    {% else %}
+                        Telefonnummer saknas
+                    {% endif %}
+                </li>
+            </ul>
+        </div> <!-- /.profile-list-section -->
+
+        <h3>Anställning</h3>
+        <div class="profile-list-section">
+            <ul class="profile-list">
+                <li>Anställnings-ID</li>
+                <li>
+                    {% if i.empid %}
+                        {{ i.empid }}
+                    {% else %}
+                        AnställningsID saknas
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="profile-list">
+                <li>Anställningsform</li>
+                <li>
+                    {% if i.emp_type == "full time" %}
+                        Heltid
+                    {% elif i.emp_type == "part time" %}
+                        Deltid
+                    {% elif i.emp_type == "hourly paid" %}
+                        Timanställning
+                    {% elif i.emp_type == "probationary" %}
+                        Provanställning
+                    {% else %}
+                        Anställningsform saknas
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="profile-list">
+                <li>Avdelningar</li>
+                <li>
+                    {% if i.groups %}
+                        {% for i in i.groups %}
+                            {{ i }} {# Comma after each, except for the last – perhaps a solution for back-end? #}
+                        {% endfor %}
+                    {% else %}
+                        Avdelningar saknas
+                    {% endif %}
+                </li>
+            </ul>
+        </div> <!-- /.profile-list-section -->
+<br>
+        <h3>Kontaktuppgifter</h3>
+        <div class="profile-list-section">
+
+            <ul class="profile-list">
+                <li>Adress</li>
+                <li>
+                    {% if i.street %}
+                        {{ i.street }}
+                    {% else %}
+                        Uppgifter saknas
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="profile-list">
+                <li>Postnummer</li>
+                <li>
+                    {% if i.postcode %}
+                        {{ i.postcode }}
+                    {% else %}
+                        Uppgifter saknas
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="profile-list">
+                <li>Stad</li>
+                <li>
+                    {% if i.city %}
+                        {{ i.city }}
+                    {% else %}
+                        Uppgifter saknas
+                    {% endif %}
+                </li>
+            </ul>
+        </div> <!-- /.profile-list-section -->
+
+
+<!--
         <div class="emergency-contacts">
             <h3>Närmaste anhöriga</h3>
             {% if next_of_kin %} {# or 'if next_of_kin != None'? Requires that we send data to variable next_of_kin #}
@@ -136,7 +194,9 @@
             {% else %}
                 Det finns inga angivna närmaste anhöriga.
             {% endif %}
-        </div> <!-- /.emergency-contacts -->
+        </div> < /.emergency-contacts -->
+
+
     </section> <!-- /.profile-section -->
     {% endfor %}
 {% endblock %}

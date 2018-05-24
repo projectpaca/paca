@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
-
 class CustomUserManager(UserManager):
 	'''Contains all of UserManager's code which can be modified later.'''
 	pass
@@ -116,8 +115,5 @@ class EmergencyContacts(models.Model):
 # 		('')
 # 		)
 # 	language = models.CharField(choices=LANGUAGE_CHOICES)
-
-
-
 
 
