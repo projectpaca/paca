@@ -12,6 +12,7 @@
                 PACA
             {% endif %}
         </title>
+        {% block head %}{% endblock %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -80,14 +81,26 @@
                                     <span class="nav-item">Profil</span>
                                 </a>
                             </li>
+<<<<<<< HEAD
                             <!--
                             <li>
+||||||| merged common ancestors
+                            <li>
+=======
+                            <!--<li>
+>>>>>>> 8cef8849b278614ba3a3b1545a74e5891d029cea
                                 <a href="/news" class="nav-item">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="nav-item">Nyheter</span>
                                 </a>
+<<<<<<< HEAD
                             </li>
                           -->
+||||||| merged common ancestors
+                            </li>
+=======
+                            </li> -->
+>>>>>>> 8cef8849b278614ba3a3b1545a74e5891d029cea
                             <br>
                             {% if user.is_staff or user.is_superuser %}
                                 <li>
