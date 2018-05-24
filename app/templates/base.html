@@ -38,7 +38,7 @@
                         <a href="{% url 'logout' %}">Logga ut</a>
                     {% else %}
                         <a href="{#{ url_for('user', username=current_user.username) }#}">Profile</a>
-                        <a href="{#{ url_for('logout') }#}">Logout</a>
+                        <a href="{#{ url ('logout') }#}">Logout</a>
                         <a href="{% url 'login' %}">Logga in</a>
                     {% endif %}
 
@@ -47,8 +47,13 @@
 
             <aside>
                 <figure class="logo">
-                    <img src="http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/3408-alpaca-1191300-1280.jpg" alt="Alpaca">
+                    <a href="/">
+                        <img src="http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/3408-alpaca-1191300-1280.jpg" alt="Alpaca">
+                    </a>
                 </figure> <!-- /.logo -->
+                <a href="/" class="">
+                    <h1>PACA</h1>
+                </a>
 
                 <nav id="main-menu">
                     <ul>
@@ -67,15 +72,15 @@
                         </li>
                         <br>
                         <li>
-                            <a href='/fullcalendar/profil' class="nav-item">
+                            <a href="/fullcalendar/profil" class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="nav-item">Profil</span>
                             </a>
                         </li>
                         <li>
-                            <a href='' class="nav-item">
+                            <a href="/news" class="nav-item">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span class="nav-item">Nyheter och notiser</span>
+                                <span class="nav-item">Nyheter</span>
                             </a>
                         </li>
                         <br>

@@ -1,15 +1,14 @@
-
 {% extends "base.html" %}
 
 {% block content %}
 
   <h1>News List</h1>
   <div class="news">
-    {% for news in news %}
+    {% for i in news %}
       <div class="news">
-        <h2><a href="{%url 'news:detail' slug=news.slug%}">{{news.title}}</a></h2>
-        <p>{{news.snippet}}</p>
-        <p>{{news.date}}</p>
+        <h2><a href="{% url 'news' slug=news.slug %}">{{ i.title }}</a></h2>
+        <p>{{ i.snippet }}</p>
+        <p>{{ i.date }}</p>
       </div>
     {% endfor %}
   </div>

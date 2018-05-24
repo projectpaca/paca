@@ -40,9 +40,7 @@ NATIVE_APPS = [
 PROJECT_APPS = [
     'userauth',
     'fullcalendar',
-    # 'accounts',
     # 'dashboard',
-    # 'department',
     'news',
     # 'sent_emails',
 ]
@@ -65,7 +63,6 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Look for templates at project level
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {

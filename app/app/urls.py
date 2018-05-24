@@ -18,16 +18,11 @@ from django.conf import settings
 from django.conf.urls import url
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-<<<<<<< HEAD
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib.auth.models import Group
 
-admin.site.unregister(Group)
-=======
-from django.conf.urls import url
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
->>>>>>> lisa
 
 admin.site.site_header = "PACA Adminportal"
 admin.site.site_title = "PACA Adminportal"
@@ -39,22 +34,5 @@ urlpatterns = [
     path('fullcalendar/', include('fullcalendar.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('news/', include('news.urls')),
-<<<<<<< HEAD
-    url('avatar/', include('avatar.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# if settings.DEBUG:
-#     # static files (images, css, javascript, etc.)
-#     urlpatterns += [
-#         url('media/(?P<path>.*)$', serve, {
-#             'document_root': settings.MEDIA_ROOT})
-#     ]
-=======
-    # path('accounts/', include('django.contrib.auth.urls')),
-]
-
-
-
-# path('account/', include('django.contrib.auth.urls', 'accounts.urls')),
-# All urls defined in /accounts/urls.py come after the url 'account/'.
->>>>>>> lisa

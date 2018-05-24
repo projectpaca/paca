@@ -3,18 +3,7 @@ from django.conf.urls import include, url
 from app import settings
 from userauth.models import CustomUser
 
-#class Post(models.Model):
-#    title = models.CharField(max_length=200)
-#    author = models.ForeignKey(
-#        'settings.AUTH_USER_MODEL',
-#        on_delete=models.CASCADE,
-#    )
-#    body = models.TextField()
-#
-#    def __str__(self):
-#        return self.title
 
-#####
 class News(models.Model):
 	author = models.ForeignKey(
 		CustomUser,
@@ -40,17 +29,11 @@ class News(models.Model):
 	list_filter = ['author','date']
 
 	class Meta:
-	        verbose_name = 'nyhet'
-	        verbose_name_plural = 'nyheter'
-
+			verbose_name = 'nyhet'
+			verbose_name_plural = 'nyheter'
+	
 	def __str__(self):
 		return self.title
 
-<<<<<<< HEAD
-=======
-    def __str__(self):
-        return self.title
-
-    def snippet(self):
-        return self.body[:50] + '...'
->>>>>>> lisa
+	def snippet(self):
+		return self.body[:50] + '...'
