@@ -26,7 +26,7 @@ $(function () {
             right: 'month,agendaWeek,agendaDay'
         },
         weekNumbers: true,
-        firstDay: 0,
+        firstDay: 1,
         weekNumberTitle: 'Vecka',
         defaultView: 'agendaWeek',
         titleFormat: 'MMMM YYYY',
@@ -60,12 +60,12 @@ $(function () {
             'November', 'December'
         ],
         dayNamesShort: [
-            'Mån', 'Tis', 'Ons', 'Tors',
-            'Fre', 'Lör', 'Sön'
+            'Sön', 'Mån', 'Tis', 'Ons', 'Tors',
+            'Fre', 'Lör'
         ],
         dayNames: [
-            'Måndag', 'Tisdag', 'Onsdag',
-            'Torsdag', 'Fredag', 'Lördag', 'Söndag'
+            'Söndag', 'Måndag', 'Tisdag', 'Onsdag',
+            'Torsdag', 'Fredag', 'Lördag'
         ],
 
         timeFormat: 'H:mm',
