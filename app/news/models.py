@@ -46,3 +46,11 @@ class News(models.Model):
 	def __str__(self):
 		return self.title
 
+<<<<<<< HEAD
+=======
+    def __str__(self):
+        return self.title
+
+    def snippet(self):
+        return self.body[:50] + '...'
+>>>>>>> lisa
