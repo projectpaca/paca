@@ -97,14 +97,6 @@ class MyUserAdmin(AuthUserAdmin):
                 )
             }
         ),
-        ('Emergency Contacts',
-            {'fields': (
-                ('EmergencyContacts.name',
-                'EmergencyContacts.relationship',
-                'EmergencyContacts.phone')
-                ) 
-            }
-        ),
         ('Permissions',
             {'fields': (
                 'is_active',
@@ -124,7 +116,6 @@ class MyUserAdmin(AuthUserAdmin):
         ),
 
     )
-    # inlines = [EmergencyContactsInline]
     list_display = ('empid', 'name', 'emp_type', 'is_active', 'is_staff', 'is_superuser')
     search_fields = ['name']
     add_fieldsets = (
