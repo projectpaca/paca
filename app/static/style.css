@@ -256,6 +256,12 @@ main {
   overflow-y: scroll;
 }
 
+.fullcalendar-section {
+  background-color: white;
+  padding: 2em 4em;
+  margin-top: 1em;
+}
+
 /* Profile */
 .container-header-title,
 .edit-profile {
