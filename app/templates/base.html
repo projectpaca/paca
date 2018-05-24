@@ -69,21 +69,19 @@
                                   <i class="fas fa-calendar-alt"></i>
                                   <span class="nav-item">Kalender</span>
                                 </a>
-                            </li>
-                            <br>
+                            </li><br>
                             <li>
                                 <a href="/fullcalendar/profile" class="nav-item">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="nav-item">Profil</span>
                                 </a>
-                            </li>
+                            </li><br>
                             <li>
                                 <a href="/news" class="nav-item">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="nav-item">Nyheter</span>
                                 </a>
-                            </li>
-                            <br>
+                            </li><br>
                             {% if user.is_staff or user.is_superuser %}
                                 <li>
                                     <a href="/admin" class="nav-item"> {# nav-item in both anchor and span tags? #}
