@@ -69,7 +69,7 @@ ul.errorlist.nonfield > li {
   color: black;
 }
 
-a {
+.container-section a {
   color: #666;
   border-bottom: 3px solid #E0E7F3;
   text-decoration: none;
