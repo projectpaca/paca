@@ -43,16 +43,22 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+  color: #666;
 }
 
 h2 {
   font-size: 1.75rem;
   font-weight: normal;
+  font-family: 'Roboto Slab', serif;
+  color: #666;
 }
 
 h3 {
+  color: #333;
   font-size: 1.25rem;
   border-bottom: 1px solid #E0E7F3;
+  font-family: 'Roboto Slab', serif;
 }
 
 i {
@@ -61,6 +67,17 @@ i {
 
 ul.errorlist.nonfield > li {
   color: black;
+}
+
+a {
+  color: #666;
+  border-bottom: 3px solid #E0E7F3;
+  text-decoration: none;
+  transition: all ease-in-out 0.1s;
+}
+
+a:hover {
+  border-color: #666;
 }
 
 /*********** TOPBAR **********/
@@ -345,7 +362,7 @@ input[type=checkbox] {
   width: 100%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 
+  grid-template-areas:
     "a c"
     "b .";
 }
@@ -384,6 +401,19 @@ input[type=checkbox] {
 }
 
 .profile-list li:nth-child(2) {
-  
+
 }
 
+
+/*********** NEWS *************/
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+}
+
+.news-title {
+  text-decoration: none;
+  color: #666;
+}
