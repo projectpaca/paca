@@ -148,4 +148,3 @@ LOGOUT_REDIRECT_URL = 'login'
 # https://wsvincent.com/django-user-authentication-tutorial-password-reset/
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
-

@@ -9,7 +9,7 @@ from userauth.models import CustomUser
 
 
 class Department(models.Model):
-    """ Företagets avdelningar """
+    """ Schema: Företagets avdelningar """
     name = models.CharField(
         'Namn',
         max_length=100,
@@ -18,7 +18,7 @@ class Department(models.Model):
     supervisor = models.ForeignKey(
         CustomUser,
         'Ansvarig',
-        limit_choices_to ={'is_staff':True},
+        limit_choices_to={'is_staff': True},
         null=True,
     )
     description = models.TextField(
@@ -27,8 +27,8 @@ class Department(models.Model):
     )
 
     list_display = ('name', 'supervisor')
-    search_fields = ['name','supervisor']
-    list_filter = ['name','supervisor']
+    search_fields = ['name', 'supervisor']
+    list_filter = ['name', 'supervisor']
 
     class Meta:
         verbose_name = 'avdelning'
@@ -39,7 +39,7 @@ class Department(models.Model):
 
 
 class Event(models.Model):
-    """ Grundläggande DB schema för calender """
+    """ Schema för kalendern """
     title = models.ForeignKey(
         Department,
         'Titel',
@@ -48,7 +48,7 @@ class Event(models.Model):
     end = models.DateTimeField('slut')
     username = models.ForeignKey(
         get_user_model(),
-        limit_choices_to={'is_active':True},
+        limit_choices_to={'is_active': sTrue},
         null=True,
         blank=True,
         verbose_name="Bokad på",

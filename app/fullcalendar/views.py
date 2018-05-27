@@ -8,50 +8,41 @@ from django.contrib.auth.decorators import login_required
 from .models import Event, Department
 from django.contrib.auth import get_user_model
 
+
 @login_required
-def fullcalendar (request):
+def fullcalendar(request):
+    """ index för kalender applikationen """
     return render(request, 'fullcalendar/calendar.html')
+
 
 @login_required
 def events(request):
-    """ Hämtar alla event från databasen """
-    return JsonResponse(list(Event.objects.all().values()),safe=False)
+    """ Hämtar alla event från databasen i JSON format """
+    return JsonResponse(list(Event.objects.all().values()), safe=False)
 
 
 @login_required
 def upd_event(request):
-    """ Uppdaterar bokning """
+    """ Uppdaterar ägande på ett pass = bokning """
     event_id = request.POST.get("event_id")
     username = request.user.pk
     print ("\nEvent_id:", event_id, "\nCurrentUser: ", username, "\n--------\n")
     available = Event.objects.filter(pk=event_id, username_id=None).values().exists()
+
+    # Låter enbart användaren boka passet om det är ledigt
     if available == False:
-        # print("Passet är upptaget!")
-        #return JsonResponse(list(Event.objects.all().values()),safe=False)
+        # Borde vara $if not available:
         raise Exception("Passet är upptaget!")
-        # return render(request, 'fullcalendar/calendar.html')
     elif available == True:
+        # Borde vara $if available:
         print(" Passet är ledigt")
         Event.objects.filter(pk=event_id).update(username_id=username)
-        return JsonResponse(list(Event.objects.all().values()),safe=False)
-        return render(request, 'fullcalendar/calendar.html')
+        return JsonResponse(list(Event.objects.all().values()), safe=False)
 
-    # ledig_test = Event.objects.filter(pk=event_id).values().exists(username_id=None)
-    # print(type(ledig_test))
-    # print(ledig_test)
-
-    """
-    Hämta username as bokad_på på pass där pk = Event_id
-    IF bokad_på != "":
-        return "Pass upptaget!"
-    ELSE (bokad_på == ""):
-        event.objects.update pass.... (Event.objects.filter(pk=event_id).update(username=username))
-    fullcal(request)
-    """
 
 @ensure_csrf_cookie
 def new_event(request):
-    """ Skapar ny bokning """
+    """ Skapar nytt pass """
     title = request.POST.get("title")
     start = request.POST.get("start")
     end = request.POST.get("end")
@@ -64,35 +55,26 @@ def new_event(request):
         "start": start,
         "end": end,
         "req_usr": req_usr,
-        "dept": dept })
+        "dept": dept})
+
 
 @login_required
 def dashboard(request):
+    """ Hämtar dashboard och populerar med data. """
     my_events = list(Event.objects.filter(username=request.user.pk).values())
     available_events = list(Event.objects.filter(username=None).values())
-    return render (request, 'dashboard.html',{"my_events": my_events, "available_events": available_events})
+    return render(request, 'dashboard.html', {"my_events": my_events, "available_events": available_events})
 
+s
 @login_required
 def profil(request):
+    """ Hämtar profil och populerar med data. """
     user_info = CustomUser.objects.all().filter(id=request.user.pk).values()
     return render(request, 'profile.html', {"user_info": user_info})
 
 
-# @login_required
-# def edit_profile(request):
-#     if request.method == 'POST':
-#         form = EditProfileForm(request.POST, instance=request.CustomUser)
-#         if form.is_valid():
-#             form.save()
-#             message = "Dina ändringar har nu sparats!"
-#             return render(request, 'edit_profile.html', {'message':message, 'form':form})
-#         else:
-#             message=None
-#     form = EditProfileForm(request.POST or None, instance=request.CustomUser)
-#     args = {'form': form}
-#     return render(request, 'edit_profile.html', args)
-
 def edit_profile(request):
+    """ Låter användaren uppdatera sin profil """
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
 
@@ -103,4 +85,3 @@ def edit_profile(request):
         form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'edit_profile.html', args)
-

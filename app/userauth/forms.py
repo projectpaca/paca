@@ -7,8 +7,10 @@ from .models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
-	'''Subclasses the existing UserCreationForm and specifying it to use our new CustomUser model.'''
-	
+	'''
+        Subclasses the existing UserCreationForm and specifying it to use our
+        new CustomUser model.
+        '''
 
 	class Meta(UserCreationForm.Meta):
 		model = CustomUser
@@ -16,9 +18,11 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
-	'''Subclasses the existing UserChangeForm and specifying it to use our new CustomUser model.'''
+	'''
+        Subclasses the existing UserChangeForm and specifying it to use
+        our new CustomUser model.
+        '''
 
 	class Meta:
 		model = CustomUser
 		fields = UserChangeForm.Meta.fields
-

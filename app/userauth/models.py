@@ -1,16 +1,20 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
+
 class CustomUserManager(UserManager):
-	'''Contains all of UserManager's code which can be modified later.'''
-	pass
+        '''Contains all of UserManager's code which can be modified later.'''
+        pass
 
 
 class CustomUser(AbstractUser):
-	'''Extends AbstractUser and specifies that all its objects come from the CustomUserManager.'''
+	'''
+        Extends AbstractUser and specifies that all its objects come from
+        the CustomUserManager.
+        '''
 
-	# First Name and Last Name do not cover name patterns
-	# around the globe.
+        # First Name and Last Name do not cover name patterns
+        # around the globe.
 	username = models.CharField(
 		unique=True,
 		max_length=150,
@@ -74,7 +78,6 @@ class CustomUser(AbstractUser):
 		return self.name
 
 
-
 class EmergencyContacts(models.Model):
 	'''Database table which stores a person's emergency contacts.'''
 	user_reference = models.ForeignKey(
@@ -100,20 +103,4 @@ class EmergencyContacts(models.Model):
 
 	def __str__(self):
 		return()
-
-
-# class EmergencyContacts():
-# 	''''''
-# 	# References CustomUser and is deleted if FK is deleted
-# 	empid_f = models.ForeignKey('CustomUser', on_delete=CASCADE)
-
-
-# class LangComp():
-# 	''''''
-# 	empid_f = models.ForeignKey('CustomUser', on_delete=CASCADE)
-# 	LANGUAGE_CHOICES = (
-# 		('')
-# 		)
-# 	language = models.CharField(choices=LANGUAGE_CHOICES)
-
 

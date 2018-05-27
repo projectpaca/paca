@@ -6,10 +6,6 @@ from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from .models import CustomUser, EmergencyContacts
 
 
-# class EmergencyContactsInline(admin.TabularInline):
-#     model = EmergencyContacts
-
-
 class MyUserChangeForm(UserChangeForm):
 
     class Meta(UserChangeForm.Meta):
@@ -28,7 +24,6 @@ class MyUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        #fields = UserCreationForm.Meta.fields + ('name', 'empid', 'emp_type',)
 
     def clean_name(self):
         name = self.cleaned_data['name']
@@ -38,6 +33,7 @@ class MyUserCreationForm(UserCreationForm):
             return name
 
         raise forms.ValidationError(self.error_messages['duplicate_username'])
+
     def clean_username(self):
         username = self.cleaned_data['username']
         try:
@@ -71,32 +67,25 @@ class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
 
-    # def get_emergency_contacts(request):
-    #     '''Gets the emergency contacts of the current user.'''
-    #     emergency_contacts = EmergencyContacts.objects.filter(user_reference=request.user.username)
-    #     return emergency_contacts
-
     fieldsets = (
         ('User Profile',
             {'fields': (
                 'name',
                 'username',
                 'email',
-                ('empid',
-                'emp_type'),
+                ('empid', 'emp_type'),
                 'password',
                 )
-            }
-        ),
+             }
+         ),
         ('Personal info',
             {'fields': (
-                ('street',
-                'phone'),
+                ('street', 'phone'),
                 'postcode',
                 'city',
                 )
-            }
-        ),
+             }
+         ),
         ('Permissions',
             {'fields': (
                 'is_active',
@@ -105,22 +94,34 @@ class MyUserAdmin(AuthUserAdmin):
                 'groups',
                 'user_permissions',
                 )
-            }
-        ),
+             }
+         ),
         ('Important dates',
             {'fields': (
                 'last_login',
                 'date_joined',
                 )
-            }
-        ),
-
+             }
+         ),
     )
-    list_display = ('empid', 'name', 'emp_type', 'is_active', 'is_staff', 'is_superuser')
+    list_display = (
+        'empid',
+        'name',
+        'emp_type',
+        'is_active',
+        'is_staff',
+        'is_superuser'
+        )
     search_fields = ['name']
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'name', 'email', 'empid', 'emp_type', 'password1', 'password2')}),)
-
-
+            'fields': (
+                'username',
+                'name',
+                'email',
+                'empid',
+                'emp_type',
+                'password1',
+                'password2'
+                )}),)
