@@ -1,15 +1,23 @@
+<!--
+    NEWS_DETAIL (Lisa Wasslöv)
+
+    /templates/news/news_list.html
+
+    The template that displays a single news article.
+-->
+
 {% extends "base.html" %}
 
-{% block content %}
-<div class="container-section">
-	  <div class="news">
-	    <h2>{{ news.title }}</h2>
-	    <p>{{ news.date }}</p>
-			<hr>
-			<br>
-	    <p>{{ news.body }}</p>
-			<br>
-			<a href="/news">Tillbaka</a>
-	  </div>
-</div> <!-- /.container-section -->
-{% endblock %}
+    {% block content %}
+        <div class="container-section">
+            <div class="news">
+                <h2>{{ news.title }}</h2>
+                <p>{{ news.date }}</p>
+                    <hr>
+                    <br>
+                <p>{{ news.body }}</p>
+                    <br>
+                    <a href="/news">Tillbaka</a>
+            </div> <!-- /.news -->
+        </div> <!-- /.container-section -->
+    {% endblock %}

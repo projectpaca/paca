@@ -1,11 +1,12 @@
 # README: /static
 
 ## Ownership
-Milo Bengtsson is responsible for /userauth.
+Milo Bengtsson is responsible for the CSS.
 
 
 ## Status
 * Stylesheet still not implemented through Sass.
+* Will have to implement it through normal CSS.
 
 
 ## Purpose

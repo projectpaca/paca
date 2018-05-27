@@ -14,12 +14,13 @@ function getCookie(name) {
         }
     }
     return cookieValue;
-    // skapar en cookie
+    // Creates cookie
 }
 
 $(function () {
     $('#calendar').fullCalendar({
-        //visuell formatering av kalendern
+        // Customization of PACA calendar
+        // Mainly translation to Swedish
         header: {
             left: '',
             center: 'prev, title, next',
@@ -79,7 +80,7 @@ $(function () {
         }],
         lazyFetching: true,
 
-        // när en håller musen över(hover) på ett pass så visas information, titel, start- och sluttid, i en ljusgul ruta
+        // Mouseover modal with information about a single shift
         eventMouseover: function (data, event, view) {
             tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#FFE4B5;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + 'Pass:  ' + data.title_id + '</br> Börjar: ' + data.start.format('YYYY-MM-DD hh:mm') + '</br> Slutar: ' + data.end.format('YYYY-MM-DD hh:mm') + '</div>';
             $("body").append(tooltip);
@@ -90,7 +91,7 @@ $(function () {
             }).mousemove(function (e) {
                 $('.tooltiptopicevent').css('top', e.pageY + 10);
                 $('.tooltiptopicevent').css('left', e.pageX + 20);
-            }); //presenterar titel/avdelning, starttid och sluttid vid hover över pass
+            }); // Displays title/department, start, and end time at mouseover
         },
 
         eventMouseout: function (data, event, view) {
@@ -101,20 +102,20 @@ $(function () {
         eventRender: function (event, element, view) {
             var skift = event.title_id;
             if (skift === 'Kassa') {
-                element.css('background-color', '#B2FF66');
-                // Gör passet grönt om det är 'kassa'
+                element.css('background-color', '#7CB1BB');
+                // Hardcoding department "Kassa" to be turqoise 
             } else if (skift === 'Lager') {
-                element.css('background-color', 'red');
-                // Gör passet rött om det är 'lager'
+                element.css('background-color', '#D63B3E');
+                // Hardcoding department "Lager" to be red 
             } else if (skift === 'Chark') {
-                element.css('background-color', '#66B2FF');
-                // Gör passet blått om det är 'chark'
+                element.css('background-color', '#EAA241');
+                // Hardcoding department "Chark" to be orange 
             } else {
-                element.css('background-color', '#FFCCCC');
-                // Gör passet rosa om det inte stämmer med ovan IF-satser
-            }// END IF SATS
+                element.css('background-color', '#E99481');
+                // Hardcoding all other departments to be pink 
+            }
             
-        }, //eventRender ger färg efter avdelning
+        },
 
         eventClick: function (event, jsEvent, view) {
             if (confirm("Bekräfta bokning av pass" + '\n Pass:  ' + event.title_id + ' \n Börjar: ' + event.start.format('YYYY-MM-DD hh:mm') + '\n Slutar: ' + event.end.format('YYYY-MM-DD hh:mm'))) {
@@ -164,92 +165,3 @@ $(function () {
 }); // function
 
 $('#calendar').fullCalendar('next');
-
-// NEDAN TAS BORT?
-
-// funktionen ovan ('next') kan ej tas bort, gör det möjligt att byta till nästa vecka och månad.
-// Nedanstående kod har ingen funktion längre, men ligger hårt jobb bakom så nostalgist / Hanna
-
-
-       /* select: function (start, end, jsEvent, view) {
-            var duration = (end - start) / 1000,
-                title = prompt('Skriv in titel på passet:', "Nytt pass"),
-                req_usr = "1",
-                dept = 'kassa',
-                event = {
-                    title: title,
-                    start: moment(start).format('YYYY-MM-DD hh:mm'), // få ett datumformat
-                    end: moment(end).format('YYYY-MM-DD hh:mm'), // end/start är innan ett objekt med tid, vi behöver en sträng för att skicka med i ajax
-                    req_usr: req_usr,
-                    dept: dept
-                };
-
-            if (duration === 1800) {
-                end = start.add(30, 'mins');
-                return $('#calendar').fullCalendar('select', start, end);
-            }
-
-            if (title !== null) {
-                $("#calendar").fullCalendar('renderEvent', event, 'stick', true);
-
-                $('#calendar').fullCalendar('unselect');
-            }
-            console.log(event); // logga vårt nya event
-            // var csrftoken = Cookies.get('csrftoken');
-            var csrftoken = getCookie('csrftoken');
-            console.log(csrftoken);
-
-            $('#calendar').fullcalendar({
-                eventClick: function (event, jsEvent, view) {
-                    if (alert("Vill du ta bort detta pass?")) {
-                        $('#calendar').fullCalendar('removeEvents', event);
-                    } else {
-                        pass;
-                    }
-
-                    $('#calendar').fullCalendar('updateEvent', event);
-
-                },
-
-            }); */
-
-
-    /*        // Lägg till event
-    $.ajax({
-        type: "POST",
-        url: 'new',
-        headers: {
-            'X-CSRFToken': csrftoken
-        },
-                //+ JSON.stringify(event),
-        data: event, // (titel, start, end, req_usr, dept)
-        dataType: "json",
-        success: function () {
-            alert("YEEEYYY!");
-        },
-        error: function () {
-            alert("nix inte idag...");
-        }
-
-    }).done(function (data) {
-        $("#calendar").fullCalendar("renderEvent", data);
-        $("#myModal").modal("hide");
-
-    });
-
-
-}); //select
-
-*/
-
-//    });// function fullcalendar
-// });//function
-
-/*
-$('#calendar').fullCalendar({
-    DayClick: function (date, jsEvent, view) {
-        console.log('day', date.format()); // date is a moment
-        console.log('coords', jsEvent.pageX, jsEvent.pageY);
-    } // länkar siffran (dagens datum) i kalendern till specifika sidan för den dagen
-
-});*/

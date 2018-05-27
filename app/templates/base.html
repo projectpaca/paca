@@ -1,5 +1,10 @@
 <!--
-    The base layout for authenticated user views
+    BASE (Milo Bengtsson)
+
+    /templates/base.html
+
+    The base layout for authenticated user views.
+    Is extended by other templates.
 -->
 <!DOCTYPE html>
 {% load staticfiles %}
@@ -25,13 +30,10 @@
         <div id="app">
 
             <header id="topbar">
-                <!--<div class="topbar-bell">
-                    <i class="far fa-bell"></i>
-                </div>  /.top-bar-bell  -->
 
                 <div class="topbar-profile">
                     {% if user.is_authenticated %}
-                        <a href="/fullcalendar/profile">
+                        <a href="/fullcalendar/profile" id="topbar-profile-link">
                             <i class="fas fa-user-circle"></i>
                         </a>
                     {% endif %}
@@ -47,7 +49,7 @@
             <aside>
                 <a href="/" id="logo">
                     <figure class="logo-al">
-                        <img src="http://www.thatsfarming.com/uploads/news/1200x800_8-208a347d63693d952b7c8a3b7338ac58/3408-alpaca-1191300-1280.jpg" alt="Alpaca">
+                        <img src="{% static 'al.svg' %}" alt="Alpaca">
                     </figure> <!-- /.logo-al -->
                     <h1>
                         PACA
@@ -58,33 +60,33 @@
                     {% if user.is_authenticated %}
                         <ul>
                             <li>
-                                <a href="/fullcalendar/dash" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                                <a href="/fullcalendar/dash" class="nav-item"> 
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span class="nav-item">Dashboard</span>
                                 </a>
                             </li>
                             <br>
                             <li>
-                              <a href="/fullcalendar" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                              <a href="/fullcalendar" class="nav-item"> 
                                   <i class="fas fa-calendar-alt"></i>
                                   <span class="nav-item">Kalender</span>
                                 </a>
                             </li><br>
                             <li>
                                 <a href="/fullcalendar/profile" class="nav-item">
-                                    <i class="fas fa-tachometer-alt"></i>
+                                    <i class="fas fa-user-circle"></i>
                                     <span class="nav-item">Profil</span>
                                 </a>
                             </li><br>
                             <li>
                                 <a href="/news" class="nav-item">
-                                    <i class="fas fa-tachometer-alt"></i>
+                                    <i class="fas fa-bullhorn"></i>
                                     <span class="nav-item">Nyheter</span>
                                 </a>
                             </li><br>
                             {% if user.is_staff or user.is_superuser %}
                                 <li>
-                                    <a href="/admin" class="nav-item"> {# nav-item in both anchor and span tags? #}
+                                    <a href="/admin" class="nav-item">
                                         <i class="fas fa-cog"></i>
                                         <span class="nav-item">Adminportal</span>
                                     </a>
@@ -97,8 +99,8 @@
 
             <main>
                 <section class="container">
+                    <!-- Main content block placeholder -->
                     {% block content %}{% endblock %}
-                    <!-- CONTENT ÄR DET STORA FÖNSTRET I CENTER -->
                 </section> <!-- /.container -->
             </main>
         </div> <!-- /#app -->

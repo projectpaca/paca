@@ -1,17 +1,20 @@
-<!-- templates/home.html -->
+<!--
+    SHIFT (Hanna Fellwing)
+
+    /templates/fullcalendar/shift.html
+
+    A template for showcasing a single shift.
+-->
 {% extends 'base.html' %}
 
-{% block title %}
-    Passdetaljer
-{% endblock %}
+    {% block title %}
+        Passdetaljer
+    {% endblock %}
 
-{% block content %}
-
-  <h1>{{ event.title }}</h1>
-    
-  <ul>
-    <li> {{ event.start }}</li>
-    <li> {{ event.end }} </li>
-  </ul>
-
-{% endblock %}
+    {% block content %}
+      <h1>{{ event.title }}</h1>
+      <ul>
+        <li> {{ event.start }}</li>
+        <li> {{ event.end }} </li>
+      </ul>
+    {% endblock %}

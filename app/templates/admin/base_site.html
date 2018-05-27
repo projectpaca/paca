@@ -1,3 +1,11 @@
+<!--
+    ADMIN BASE_SITE
+
+    /templates/admin/base_site.html
+
+    Small edits to the admin portal.
+-->
+
 {% extends "admin/base.html" %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}

@@ -1,5 +1,5 @@
 <!--
-    MAIN PROFILE PAGE
+    MAIN PROFILE PAGE (Victor Dahl & Milo Bengtsson)
 
     .container-nav
     .container-header
@@ -10,45 +10,35 @@
 
 {% block content %}
     {% for i in user_info %}
-    <!-- <nav class="container-nav">
-        <ul> {# eller använd .profile-nav ul #}
-            <li><a href="" class="current">Profil</a></li>
-            <li><a href="">Anställning</a></li>
-            <li><a href="">Kompetens</a></li>
-            <li><a href="">Kontakt</a></li>
-        </ul>
-    </nav> /.profile-nav -->
+        <header class="container-header">
+            <div class="profile-header-person">
+                <h2>{{ i.name }}</h2>
+                <div class="employment-type">
+                    <i class="fas fa-user"></i>
+                    <p>
+                        {% if i.is_superuser %}
+                            Chef
+                        {% endif %}
+                        {% if i.is_admin == True and i.is_superuser == False %}
+                            Admin
+                        {% endif %}
+                        {% if i.is_active and i.is_admin == False and i.is_superuser == False %}
+                            Anställd
+                        {% endif %}
+                    </p>
+                </div> <!-- /.employment-type -->
+                <div>
+                    <button type="submit" style="background-color: green;">Spara</button>
+                    <a href="{% url 'profile' %}"><button style="background-color: red;">Avbryt</button></a>
+            </div> <!-- /.profile-header-person -->
+        </header> <!-- /.profile-header -->
 
-    <header class="container-header">
-        <div class="profile-header-person">
-            <h2>{{ i.name }}</h2>
-            <div class="employment-type">
-                <i class="fas fa-user"></i>
-                <p>
-                    {% if i.is_superuser %}
-                        Chef
-                    {% endif %}
-                    {% if i.is_admin == True and i.is_superuser == False %}
-                        Admin
-                    {% endif %}
-
-                    {% if i.is_active and i.is_admin == False and i.is_superuser == False %}
-                        Anställd
-                    {% endif %}
-                </p> {# rights or emp_type? #}
-            </div> <!-- /.employment-type -->
-            <div>
-                <button type="submit" style="background-color: green;">Spara</button>
-                <a href="{% url 'profile' %}"><button style="background-color: red;">Avbryt</button></a>
-        </div> <!-- /.profile-header-person -->
-    </header> <!-- /.profile-header -->
-
-    <section id="profile-section" class="container-section">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
-        </form>
-    </section> <!-- /.profile-section -->
+        <section id="profile-section" class="container-section">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </section> <!-- /.profile-section -->
     {% endfor %}
 {% endblock %}

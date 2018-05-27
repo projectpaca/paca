@@ -2,8 +2,6 @@ from django.urls import path
 from django.views.generic import TemplateView
 from . import views
 
-
-# app_name = 'fullcalendar'
 urlpatterns = [
     path('', views.fullcalendar, name='fullcalendar'),
     path('events', views.events),

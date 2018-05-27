@@ -1,22 +1,23 @@
 <!--
-    DASHBOARD
+    DASHBOARD (Victor Dahl)
 
     /templates/dashboard.html
+
+    An introductory page to the web application.
+    The first page that unauthenticated users see. 
 -->
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="container-section">
+    <section class="container-section" id="index">
         {% if user.is_authenticated %}
             <h1>Hej, {{ user.name }}!</h1>
         {% else %}
             <h1>Hej!</h1>
         {% endif %}
-
         <h2>Välkommen till Lima Livs </h2>
         <p>
-          Här kan du kika runt i exempelkunden Lima Livs schemaläggningssystem, och se deras anställda och deras nuarande pass.
-          Du är välkommen att kika i admin panelen som du når genom sidopanelen eftersom du är inloggad som användaren Al, som självklart är superuser.
+          Här kan du kika runt i exempelkunden Lima Livs schemaläggningssystem, och se deras anställda och deras nuvarande pass. Du är välkommen att kika i admin panelen som du når genom sidopanelen eftersom du är inloggad som användaren Al, som självklart är superuser.
         </p>
         <br>
         <h2> Mål med vårt projekt </h2>
@@ -25,6 +26,5 @@
         <br>
         <h2>Omfattning </h2>
         <p>Produkten som framställs kommer vara ett schemaläggningssystem för svenska företag som vill ha ett visuellt tilltalande och användarvänligt verktyg för sin planering. Projektets omfattning grundas på kraven på sprintarna som beskrivna i kursplanen för projektet. Projektet kommer ej att omfatta personaladministration utöver grundläggande kontoadministration. Med kontoadministration menas sådan funktionalitet som rimligen krävs för att identifiera personer för att kunna koppla en individ till ett pass, och hantera kontaktinformation till personen.</p>
-
     </section> <!-- /.container-section -->
 {% endblock %}

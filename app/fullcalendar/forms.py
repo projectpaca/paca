@@ -6,6 +6,7 @@ from userauth.models import CustomUser
 
 
 class EditProfileForm(UserChangeForm):
+    '''A profile edit form.'''
 	password = forms.CharField(widget=forms.PasswordInput())
 
         class Meta:
@@ -13,16 +14,4 @@ class EditProfileForm(UserChangeForm):
 
 		fields = ['username', 'email', 'name', 'street', 'postcode', 'city', 'phone']
 		exclude = []
-
-
-class EditProfileForm(UserChangeForm):
-    template_name = '/something/else'
-
-    class Meta:
-        model = User
-        fields = (
-            'email',
-            'name',
-            'username',
-        )
 

@@ -1,3 +1,10 @@
+<!--
+    NEWS_LIST (Lisa Wasslöv)
+
+    /templates/news_list.html
+
+    The template that loops through the news.
+-->
 {% extends "base.html" %}
 
 {% block content %}
@@ -5,7 +12,9 @@
     <div class="news-list">
       {% for news in news %}
       <div class="container-section">
-        <a href="{% url 'news:detail' slug=news.slug %}" class="news-title"><h2>{{ news.title }}</h2></a>
+        <a href="{% url 'news:detail' slug=news.slug %}" class="news-title">
+          <h2>{{ news.title }}</h2>
+        </a>
         <p>{{ news.date }}</p>
         <hr>
         <br>

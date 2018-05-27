@@ -9,7 +9,7 @@ from userauth.models import CustomUser
 
 
 class Department(models.Model):
-    """ Schema: Företagets avdelningar """
+    '''A database model for a company's departments.'''
     name = models.CharField(
         'Namn',
         max_length=100,
@@ -39,7 +39,7 @@ class Department(models.Model):
 
 
 class Event(models.Model):
-    """ Schema för kalendern """
+    '''Database model for a calendar event (shift).'''
     title = models.ForeignKey(
         Department,
         'Titel',
@@ -48,7 +48,7 @@ class Event(models.Model):
     end = models.DateTimeField('slut')
     username = models.ForeignKey(
         get_user_model(),
-        limit_choices_to={'is_active': sTrue},
+        limit_choices_to={'is_active': True},
         null=True,
         blank=True,
         verbose_name="Bokad på",

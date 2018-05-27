@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 
 
 class News(models.Model):
+    '''A database model for news articles.'''
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     body = models.TextField()
